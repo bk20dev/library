@@ -17,6 +17,8 @@
 #include <Data.Bind.ObjectScope.hpp>
 #include <Vcl.VirtualImage.hpp>
 //---------------------------------------------------------------------------
+#include <vector>
+#include "Book.h"
 class TForm1 : public TForm
 {
 __published:	// IDE-managed Components
@@ -29,11 +31,14 @@ __published:	// IDE-managed Components
 	TLabel *Label2;
 	TControlList *ControlList1;
 	TLabel *Label3;
-	TVirtualImage *VirtualImage1;
 	TLabel *Label4;
 	TControlListButton *ControlListButton1;
 	TControlListButton *ControlListButton2;
+	TImage *Image1;
+	void __fastcall ControlList1BeforeDrawItem(int AIndex, TCanvas *ACanvas, TRect &ARect,
+          TOwnerDrawState AState);
 private:	// User declarations
+	std::vector<const Book*> allBooks;
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
 };

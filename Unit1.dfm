@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 472
-  ClientWidth = 369
+  ClientHeight = 467
+  ClientWidth = 570
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,7 +15,7 @@ object Form1: TForm1
   object GridPanel1: TGridPanel
     Left = 0
     Top = 0
-    Width = 369
+    Width = 570
     Height = 69
     Align = alTop
     BevelOuter = bvNone
@@ -71,38 +71,38 @@ object Form1: TForm1
         Value = 100.000000000000000000
       end>
     TabOrder = 0
-    ExplicitWidth = 865
+    ExplicitWidth = 566
     object Button1: TButton
       Left = 0
       Top = 46
-      Width = 247
+      Width = 347
       Height = 23
       Align = alClient
       Caption = 'Clear filters'
       TabOrder = 0
-      ExplicitWidth = 495
+      ExplicitWidth = 345
     end
     object Edit1: TEdit
       Left = 125
       Top = 0
-      Width = 122
+      Width = 222
       Height = 23
       Align = alClient
       TabOrder = 1
       TextHint = 'Title, author, series, etc.'
-      ExplicitWidth = 370
+      ExplicitWidth = 220
     end
     object ComboBox1: TComboBox
       Left = 125
       Top = 23
-      Width = 122
+      Width = 222
       Height = 23
       Align = alClient
       AutoDropDown = True
       Sorted = True
       TabOrder = 2
       TextHint = 'Category'
-      ExplicitWidth = 370
+      ExplicitWidth = 220
     end
     object Label1: TLabel
       AlignWithMargins = True
@@ -135,18 +135,18 @@ object Form1: TForm1
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 453
-    Width = 369
+    Top = 448
+    Width = 570
     Height = 19
     Panels = <>
-    ExplicitTop = 515
-    ExplicitWidth = 865
+    ExplicitTop = 447
+    ExplicitWidth = 566
   end
   object ControlList1: TControlList
     Left = 0
     Top = 69
-    Width = 369
-    Height = 384
+    Width = 570
+    Height = 379
     Align = alClient
     ItemCount = 10
     ItemMargins.Left = 0
@@ -158,13 +158,14 @@ object Form1: TForm1
     ItemSelectionOptions.FocusedColorAlpha = 80
     ParentColor = False
     TabOrder = 2
-    ExplicitWidth = 869
-    ExplicitHeight = 447
+    OnBeforeDrawItem = ControlList1BeforeDrawItem
+    ExplicitLeft = -40
+    ExplicitTop = 52
     object Label3: TLabel
       AlignWithMargins = True
       Left = 76
       Top = 24
-      Width = 195
+      Width = 396
       Height = 38
       Margins.Left = 10
       Margins.Top = 2
@@ -180,22 +181,6 @@ object Form1: TForm1
       Transparent = True
       WordWrap = True
       ExplicitWidth = 269
-    end
-    object VirtualImage1: TVirtualImage
-      AlignWithMargins = True
-      Left = 4
-      Top = 4
-      Width = 62
-      Height = 62
-      Margins.Left = 4
-      Margins.Top = 4
-      Margins.Right = 4
-      Margins.Bottom = 4
-      Align = alLeft
-      ImageWidth = 0
-      ImageHeight = 0
-      ImageIndex = -1
-      ExplicitHeight = 32
     end
     object Label4: TLabel
       Left = 76
@@ -213,7 +198,7 @@ object Form1: TForm1
     end
     object ControlListButton1: TControlListButton
       AlignWithMargins = True
-      Left = 314
+      Left = 515
       Top = 20
       Width = 30
       Height = 30
@@ -229,7 +214,7 @@ object Form1: TForm1
     end
     object ControlListButton2: TControlListButton
       AlignWithMargins = True
-      Left = 280
+      Left = 481
       Top = 20
       Width = 30
       Height = 30
@@ -241,6 +226,12 @@ object Form1: TForm1
       LinkHotColor = clHighlight
       Style = clbkToolButton
       ExplicitLeft = 346
+    end
+    object Image1: TImage
+      Left = 4
+      Top = 4
+      Width = 60
+      Height = 60
     end
   end
 end
