@@ -137,6 +137,9 @@
             <DependentOn>Unit1.h</DependentOn>
             <BuildOrder>2</BuildOrder>
         </CppCompile>
+        <None Include="Utils.h">
+            <BuildOrder>4</BuildOrder>
+        </None>
         <FormResources Include="Unit1.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
