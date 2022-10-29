@@ -7,8 +7,14 @@
 //---------------------------------------------------------------------------
 struct Book {
 	int id;
-	System::UnicodeString title;
-	System::UnicodeString description;
+   	UnicodeString coverImagePath;
+    UnicodeString series;
+	UnicodeString title;
+  	UnicodeString genre;
+	UnicodeString description;
+	UnicodeString author;
+	unsigned short releaseYear;
+    float rating;
 };
 //---------------------------------------------------------------------------
 #endif
