@@ -148,7 +148,6 @@ object Form1: TForm1
     Width = 570
     Height = 379
     Align = alClient
-    ItemCount = 10
     ItemMargins.Left = 0
     ItemMargins.Top = 0
     ItemMargins.Right = 0
@@ -159,8 +158,6 @@ object Form1: TForm1
     ParentColor = False
     TabOrder = 2
     OnBeforeDrawItem = ControlList1BeforeDrawItem
-    ExplicitLeft = -40
-    ExplicitTop = 52
     object Label3: TLabel
       AlignWithMargins = True
       Left = 76
@@ -198,7 +195,7 @@ object Form1: TForm1
     end
     object ControlListButton1: TControlListButton
       AlignWithMargins = True
-      Left = 515
+      Left = 532
       Top = 20
       Width = 30
       Height = 30
@@ -214,7 +211,7 @@ object Form1: TForm1
     end
     object ControlListButton2: TControlListButton
       AlignWithMargins = True
-      Left = 481
+      Left = 498
       Top = 20
       Width = 30
       Height = 30
@@ -232,6 +229,7 @@ object Form1: TForm1
       Top = 4
       Width = 60
       Height = 60
+      Proportional = True
     end
   end
 end

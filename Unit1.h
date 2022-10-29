@@ -16,6 +16,7 @@
 #include <Data.Bind.Components.hpp>
 #include <Data.Bind.ObjectScope.hpp>
 #include <Vcl.VirtualImage.hpp>
+#include <Vcl.Dialogs.hpp>
 //---------------------------------------------------------------------------
 #include <vector>
 #include "Book.h"
@@ -39,6 +40,7 @@ __published:	// IDE-managed Components
           TOwnerDrawState AState);
 private:	// User declarations
 	std::vector<const Book*> allBooks;
+    void UpdateCurrentItem(const Book&);
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
 };
