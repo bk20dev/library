@@ -2,29 +2,44 @@ object Form2: TForm2
   Left = 0
   Top = 0
   Caption = 'Form2'
-  ClientHeight = 458
-  ClientWidth = 568
+  ClientHeight = 597
+  ClientWidth = 728
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Padding.Left = 12
+  Padding.Top = 8
+  Padding.Right = 12
+  Padding.Bottom = 8
   TextHeight = 15
   object GridPanel1: TGridPanel
-    Left = 0
-    Top = 0
-    Width = 568
-    Height = 458
+    Left = 12
+    Top = 8
+    Width = 704
+    Height = 581
     Align = alClient
     BevelOuter = bvNone
-    Color = clWindow
     ColumnCollection = <
       item
-        Value = 50.000000000000000000
+        SizeStyle = ssAuto
       end
       item
-        Value = 50.000000000000000000
+        SizeStyle = ssAbsolute
+        Value = 12.000000000000000000
+      end
+      item
+        SizeStyle = ssAuto
+        Value = 100.000000000000000000
+      end
+      item
+        SizeStyle = ssAbsolute
+        Value = 12.000000000000000000
+      end
+      item
+        SizeStyle = ssAuto
       end>
     ControlCollection = <
       item
@@ -33,25 +48,30 @@ object Form2: TForm2
         Row = 0
       end
       item
-        Column = 1
+        Column = 2
         Control = StackPanel4
+        Row = 0
+      end
+      item
+        Column = 4
+        Control = StackPanel2
         Row = 0
       end>
     ParentBackground = False
     RowCollection = <
       item
-        SizeStyle = ssAbsolute
-        Value = 300.000000000000000000
+        Value = 100.000000000000000000
       end>
     TabOrder = 0
+    ExplicitLeft = 0
+    ExplicitTop = 0
     ExplicitWidth = 620
     ExplicitHeight = 440
     object StackPanel1: TStackPanel
       Left = 0
       Top = 0
-      Width = 284
+      Width = 250
       Height = 232
-      Align = alTop
       AutoSize = True
       BevelOuter = bvNone
       ControlCollection = <
@@ -80,9 +100,6 @@ object Form2: TForm2
           Control = Edit3
         end>
       TabOrder = 0
-      ExplicitLeft = 1
-      ExplicitTop = 1
-      ExplicitWidth = 311
       object Label1: TLabel
         Left = 0
         Top = 0
@@ -147,12 +164,10 @@ object Form2: TForm2
       end
     end
     object StackPanel4: TStackPanel
-      Left = 284
+      Left = 262
       Top = 0
-      Width = 284
+      Width = 250
       Height = 436
-      Align = alTop
-      AutoSize = True
       BevelOuter = bvNone
       ControlCollection = <
         item
@@ -330,6 +345,37 @@ object Form2: TForm2
           8418002106408801106200841800210640880110620084180021064088011062
           00E4BF61A98BBEF32473A90000000049454E44AE426082}
         Proportional = True
+      end
+    end
+    object StackPanel2: TStackPanel
+      Left = 480
+      Top = 0
+      Height = 42
+      AutoSize = True
+      BevelOuter = bvNone
+      ControlCollection = <
+        item
+          Control = Actions
+        end
+        item
+          Control = Save
+          HorizontalPositioning = sphpFill
+        end>
+      TabOrder = 2
+      object Actions: TLabel
+        Left = 0
+        Top = 0
+        Width = 40
+        Height = 15
+        Caption = 'Actions'
+      end
+      object Save: TButton
+        Left = 0
+        Top = 17
+        Width = 185
+        Height = 25
+        Caption = 'Save'
+        TabOrder = 0
       end
     end
   end

@@ -36,6 +36,9 @@ __published:	// IDE-managed Components
 	TLabel *Label2;
 	TButton *Button1;
 	TImage *Image1;
+	TStackPanel *StackPanel2;
+	TLabel *Actions;
+	TButton *Save;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm2(TComponent* Owner);
