@@ -13,8 +13,8 @@ TForm1 *Form1;
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
-	Book *temp = new Book{1, "", "", "Lifetime", "comedy", "A book about our lives", "John Smith", 2012, 4.2};
-	allBooks.push_back(temp);
+	allBooks.push_back(Book{1, "", "", "Lifetime", "comedy", "A book about our lives", "John Smith", 2012, 4.2});
+    allBooks.push_back(Book{2, "", "Harry Potter", "Harry Potter and the Prisoner of Azcaban", "thriller", "", "J. K. Rowling", 2012, 4.2});
     ApplyFilters();
 }
 //---------------------------------------------------------------------------
@@ -37,13 +37,26 @@ void TForm1::UpdateCurrentListItem(const Book &book)
 //---------------------------------------------------------------------------
 void TForm1::ApplyFilters()
 {
+	UnicodeString searchPhrase = Edit1->Text;
+	UnicodeString genre = ComboBox1->Text;
+
 	filteredBooks.clear();
-	for(const Book *book : allBooks) {
-        filteredBooks.push_back(book);
+	for(const Book &book : allBooks) {
+		bool matchesGenre = (
+			genre == "" || containsIgnoreCase(book.genre, genre)
+		);
+		bool matchesSearchPhrase = (
+			containsIgnoreCase(book.title, searchPhrase) ||
+			containsIgnoreCase(book.description, searchPhrase) ||
+			containsIgnoreCase(book.author, searchPhrase)
+		);
+
+		if(matchesGenre && matchesSearchPhrase){
+			filteredBooks.push_back(&book);
+		}
 	}
     ControlList1->ItemCount = filteredBooks.size();
 }
-//---------------------------------------------------------------------------
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Edit1Change(TObject *Sender)
 {

@@ -42,7 +42,7 @@ __published:	// IDE-managed Components
 	void __fastcall ComboBox1Change(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
 private:	// User declarations
-	std::vector<const Book*> allBooks;
+	std::vector<Book> allBooks;
     std::vector <const Book*> filteredBooks;
 	void UpdateCurrentListItem(const Book&);
 	void ApplyFilters();
