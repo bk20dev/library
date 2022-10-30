@@ -124,6 +124,12 @@
         <None Include="Book.h">
             <BuildOrder>3</BuildOrder>
         </None>
+        <CppCompile Include="NewBookForm.cpp">
+            <Form>Form2</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>NewBookForm.h</DependentOn>
+            <BuildOrder>5</BuildOrder>
+        </CppCompile>
         <CppCompile Include="Project1.cpp">
             <BuildOrder>0</BuildOrder>
         </CppCompile>
@@ -141,6 +147,7 @@
             <BuildOrder>4</BuildOrder>
         </None>
         <FormResources Include="Unit1.dfm"/>
+        <FormResources Include="NewBookForm.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

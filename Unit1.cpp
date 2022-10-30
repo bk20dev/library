@@ -10,6 +10,7 @@
 TForm1 *Form1;
 //---------------------------------------------------------------------------
 #include "Utils.h"
+#include "BookFormUnit.h"
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
@@ -77,3 +78,10 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 	ApplyFilters();
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm1::New1Click(TObject *Sender)
+{
+	TForm2* bookForm = new TForm2(this);
+	bookForm->Show();
+}
+//---------------------------------------------------------------------------
+

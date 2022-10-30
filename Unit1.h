@@ -27,7 +27,6 @@ __published:	// IDE-managed Components
 	TButton *Button1;
 	TEdit *Edit1;
 	TComboBox *ComboBox1;
-	TStatusBar *StatusBar1;
 	TLabel *Label1;
 	TLabel *Label2;
 	TControlList *ControlList1;
@@ -36,11 +35,15 @@ __published:	// IDE-managed Components
 	TControlListButton *ControlListButton1;
 	TControlListButton *ControlListButton2;
 	TImage *Image1;
+	TMainMenu *MainMenu1;
+	TMenuItem *File1;
+	TMenuItem *New1;
 	void __fastcall ControlList1BeforeDrawItem(int AIndex, TCanvas *ACanvas, TRect &ARect,
           TOwnerDrawState AState);
 	void __fastcall Edit1Change(TObject *Sender);
 	void __fastcall ComboBox1Change(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall New1Click(TObject *Sender);
 private:	// User declarations
 	std::vector<Book> allBooks;
     std::vector <const Book*> filteredBooks;
