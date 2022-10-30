@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 467
-  ClientWidth = 570
+  ClientHeight = 466
+  ClientWidth = 566
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,7 +15,7 @@ object Form1: TForm1
   object GridPanel1: TGridPanel
     Left = 0
     Top = 0
-    Width = 570
+    Width = 566
     Height = 69
     Align = alTop
     BevelOuter = bvNone
@@ -71,38 +71,37 @@ object Form1: TForm1
         Value = 100.000000000000000000
       end>
     TabOrder = 0
-    ExplicitWidth = 566
     object Button1: TButton
       Left = 0
       Top = 46
-      Width = 347
+      Width = 345
       Height = 23
       Align = alClient
       Caption = 'Clear filters'
       TabOrder = 0
-      ExplicitWidth = 345
+      OnClick = Button1Click
     end
     object Edit1: TEdit
       Left = 125
       Top = 0
-      Width = 222
+      Width = 220
       Height = 23
       Align = alClient
       TabOrder = 1
       TextHint = 'Title, author, series, etc.'
-      ExplicitWidth = 220
+      OnChange = Edit1Change
     end
     object ComboBox1: TComboBox
       Left = 125
       Top = 23
-      Width = 222
+      Width = 220
       Height = 23
       Align = alClient
       AutoDropDown = True
       Sorted = True
       TabOrder = 2
       TextHint = 'Category'
-      ExplicitWidth = 220
+      OnChange = ComboBox1Change
     end
     object Label1: TLabel
       AlignWithMargins = True
@@ -135,18 +134,16 @@ object Form1: TForm1
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 448
-    Width = 570
+    Top = 447
+    Width = 566
     Height = 19
     Panels = <>
-    ExplicitTop = 447
-    ExplicitWidth = 566
   end
   object ControlList1: TControlList
     Left = 0
     Top = 69
-    Width = 570
-    Height = 379
+    Width = 566
+    Height = 378
     Align = alClient
     ItemMargins.Left = 0
     ItemMargins.Top = 0
@@ -195,7 +192,7 @@ object Form1: TForm1
     end
     object ControlListButton1: TControlListButton
       AlignWithMargins = True
-      Left = 532
+      Left = 528
       Top = 20
       Width = 30
       Height = 30
@@ -211,7 +208,7 @@ object Form1: TForm1
     end
     object ControlListButton2: TControlListButton
       AlignWithMargins = True
-      Left = 498
+      Left = 494
       Top = 20
       Width = 30
       Height = 30

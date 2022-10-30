@@ -16,4 +16,4 @@ bool containsIgnoreCase(UnicodeString haystack, UnicodeString needle) {
 	return iter != haystackUpper.end();
 }
 //---------------------------------------------------------------------------
-#endif UtilsH
+#endif

@@ -38,9 +38,14 @@ __published:	// IDE-managed Components
 	TImage *Image1;
 	void __fastcall ControlList1BeforeDrawItem(int AIndex, TCanvas *ACanvas, TRect &ARect,
           TOwnerDrawState AState);
+	void __fastcall Edit1Change(TObject *Sender);
+	void __fastcall ComboBox1Change(TObject *Sender);
+	void __fastcall Button1Click(TObject *Sender);
 private:	// User declarations
 	std::vector<const Book*> allBooks;
-    void UpdateCurrentItem(const Book&);
+    std::vector <const Book*> filteredBooks;
+	void UpdateCurrentListItem(const Book&);
+	void ApplyFilters();
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
 };
