@@ -71,6 +71,7 @@ object Form1: TForm1
         Value = 100.000000000000000000
       end>
     TabOrder = 0
+    ExplicitWidth = 562
     object Button1: TButton
       Left = 0
       Top = 46
@@ -80,6 +81,7 @@ object Form1: TForm1
       Caption = 'Clear filters'
       TabOrder = 0
       OnClick = Button1Click
+      ExplicitWidth = 343
     end
     object Edit1: TEdit
       Left = 125
@@ -90,6 +92,7 @@ object Form1: TForm1
       TabOrder = 1
       TextHint = 'Title, author, series, etc.'
       OnChange = Edit1Change
+      ExplicitWidth = 218
     end
     object ComboBox1: TComboBox
       Left = 125
@@ -102,6 +105,7 @@ object Form1: TForm1
       TabOrder = 2
       TextHint = 'Category'
       OnChange = ComboBox1Change
+      ExplicitWidth = 218
     end
     object Label1: TLabel
       AlignWithMargins = True
@@ -138,6 +142,8 @@ object Form1: TForm1
     Width = 566
     Height = 19
     Panels = <>
+    ExplicitTop = 446
+    ExplicitWidth = 562
   end
   object ControlList1: TControlList
     Left = 0
@@ -145,6 +151,8 @@ object Form1: TForm1
     Width = 566
     Height = 378
     Align = alClient
+    ItemCount = 1
+    ItemIndex = 0
     ItemMargins.Left = 0
     ItemMargins.Top = 0
     ItemMargins.Right = 0
@@ -154,7 +162,8 @@ object Form1: TForm1
     ItemSelectionOptions.FocusedColorAlpha = 80
     ParentColor = False
     TabOrder = 2
-    OnBeforeDrawItem = ControlList1BeforeDrawItem
+    ExplicitWidth = 562
+    ExplicitHeight = 377
     object Label3: TLabel
       AlignWithMargins = True
       Left = 76
@@ -167,9 +176,6 @@ object Form1: TForm1
       Margins.Bottom = 2
       Anchors = [akLeft, akTop, akRight, akBottom]
       AutoSize = False
-      Caption = 
-        'This is example of item with multi-line text. You can put any TG' +
-        'raphicControl on it and adjust properties.'
       EllipsisPosition = epEndEllipsis
       ShowAccelChar = False
       Transparent = True
@@ -179,9 +185,9 @@ object Form1: TForm1
     object Label4: TLabel
       Left = 76
       Top = 6
-      Width = 25
+      Width = 66
       Height = 13
-      Caption = 'Title'
+      Caption = 'Cien Smoka'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
@@ -228,5 +234,52 @@ object Form1: TForm1
       Height = 60
       Proportional = True
     end
+  end
+  object BindSourcebook: TBindSourceDB
+    DataSet = FDTablebook
+    ScopeMappings = <>
+    Left = 272
+    Top = 240
+  end
+  object FDTablebook: TFDTable
+    Active = True
+    Connection = LibraryConnection
+    TableName = 'book'
+    Left = 392
+    Top = 232
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 156
+    Top = 245
+    object LinkGridToDataSourceBindSourcebook: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourcebook
+      GridControl = ControlList1
+      Columns = <>
+    end
+    object LinkPropertyToFieldCaption: TLinkPropertyToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourcebook
+      FieldName = 'title'
+      Component = Label4
+      ComponentProperty = 'Caption'
+    end
+    object LinkPropertyToFieldCaption2: TLinkPropertyToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourcebook
+      FieldName = 'description'
+      Component = Label3
+      ComponentProperty = 'Caption'
+    end
+  end
+  object LibraryConnection: TFDConnection
+    Params.Strings = (
+      'ConnectionDef=library')
+    Connected = True
+    LoginPrompt = False
+    Left = 527
+    Top = 12
   end
 end

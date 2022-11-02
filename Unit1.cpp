@@ -13,17 +13,19 @@ TForm1 *Form1;
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
-	allBooks.push_back(Book{1, "", "", "Lifetime", "comedy", "A book about our lives", "John Smith", 2012, 4.2});
-    allBooks.push_back(Book{2, "", "Harry Potter", "Harry Potter and the Prisoner of Azcaban", "thriller", "", "J. K. Rowling", 2012, 4.2});
-    ApplyFilters();
+//	LibraryConnection->Open();
+//	LibraryConnection->ExecSQL("SELECT * FROM book;", ClientDataSet1);
+//
+//    LibraryConnection->Open();
+//	ApplyFilters();
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm1::ControlList1BeforeDrawItem(int AIndex, TCanvas *ACanvas, TRect &ARect,
-		  TOwnerDrawState AState)
-{
-	Book currentBook = *filteredBooks[AIndex];
-	UpdateCurrentListItem(currentBook);
-}
+//void __fastcall TForm1::ControlList1BeforeDrawItem(int AIndex, TCanvas *ACanvas, TRect &ARect,
+//		  TOwnerDrawState AState)
+//{
+//	Book currentBook = *filteredBooks[AIndex];
+//	UpdateCurrentListItem(currentBook);
+//}
 //---------------------------------------------------------------------------
 void TForm1::UpdateCurrentListItem(const Book &book)
 {
