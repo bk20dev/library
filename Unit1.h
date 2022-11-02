@@ -68,20 +68,18 @@ __published:	// IDE-managed Components
 	TImage *Image1;
 	TBindSourceDB *BindSourcebook;
 	TFDTable *FDTablebook;
-	TLinkGridToDataSource *LinkGridToDataSourceBindSourcebook;
 	TBindingsList *BindingsList1;
 	TLinkPropertyToField *LinkPropertyToFieldCaption;
 	TLinkPropertyToField *LinkPropertyToFieldCaption2;
 	TFDConnection *LibraryConnection;
+	TLinkGridToDataSource *LinkGridToDataSourceBindSourcebook;
 //	void __fastcall ControlList1BeforeDrawItem(int AIndex, TCanvas *ACanvas, TRect &ARect,
 //		  TOwnerDrawState AState);
 	void __fastcall Edit1Change(TObject *Sender);
 	void __fastcall ComboBox1Change(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
 private:	// User declarations
-	std::vector<Book> allBooks;
-    std::vector <const Book*> filteredBooks;
-	void UpdateCurrentListItem(const Book&);
+//	void UpdateCurrentListItem(const Book &book);
 	void ApplyFilters();
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);

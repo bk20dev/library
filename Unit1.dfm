@@ -151,7 +151,7 @@ object Form1: TForm1
     Width = 566
     Height = 378
     Align = alClient
-    ItemCount = 1
+    ItemCount = 3
     ItemIndex = 0
     ItemMargins.Left = 0
     ItemMargins.Top = 0
@@ -243,6 +243,8 @@ object Form1: TForm1
   end
   object FDTablebook: TFDTable
     Active = True
+    Filtered = True
+    FilterOptions = [foCaseInsensitive]
     Connection = LibraryConnection
     TableName = 'book'
     Left = 392
@@ -253,12 +255,6 @@ object Form1: TForm1
     OutputConverters = <>
     Left = 156
     Top = 245
-    object LinkGridToDataSourceBindSourcebook: TLinkGridToDataSource
-      Category = 'Quick Bindings'
-      DataSource = BindSourcebook
-      GridControl = ControlList1
-      Columns = <>
-    end
     object LinkPropertyToFieldCaption: TLinkPropertyToField
       Category = 'Quick Bindings'
       DataSource = BindSourcebook
@@ -272,6 +268,12 @@ object Form1: TForm1
       FieldName = 'description'
       Component = Label3
       ComponentProperty = 'Caption'
+    end
+    object LinkGridToDataSourceBindSourcebook: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourcebook
+      GridControl = ControlList1
+      Columns = <>
     end
   end
   object LibraryConnection: TFDConnection

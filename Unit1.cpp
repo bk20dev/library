@@ -9,7 +9,6 @@
 #pragma resource "*.dfm"
 TForm1 *Form1;
 //---------------------------------------------------------------------------
-#include "Utils.h"
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
@@ -25,39 +24,35 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 //{
 //	Book currentBook = *filteredBooks[AIndex];
 //	UpdateCurrentListItem(currentBook);
-//}
-//---------------------------------------------------------------------------
-void TForm1::UpdateCurrentListItem(const Book &book)
-{
-	Label4->Caption = book.title;
+//}
 
-	Label3->Caption = "No description";
-	if(book.description != "") {
-		Label3->Caption = book.description;
-	}
-}
+//---------------------------------------------------------------------------
+//void TForm1::UpdateCurrentListItem(const Book &book)
+//{
+//	Label4->Caption = book.title;
+//
+//	Label3->Caption = "No description";
+//	if(book.description != "") {
+//		Label3->Caption = book.description;
+//	}
+//}
+
 //---------------------------------------------------------------------------
 void TForm1::ApplyFilters()
 {
 	UnicodeString searchPhrase = Edit1->Text;
 	UnicodeString genre = ComboBox1->Text;
 
-	filteredBooks.clear();
-	for(const Book &book : allBooks) {
-		bool matchesGenre = (
-			genre == "" || containsIgnoreCase(book.genre, genre)
-		);
-		bool matchesSearchPhrase = (
-			containsIgnoreCase(book.title, searchPhrase) ||
-			containsIgnoreCase(book.description, searchPhrase) ||
-			containsIgnoreCase(book.author, searchPhrase)
-		);
+	UnicodeString filter = "(\
+		title LIKE '%" + searchPhrase + "%'\
+		OR author LIKE '%" + searchPhrase + "%'\
+		OR series LIKE '%" + searchPhrase + "%')";
 
-		if(matchesGenre && matchesSearchPhrase){
-			filteredBooks.push_back(&book);
-		}
+	if(genre != "") {
+		filter += " AND (genre LIKE '%" + genre + "%')";
 	}
-    ControlList1->ItemCount = filteredBooks.size();
+
+	FDTablebook->Filter = filter;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Edit1Change(TObject *Sender)
