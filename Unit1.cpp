@@ -36,7 +36,6 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 //		Label3->Caption = book.description;
 //	}
 //}
-
 //---------------------------------------------------------------------------
 void TForm1::ApplyFilters()
 {
@@ -74,3 +73,17 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 	ApplyFilters();
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm1::LinkPropertyToFieldCaption2AssigningValue(TObject *Sender,
+          TBindingAssignValueRec &AssignValueRec, TValue &Value, bool &Handled)
+
+{
+	TValue descriptionValue = Value;
+	UnicodeString description = descriptionValue.ToString();
+	if(description == "") {
+		TLabel *label = (TLabel*) AssignValueRec.OutObj;
+		label->Caption = "No description";
+		Handled = true;
+	}
+}
+//---------------------------------------------------------------------------
+

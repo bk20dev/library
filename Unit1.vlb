@@ -1,46 +1,46 @@
 ﻿[Image1]
-Coordinates=10,486,57,58
+Coordinates=222,314,57,58
 
 [ComboBox1]
-Coordinates=10,336,101,124
+Coordinates=10,314,101,124
 
 [StatusBar1]
-Coordinates=555,336,78,58
+Coordinates=10,464,78,58
 
 [Edit1]
-Coordinates=485,336,44,58
+Coordinates=489,314,44,58
 
 [Label1]
-Coordinates=137,336,53,58
+Coordinates=114,464,53,58
 
 [GridPanel1]
-Coordinates=216,336,79,58
+Coordinates=305,314,79,58
 
 [Label2]
-Coordinates=406,336,53,58
+Coordinates=410,314,53,58
 
 [Label3]
-Coordinates=332,131,53,58
+Coordinates=10,120,53,58
 
 [ControlList1]
-Coordinates=597,120,84,58
+Coordinates=332,61,84,58
 Visible=True
 
 [Label4]
-Coordinates=10,131,53,58
+Coordinates=348,179,53,58
 
 [Button1]
-Coordinates=321,336,59,58
+Coordinates=137,314,59,58
 
 [ControlListButton1]
-Coordinates=93,486,121,36
+Coordinates=340,464,121,36
 
 [ControlListButton2]
-Coordinates=240,486,121,36
+Coordinates=193,464,121,36
 
 []
-Coordinates=145,87,78,256
-Visible=True
+Coordinates=0,0,75,36
+Visible=False
 
 [BindSourcebook]
 Coordinates=143,10,109,278

@@ -47,6 +47,8 @@
 #include <Vcl.Bind.ControlList.hpp>
 #include <Vcl.Bind.DBEngExt.hpp>
 #include <Vcl.Bind.Editors.hpp>
+#include <Vcl.DBCtrls.hpp>
+#include <Vcl.Graphics.hpp>
 //---------------------------------------------------------------------------
 #include <vector>
 #include "Book.h"
@@ -78,6 +80,8 @@ __published:	// IDE-managed Components
 	void __fastcall Edit1Change(TObject *Sender);
 	void __fastcall ComboBox1Change(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall LinkPropertyToFieldCaption2AssigningValue(TObject *Sender, TBindingAssignValueRec &AssignValueRec,
+          TValue &Value, bool &Handled);
 private:	// User declarations
 //	void UpdateCurrentListItem(const Book &book);
 	void ApplyFilters();
