@@ -3,7 +3,7 @@ object Form2: TForm2
   Top = 0
   Caption = 'Form2'
   ClientHeight = 597
-  ClientWidth = 728
+  ClientWidth = 859
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,7 +18,7 @@ object Form2: TForm2
   object GridPanel1: TGridPanel
     Left = 12
     Top = 8
-    Width = 704
+    Width = 835
     Height = 581
     Align = alClient
     BevelOuter = bvNone
@@ -63,10 +63,8 @@ object Form2: TForm2
         Value = 100.000000000000000000
       end>
     TabOrder = 0
-    ExplicitLeft = 0
-    ExplicitTop = 0
-    ExplicitWidth = 620
-    ExplicitHeight = 440
+    ExplicitWidth = 700
+    ExplicitHeight = 580
     object StackPanel1: TStackPanel
       Left = 0
       Top = 0
@@ -348,7 +346,7 @@ object Form2: TForm2
       end
     end
     object StackPanel2: TStackPanel
-      Left = 480
+      Left = 524
       Top = 0
       Height = 42
       AutoSize = True

@@ -10,13 +10,15 @@
 TForm1 *Form1;
 //---------------------------------------------------------------------------
 #include "Utils.h"
-#include "BookFormUnit.h"
+#include "FormUnit.h"
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
 	allBooks.push_back(Book{1, "", "", "Lifetime", "comedy", "A book about our lives", "John Smith", 2012, 4.2});
     allBooks.push_back(Book{2, "", "Harry Potter", "Harry Potter and the Prisoner of Azcaban", "thriller", "", "J. K. Rowling", 2012, 4.2});
-    ApplyFilters();
+	ApplyFilters();
+    TForm2* bookForm = new TForm2(this);
+	bookForm->Show();
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ControlList1BeforeDrawItem(int AIndex, TCanvas *ACanvas, TRect &ARect,
