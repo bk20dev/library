@@ -12,6 +12,35 @@
 #include <Vcl.Mask.hpp>
 #include <Vcl.WinXPanels.hpp>
 #include <Vcl.Imaging.pngimage.hpp>
+#include <Data.DB.hpp>
+#include <FireDAC.Comp.Client.hpp>
+#include <FireDAC.Phys.hpp>
+#include <FireDAC.Phys.Intf.hpp>
+#include <FireDAC.Phys.SQLite.hpp>
+#include <FireDAC.Phys.SQLiteDef.hpp>
+#include <FireDAC.Phys.SQLiteWrapper.Stat.hpp>
+#include <FireDAC.Stan.Async.hpp>
+#include <FireDAC.Stan.Def.hpp>
+#include <FireDAC.Stan.Error.hpp>
+#include <FireDAC.Stan.ExprFuncs.hpp>
+#include <FireDAC.Stan.Intf.hpp>
+#include <FireDAC.Stan.Option.hpp>
+#include <FireDAC.Stan.Pool.hpp>
+#include <FireDAC.UI.Intf.hpp>
+#include <FireDAC.VCLUI.Wait.hpp>
+#include <Data.Bind.Components.hpp>
+#include <Data.Bind.DBScope.hpp>
+#include <FireDAC.Comp.DataSet.hpp>
+#include <FireDAC.DApt.hpp>
+#include <FireDAC.DApt.Intf.hpp>
+#include <FireDAC.DatS.hpp>
+#include <FireDAC.Stan.Param.hpp>
+#include <Data.Bind.EngExt.hpp>
+#include <System.Bindings.Outputs.hpp>
+#include <System.Rtti.hpp>
+#include <Vcl.Bind.DBEngExt.hpp>
+#include <Vcl.Bind.Editors.hpp>
+#include <Vcl.NumberBox.hpp>
 //---------------------------------------------------------------------------
 class TForm2 : public TForm
 {
@@ -28,9 +57,7 @@ __published:	// IDE-managed Components
 	TLabel *Label7;
 	TMemo *Memo2;
 	TLabel *Label3;
-	TEdit *Edit2;
 	TLabel *Label5;
-	TEdit *Edit3;
 	TLabel *Label8;
 	TComboBox *ComboBox3;
 	TLabel *Label2;
@@ -39,6 +66,19 @@ __published:	// IDE-managed Components
 	TStackPanel *StackPanel2;
 	TLabel *Actions;
 	TButton *Save;
+	TFDConnection *LibraryConnection;
+	TFDTable *FDTable1;
+	TBindSourceDB *BindSourceDB2;
+	TBindingsList *BindingsList1;
+	TLinkControlToField *LinkControlToField1;
+	TLinkControlToField *LinkControlToField2;
+	TLinkFillControlToField *LinkFillControlToField2;
+	TLinkFillControlToField *LinkFillControlToField1;
+	TLinkFillControlToField *LinkFillControlToField3;
+	TNumberBox *NumberBox1;
+	TLinkControlToField *LinkControlToField5;
+	TNumberBox *NumberBox2;
+	TLinkControlToField *LinkControlToField3;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm2(TComponent* Owner);

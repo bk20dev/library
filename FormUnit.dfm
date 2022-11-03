@@ -63,7 +63,7 @@ object Form2: TForm2
         Value = 100.000000000000000000
       end>
     TabOrder = 0
-    ExplicitWidth = 700
+    ExplicitWidth = 831
     ExplicitHeight = 580
     object StackPanel1: TStackPanel
       Left = 0
@@ -95,7 +95,7 @@ object Form2: TForm2
           Control = Label5
         end
         item
-          Control = Edit3
+          Control = NumberBox1
         end>
       TabOrder = 0
       object Label1: TLabel
@@ -111,7 +111,7 @@ object Form2: TForm2
         Width = 250
         Height = 23
         TabOrder = 0
-        Text = 'Edit1'
+        Text = 'Cien Smoka'
       end
       object Label6: TLabel
         Left = 0
@@ -126,7 +126,10 @@ object Form2: TForm2
         Width = 200
         Height = 23
         TabOrder = 1
-        Text = 'ComboBox4'
+        Items.Strings = (
+          'Magiczne Drzewo'
+          'Harry Potter'
+          'Harry Potter')
       end
       object Label7: TLabel
         Left = 0
@@ -141,7 +144,7 @@ object Form2: TForm2
         Width = 250
         Height = 89
         Lines.Strings = (
-          'Memo2')
+          'aaa')
         TabOrder = 2
       end
       object Label5: TLabel
@@ -151,14 +154,15 @@ object Form2: TForm2
         Height = 15
         Caption = 'Rating'
       end
-      object Edit3: TEdit
+      object NumberBox1: TNumberBox
         Left = 0
         Top = 209
         Width = 121
         Height = 23
-        NumbersOnly = True
+        Mode = nbmFloat
+        MinValue = 1.000000000000000000
+        MaxValue = 5.000000000000000000
         TabOrder = 3
-        Text = 'Edit3'
       end
     end
     object StackPanel4: TStackPanel
@@ -178,7 +182,7 @@ object Form2: TForm2
           Control = Label3
         end
         item
-          Control = Edit2
+          Control = NumberBox2
         end
         item
           Control = Label8
@@ -209,23 +213,24 @@ object Form2: TForm2
         Width = 200
         Height = 23
         TabOrder = 0
-        Text = 'ComboBox2'
+        Items.Strings = (
+          'Andrzej Maleszka'
+          'J. K. Rowling'
+          'B. D. Rolled')
       end
       object Label3: TLabel
         Left = 0
         Top = 42
-        Width = 65
+        Width = 64
         Height = 15
-        Caption = 'Publish date'
+        Caption = 'Publish year'
       end
-      object Edit2: TEdit
+      object NumberBox2: TNumberBox
         Left = 0
         Top = 59
         Width = 121
         Height = 23
-        NumbersOnly = True
-        TabOrder = 1
-        Text = 'Edit2'
+        TabOrder = 3
       end
       object Label8: TLabel
         Left = 0
@@ -239,8 +244,11 @@ object Form2: TForm2
         Top = 101
         Width = 145
         Height = 23
-        TabOrder = 2
-        Text = 'ComboBox3'
+        TabOrder = 1
+        Items.Strings = (
+          ''
+          ''
+          '')
       end
       object Label2: TLabel
         Left = 0
@@ -255,7 +263,7 @@ object Form2: TForm2
         Width = 145
         Height = 25
         Caption = 'Pick image'
-        TabOrder = 3
+        TabOrder = 2
       end
       object Image1: TImage
         AlignWithMargins = True
@@ -375,6 +383,94 @@ object Form2: TForm2
         Caption = 'Save'
         TabOrder = 0
       end
+    end
+  end
+  object LibraryConnection: TFDConnection
+    Params.Strings = (
+      'ConnectionDef=library')
+    Connected = True
+    LoginPrompt = False
+    Left = 812
+    Top = 9
+  end
+  object FDTable1: TFDTable
+    Active = True
+    Connection = LibraryConnection
+    TableName = 'book'
+    Left = 812
+    Top = 64
+  end
+  object BindSourceDB2: TBindSourceDB
+    DataSet = FDTable1
+    ScopeMappings = <>
+    Left = 816
+    Top = 120
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 764
+    Top = 13
+    object LinkControlToField1: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      FieldName = 'description'
+      Control = Memo2
+      Track = False
+    end
+    object LinkControlToField2: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      FieldName = 'title'
+      Control = Edit1
+      Track = True
+    end
+    object LinkFillControlToField2: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      Control = ComboBox2
+      Track = True
+      FillDataSource = BindSourceDB2
+      FillDisplayFieldName = 'author'
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+    object LinkFillControlToField1: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      Control = ComboBox4
+      Track = True
+      FillDataSource = BindSourceDB2
+      FillDisplayFieldName = 'series'
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+    object LinkFillControlToField3: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      Control = ComboBox3
+      Track = True
+      FillDataSource = BindSourceDB2
+      FillDisplayFieldName = 'genre'
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+    object LinkControlToField5: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      FieldName = 'rating'
+      Control = NumberBox1
+      Track = True
+    end
+    object LinkControlToField3: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      FieldName = 'release_year'
+      Control = NumberBox2
+      Track = True
     end
   end
 end

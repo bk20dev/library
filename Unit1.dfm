@@ -10,7 +10,6 @@ object Form1: TForm1
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
-  Menu = MainMenu1
   Position = poDesigned
   TextHeight = 15
   object GridPanel1: TGridPanel
@@ -137,15 +136,6 @@ object Form1: TForm1
       ExplicitHeight = 15
     end
   end
-  object StatusBar1: TStatusBar
-    Left = 0
-    Top = 447
-    Width = 566
-    Height = 19
-    Panels = <>
-    ExplicitTop = 446
-    ExplicitWidth = 562
-  end
   object ControlList1: TControlList
     Left = 0
     Top = 69
@@ -162,7 +152,7 @@ object Form1: TForm1
     ItemSelectionOptions.SelectedColorAlpha = 70
     ItemSelectionOptions.FocusedColorAlpha = 80
     ParentColor = False
-    TabOrder = 2
+    TabOrder = 1
     ExplicitWidth = 562
     ExplicitHeight = 377
     object Label3: TLabel
