@@ -1,85 +1,87 @@
 ﻿[Label3]
-Coordinates=435,750,46,51
+Coordinates=202,428,53,58
 
 [Label2]
-Coordinates=790,750,46,51
+Coordinates=291,344,53,58
 
 [Button1]
-Coordinates=356,750,53,51
+Coordinates=123,344,59,58
 
 [Label7]
-Coordinates=651,750,46,51
+Coordinates=430,428,53,58
 
 [ComboBox4]
-Coordinates=346,619,84,105
+Coordinates=10,102,101,124
+ExplicitSubNodes=
 
 [Memo2]
-Coordinates=362,121,53,51
+Coordinates=504,10,64,58
 
 [Image1]
-Coordinates=622,10,49,51
+Coordinates=208,344,57,58
 
 [Label6]
-Coordinates=10,750,46,51
+Coordinates=614,428,53,58
 
 [Label1]
-Coordinates=550,10,46,51
+Coordinates=351,428,53,58
 
 [Label4]
-Coordinates=284,750,46,51
+Coordinates=693,428,53,58
 
 [ComboBox3]
-Coordinates=346,454,84,105
+Coordinates=377,10,101,124
 
 [Label5]
-Coordinates=507,750,46,51
+Coordinates=453,344,53,58
 
 [StackPanel1]
-Coordinates=862,750,75,51
+Coordinates=10,428,87,58
 
 [GridPanel1]
-Coordinates=456,10,68,51
+Coordinates=509,428,79,58
 
 [Edit1]
-Coordinates=368,343,40,51
+Coordinates=594,10,44,58
 
 [Save]
-Coordinates=723,750,41,51
+Coordinates=532,344,49,58
 
 [Label8]
-Coordinates=579,750,46,51
+Coordinates=123,428,53,58
 
 [StackPanel4]
-Coordinates=183,750,75,51
+Coordinates=722,344,87,58
 
 [Actions]
-Coordinates=10,827,52,51
+Coordinates=370,344,57,58
 
 [ComboBox2]
-Coordinates=10,261,84,105
+Coordinates=377,194,101,124
 
 [StackPanel2]
-Coordinates=82,750,75,51
+Coordinates=10,344,87,58
 
 [LibraryConnection]
-Coordinates=416,1,105,33
+Coordinates=416,1,119,36
 
 [FDTable1]
-Coordinates=570,100,60,33
+Coordinates=570,100,71,36
 Visible=False
 
 [BindSourceDB2]
-Coordinates=174,198,92,231
+Coordinates=191,25,106,278
+ExplicitSubNodes=
 
 [BindingsList1]
-Coordinates=308,80,82,33
+Coordinates=308,80,91,36
 
 []
-Coordinates=368,121,40,51
+Coordinates=601,306,89,58
 
 [NumberBox1]
-Coordinates=349,232,78,51
+Coordinates=607,344,89,58
 
-[NumberBox2]
-Coordinates=349,10,78,51
+[Edit2]
+Coordinates=281,428,44,58
 

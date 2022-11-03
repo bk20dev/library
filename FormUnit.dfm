@@ -2,8 +2,8 @@ object Form2: TForm2
   Left = 0
   Top = 0
   Caption = 'Form2'
-  ClientHeight = 597
-  ClientWidth = 859
+  ClientHeight = 596
+  ClientWidth = 855
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,10 +18,11 @@ object Form2: TForm2
   object GridPanel1: TGridPanel
     Left = 12
     Top = 8
-    Width = 835
-    Height = 581
+    Width = 831
+    Height = 580
     Align = alClient
     BevelOuter = bvNone
+    Caption = '1597'
     ColumnCollection = <
       item
         SizeStyle = ssAuto
@@ -63,8 +64,8 @@ object Form2: TForm2
         Value = 100.000000000000000000
       end>
     TabOrder = 0
-    ExplicitWidth = 831
-    ExplicitHeight = 580
+    ExplicitWidth = 827
+    ExplicitHeight = 579
     object StackPanel1: TStackPanel
       Left = 0
       Top = 0
@@ -111,7 +112,7 @@ object Form2: TForm2
         Width = 250
         Height = 23
         TabOrder = 0
-        Text = 'Cien Smoka'
+        TextHint = 'Romeo and Juliet'
       end
       object Label6: TLabel
         Left = 0
@@ -126,6 +127,7 @@ object Form2: TForm2
         Width = 200
         Height = 23
         TabOrder = 1
+        TextHint = 'First Quatro'
         Items.Strings = (
           'Magiczne Drzewo'
           'Harry Potter'
@@ -143,8 +145,7 @@ object Form2: TForm2
         Top = 101
         Width = 250
         Height = 89
-        Lines.Strings = (
-          'aaa')
+        Hint = 'Romeo falls in love with Ju...'
         TabOrder = 2
       end
       object Label5: TLabel
@@ -162,7 +163,10 @@ object Form2: TForm2
         Mode = nbmFloat
         MinValue = 1.000000000000000000
         MaxValue = 5.000000000000000000
+        SmallStep = 0.500000000000000000
         TabOrder = 3
+        Value = 1.000000000000000000
+        SpinButtonOptions.Placement = nbspCompact
       end
     end
     object StackPanel4: TStackPanel
@@ -182,7 +186,7 @@ object Form2: TForm2
           Control = Label3
         end
         item
-          Control = NumberBox2
+          Control = Edit2
         end
         item
           Control = Label8
@@ -213,6 +217,7 @@ object Form2: TForm2
         Width = 200
         Height = 23
         TabOrder = 0
+        TextHint = 'William Shakespeare'
         Items.Strings = (
           'Andrzej Maleszka'
           'J. K. Rowling'
@@ -225,12 +230,14 @@ object Form2: TForm2
         Height = 15
         Caption = 'Publish year'
       end
-      object NumberBox2: TNumberBox
+      object Edit2: TEdit
         Left = 0
         Top = 59
         Width = 121
         Height = 23
+        NumbersOnly = True
         TabOrder = 3
+        TextHint = '1597'
       end
       object Label8: TLabel
         Left = 0
@@ -245,6 +252,7 @@ object Form2: TForm2
         Width = 145
         Height = 23
         TabOrder = 1
+        TextHint = 'tragedy'
         Items.Strings = (
           ''
           ''
@@ -411,37 +419,12 @@ object Form2: TForm2
     OutputConverters = <>
     Left = 764
     Top = 13
-    object LinkControlToField1: TLinkControlToField
-      Category = 'Quick Bindings'
-      DataSource = BindSourceDB2
-      FieldName = 'description'
-      Control = Memo2
-      Track = False
-    end
-    object LinkControlToField2: TLinkControlToField
-      Category = 'Quick Bindings'
-      DataSource = BindSourceDB2
-      FieldName = 'title'
-      Control = Edit1
-      Track = True
-    end
     object LinkFillControlToField2: TLinkFillControlToField
       Category = 'Quick Bindings'
       Control = ComboBox2
       Track = True
       FillDataSource = BindSourceDB2
       FillDisplayFieldName = 'author'
-      AutoFill = True
-      FillExpressions = <>
-      FillHeaderExpressions = <>
-      FillBreakGroups = <>
-    end
-    object LinkFillControlToField1: TLinkFillControlToField
-      Category = 'Quick Bindings'
-      Control = ComboBox4
-      Track = True
-      FillDataSource = BindSourceDB2
-      FillDisplayFieldName = 'series'
       AutoFill = True
       FillExpressions = <>
       FillHeaderExpressions = <>
@@ -458,19 +441,16 @@ object Form2: TForm2
       FillHeaderExpressions = <>
       FillBreakGroups = <>
     end
-    object LinkControlToField5: TLinkControlToField
+    object LinkFillControlToField1: TLinkFillControlToField
       Category = 'Quick Bindings'
-      DataSource = BindSourceDB2
-      FieldName = 'rating'
-      Control = NumberBox1
+      Control = ComboBox4
       Track = True
-    end
-    object LinkControlToField3: TLinkControlToField
-      Category = 'Quick Bindings'
-      DataSource = BindSourceDB2
-      FieldName = 'release_year'
-      Control = NumberBox2
-      Track = True
+      FillDataSource = BindSourceDB2
+      FillDisplayFieldName = 'series'
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
     end
   end
 end

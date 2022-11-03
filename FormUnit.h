@@ -70,15 +70,10 @@ __published:	// IDE-managed Components
 	TFDTable *FDTable1;
 	TBindSourceDB *BindSourceDB2;
 	TBindingsList *BindingsList1;
-	TLinkControlToField *LinkControlToField1;
-	TLinkControlToField *LinkControlToField2;
 	TLinkFillControlToField *LinkFillControlToField2;
-	TLinkFillControlToField *LinkFillControlToField1;
 	TLinkFillControlToField *LinkFillControlToField3;
 	TNumberBox *NumberBox1;
-	TLinkControlToField *LinkControlToField5;
-	TNumberBox *NumberBox2;
-	TLinkControlToField *LinkControlToField3;
+	TEdit *Edit2;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm2(TComponent* Owner);

@@ -6,7 +6,7 @@
         <AppType>Application</AppType>
         <MainSource>Project1.cpp</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Config Condition="'$(Config)'==''">Release</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <CC_Suffix Condition="'$(CC_Suffix)'==''">c</CC_Suffix>
         <TargetedPlatforms>1</TargetedPlatforms>
@@ -119,6 +119,7 @@
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <BCC_UseClassicCompiler>false</BCC_UseClassicCompiler>
+        <LinkPackageImports>rtl.bpi;vcl.bpi;vclwinx.bpi;vclimg.bpi;bindengine.bpi;bindcomp.bpi;dbrtl.bpi;FireDACCommonDriver.bpi;FireDACCommon.bpi;xmlrtl.bpi;FireDACSqliteDriver.bpi;FireDAC.bpi;vclFireDAC.bpi;vcldb.bpi;vclx.bpi;dsnap.bpi;bindcompvclwinx.bpi;bindcompvcl.bpi</LinkPackageImports>
     </PropertyGroup>
     <ItemGroup>
         <None Include="Book.h">
