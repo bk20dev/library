@@ -58,7 +58,7 @@
         <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\release\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
         <ProjectType>CppVCLApplication</ProjectType>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
-        <AllPackageLibs>rtl.lib;vcl.lib;vclwinx.lib;vclimg.lib;bindengine.lib;bindcomp.lib;dbrtl.lib;FireDACCommonDriver.lib;FireDACCommon.lib;xmlrtl.lib;FireDACSqliteDriver.lib;FireDAC.lib;vclFireDAC.lib;vcldb.lib;vclx.lib;dsnap.lib;bindcompvclwinx.lib;bindcompvcl.lib</AllPackageLibs>
+        <AllPackageLibs>rtl.lib;vcl.lib;vclwinx.lib;vclimg.lib;bindengine.lib;bindcomp.lib;dbrtl.lib;FireDACCommonDriver.lib;FireDACCommon.lib;xmlrtl.lib;FireDACSqliteDriver.lib;FireDAC.lib;vclFireDAC.lib;vcldb.lib;vclx.lib;dsnap.lib;bindcompvclwinx.lib;bindcompvcl.lib;UserComponents.lib</AllPackageLibs>
         <_TCHARMapping>wchar_t</_TCHARMapping>
         <Multithreaded>true</Multithreaded>
         <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
@@ -120,6 +120,7 @@
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <BCC_UseClassicCompiler>false</BCC_UseClassicCompiler>
         <LinkPackageImports>rtl.bpi;vcl.bpi;vclwinx.bpi;vclimg.bpi;bindengine.bpi;bindcomp.bpi;dbrtl.bpi;FireDACCommonDriver.bpi;FireDACCommon.bpi;xmlrtl.bpi;FireDACSqliteDriver.bpi;FireDAC.bpi;vclFireDAC.bpi;vcldb.bpi;vclx.bpi;dsnap.bpi;bindcompvclwinx.bpi;bindcompvcl.bpi</LinkPackageImports>
+        <LinkPackageStatics>UserComponents.lib</LinkPackageStatics>
     </PropertyGroup>
     <ItemGroup>
         <None Include="Book.h">
@@ -151,8 +152,8 @@
             <BuildOrder>2</BuildOrder>
         </CppCompile>
         <FormResources Include="Unit1.dfm"/>
-        <FormResources Include="FormUnit.dfm"/>
         <FormResources Include="DetailsUnit.dfm"/>
+        <FormResources Include="FormUnit.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

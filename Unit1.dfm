@@ -71,6 +71,7 @@ object Form1: TForm1
         Value = 100.000000000000000000
       end>
     TabOrder = 0
+    ExplicitWidth = 562
     object Button1: TButton
       Left = 0
       Top = 46
@@ -80,6 +81,7 @@ object Form1: TForm1
       Caption = 'Clear filters'
       TabOrder = 0
       OnClick = Button1Click
+      ExplicitWidth = 343
     end
     object Edit1: TEdit
       Left = 125
@@ -90,6 +92,7 @@ object Form1: TForm1
       TabOrder = 1
       TextHint = 'Title, author, series, etc.'
       OnChange = Edit1Change
+      ExplicitWidth = 218
     end
     object ComboBox1: TComboBox
       Left = 125
@@ -102,6 +105,7 @@ object Form1: TForm1
       TabOrder = 2
       TextHint = 'Category'
       OnChange = ComboBox1Change
+      ExplicitWidth = 218
     end
     object Label1: TLabel
       AlignWithMargins = True
@@ -150,6 +154,8 @@ object Form1: TForm1
     ParentColor = False
     TabOrder = 1
     OnItemDblClick = ControlList1ItemDblClick
+    ExplicitWidth = 562
+    ExplicitHeight = 396
     object Label3: TLabel
       AlignWithMargins = True
       Left = 76
@@ -709,8 +715,8 @@ object Form1: TForm1
       DataSource = BindSourcebook
       FieldName = 'description'
       Component = Label3
+      CustomFormat = 'IfThen(IfAny(%0:s <> ""), %0:s, "No description")'
       ComponentProperty = 'Caption'
-      OnAssigningValue = LinkPropertyToFieldCaption2AssigningValue
     end
     object LinkGridToDataSourceBindSourcebook: TLinkGridToDataSource
       Category = 'Quick Bindings'

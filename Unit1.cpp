@@ -75,20 +75,6 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 	ApplyFilters();
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm1::LinkPropertyToFieldCaption2AssigningValue(TObject *Sender,
-          TBindingAssignValueRec &AssignValueRec, TValue &Value, bool &Handled)
-
-{
-	TValue descriptionValue = Value;
-	UnicodeString description = descriptionValue.ToString();
-	if(description == "") {
-		TLabel *label = (TLabel*) AssignValueRec.OutObj;
-		label->Caption = "No description";
-		Handled = true;
-	}
-}
-//---------------------------------------------------------------------------
-
 void __fastcall TForm1::ControlList1ItemDblClick(TObject *Sender)
 {
 	int itemId = FDTablebook ->Fields->Fields[0]->AsInteger;

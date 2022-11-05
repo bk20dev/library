@@ -74,13 +74,11 @@ __published:	// IDE-managed Components
 	TLinkPropertyToField *LinkPropertyToFieldCaption2;
 	TFDConnection *LibraryConnection;
 	TLinkGridToDataSource *LinkGridToDataSourceBindSourcebook;
-//	void __fastcall ControlList1BeforeDrawItem(int AIndex, TCanvas *ACanvas, TRect &ARect,
+//	void __fastcall Co(int AIndex, TCanvas *ACanvas, TRect &ARect,
 //		  TOwnerDrawState AState);
 	void __fastcall Edit1Change(TObject *Sender);
 	void __fastcall ComboBox1Change(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
-	void __fastcall LinkPropertyToFieldCaption2AssigningValue(TObject *Sender, TBindingAssignValueRec &AssignValueRec,
-          TValue &Value, bool &Handled);
 	void __fastcall ControlList1ItemDblClick(TObject *Sender);
 private:	// User declarations
 //	void UpdateCurrentListItem(const Book &book);

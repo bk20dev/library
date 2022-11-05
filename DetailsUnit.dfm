@@ -35,10 +35,8 @@ object Form3: TForm3
     Padding.Top = 8
     TabOrder = 0
     VerticalPositioning = spvpTop
-    ExplicitLeft = 265
-    ExplicitTop = 88
-    ExplicitWidth = 524
-    ExplicitHeight = 501
+    ExplicitWidth = 488
+    ExplicitHeight = 433
     object Label1: TLabel
       Left = 24
       Top = 8
@@ -63,6 +61,7 @@ object Form3: TForm3
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
+      Transparent = True
     end
     object Label3: TLabel
       AlignWithMargins = True
@@ -105,9 +104,7 @@ object Form3: TForm3
         Control = Label6
       end>
     TabOrder = 1
-    ExplicitLeft = 8
-    ExplicitTop = 8
-    ExplicitHeight = 425
+    ExplicitHeight = 433
     object Image1: TImage
       Left = 0
       Top = 0
@@ -117,22 +114,23 @@ object Form3: TForm3
     object Label4: TLabel
       Left = 0
       Top = 258
-      Width = 3
+      Width = 61
       Height = 15
+      Caption = 'Author: n/a'
     end
     object Label5: TLabel
       Left = 0
       Top = 275
-      Width = 24
+      Width = 94
       Height = 15
-      Caption = '1579'
+      Caption = 'Release year: 1579'
     end
     object Label6: TLabel
       Left = 0
       Top = 292
-      Width = 15
+      Width = 65
       Height = 15
-      Caption = '4.5'
+      Caption = 'Rating: 4.5'#11088
     end
   end
   object LibraryConnection: TFDConnection
@@ -176,12 +174,14 @@ object Form3: TForm3
       FieldName = 'series'
       Component = Label2
       ComponentProperty = 'Caption'
+      OnAssignedValue = LinkPropertyToFieldCaption2AssignedValue
     end
     object LinkPropertyToFieldCaption3: TLinkPropertyToField
       Category = 'Quick Bindings'
       DataSource = BindSourceDB1
       FieldName = 'description'
       Component = Label3
+      CustomFormat = 'IfThen(IfAny(%0:s <> ""), %0:s, "No description")'
       ComponentProperty = 'Caption'
     end
     object LinkPropertyToFieldCaption4: TLinkPropertyToField
@@ -189,6 +189,7 @@ object Form3: TForm3
       DataSource = BindSourceDB1
       FieldName = 'author'
       Component = Label4
+      CustomFormat = '"Author: " + IfThen(IfAny(%0:s <> ""), %0:s, "n/a")'
       ComponentProperty = 'Caption'
     end
     object LinkPropertyToFieldCaption5: TLinkPropertyToField
@@ -196,6 +197,7 @@ object Form3: TForm3
       DataSource = BindSourceDB1
       FieldName = 'release_year'
       Component = Label5
+      CustomFormat = '"Release year: " + IfThen(IfAny(%0:s <> ""), %0:s, "n/a")'
       ComponentProperty = 'Caption'
     end
     object LinkPropertyToFieldCaption6: TLinkPropertyToField
@@ -203,6 +205,7 @@ object Form3: TForm3
       DataSource = BindSourceDB1
       FieldName = 'rating'
       Component = Label6
+      CustomFormat = '"Rating: " + IfThen(IfAny(%0:s <> ""), %0:s + "'#11088'", "n/a")'
       ComponentProperty = 'Caption'
     end
   end
