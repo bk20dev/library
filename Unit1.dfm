@@ -10,6 +10,7 @@ object Form1: TForm1
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Menu = MainMenu1
   Position = poDesigned
   TextHeight = 15
   object GridPanel1: TGridPanel
@@ -105,6 +106,9 @@ object Form1: TForm1
       TabOrder = 2
       TextHint = 'Category'
       OnChange = ComboBox1Change
+      Items.Strings = (
+        ''
+        '')
       ExplicitWidth = 218
     end
     object Label1: TLabel
@@ -685,24 +689,24 @@ object Form1: TForm1
   object BindSourcebook: TBindSourceDB
     DataSet = FDTablebook
     ScopeMappings = <>
-    Left = 272
-    Top = 240
+    Left = 8
+    Top = 208
   end
   object FDTablebook: TFDTable
     Active = True
     Filtered = True
     FilterOptions = [foCaseInsensitive]
     IndexFieldNames = 'id'
-    Connection = LibraryConnection
+    Connection = S
     TableName = 'book'
-    Left = 392
-    Top = 232
+    Left = 40
+    Top = 208
   end
   object BindingsList1: TBindingsList
     Methods = <>
     OutputConverters = <>
-    Left = 156
-    Top = 245
+    Left = 36
+    Top = 149
     object LinkPropertyToFieldCaption: TLinkPropertyToField
       Category = 'Quick Bindings'
       DataSource = BindSourcebook
@@ -724,13 +728,35 @@ object Form1: TForm1
       GridControl = ControlList1
       Columns = <>
     end
+    object LinkFillControlToField1: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      Control = ComboBox1
+      Track = True
+      FillDataSource = BindSourcebook
+      FillDisplayFieldName = 'genre'
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
   end
-  object LibraryConnection: TFDConnection
+  object S: TFDConnection
     Params.Strings = (
       'ConnectionDef=library')
     Connected = True
     LoginPrompt = False
-    Left = 527
-    Top = 12
+    Left = 7
+    Top = 148
+  end
+  object MainMenu1: TMainMenu
+    Left = 128
+    Top = 152
+    object File1: TMenuItem
+      Caption = 'File'
+      object Newbook1: TMenuItem
+        Caption = 'New book'
+        OnClick = Newbook1Click
+      end
+    end
   end
 end

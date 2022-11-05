@@ -9,35 +9,13 @@
 #pragma resource "*.dfm"
 TForm1 *Form1;
 //---------------------------------------------------------------------------
+#include "FormUnit.h"
 #include "DetailsUnit.h"
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
-//	LibraryConnection->Open();
-//	LibraryConnection->ExecSQL("SELECT * FROM book;", ClientDataSet1);
-//
-//    LibraryConnection->Open();
-//	ApplyFilters();
 }
-//---------------------------------------------------------------------------
-//void __fastcall TForm1::ControlList1BeforeDrawItem(int AIndex, TCanvas *ACanvas, TRect &ARect,
-//		  TOwnerDrawState AState)
-//{
-//	Book currentBook = *filteredBooks[AIndex];
-//	UpdateCurrentListItem(currentBook);
-//}
-
-//---------------------------------------------------------------------------
-//void TForm1::UpdateCurrentListItem(const Book &book)
-//{
-//	Label4->Caption = book.title;
-//
-//	Label3->Caption = "No description";
-//	if(book.description != "") {
-//		Label3->Caption = book.description;
-//	}
-//}
 //---------------------------------------------------------------------------
 void TForm1::ApplyFilters()
 {
@@ -80,6 +58,13 @@ void __fastcall TForm1::ControlList1ItemDblClick(TObject *Sender)
 	int itemId = FDTablebook ->Fields->Fields[0]->AsInteger;
 	TForm3 *detailsForm = new TForm3(itemId, this);
 	detailsForm->Show();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Newbook1Click(TObject *Sender)
+{
+	TForm2* editForm = new TForm2(this);
+	editForm->ShowModal();
 }
 //---------------------------------------------------------------------------
 

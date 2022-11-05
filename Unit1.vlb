@@ -1,64 +1,76 @@
 ﻿[Image1]
-Coordinates=222,314,57,58
+Coordinates=242,309,49,51
 
 [ComboBox1]
-Coordinates=10,314,101,124
+Coordinates=10,94,84,105
 
 [StatusBar1]
 Coordinates=10,464,78,58
 
 [Edit1]
-Coordinates=489,314,44,58
+Coordinates=104,309,40,51
 
 [Label1]
-Coordinates=114,464,53,58
+Coordinates=170,309,46,51
 
 [GridPanel1]
-Coordinates=305,314,79,58
+Coordinates=10,309,68,51
 
 [Label2]
-Coordinates=410,314,53,58
+Coordinates=317,309,46,51
 
 [Label3]
-Coordinates=10,120,53,58
+Coordinates=364,232,46,51
 
 [ControlList1]
-Coordinates=332,61,84,58
+Coordinates=350,10,74,51
 Visible=True
 ExplicitSubNodes=
 
 [Label4]
-Coordinates=348,179,53,58
+Coordinates=364,121,46,51
 
 [Button1]
-Coordinates=137,314,59,58
+Coordinates=389,309,53,51
 
 [ControlListButton1]
-Coordinates=340,464,121,36
+Coordinates=468,309,108,33
 
 [ControlListButton2]
-Coordinates=193,464,121,36
+Coordinates=10,386,108,33
 
 []
-Coordinates=0,0,99,33
+Coordinates=103,1,50,51
 Visible=False
 
 [BindSourcebook]
-Coordinates=143,10,109,278
+Coordinates=174,31,96,213
 ExplicitSubNodes=
 
 [FDTablebook]
-Coordinates=246,80,91,36
+Coordinates=246,80,79,33
 Visible=False
 
 [BindingsList1]
-Coordinates=113,80,91,36
-
-[LibraryConnection]
-Coordinates=113,1,119,36
+Coordinates=113,80,82,33
 
 [Module Settings]
 ModelLayerNames=
 ActiveLayerNames=
 EditingLayerName=
+
+[S]
+Coordinates=113,1,40,33
+
+[MainMenu1]
+Coordinates=0,0,70,33
+
+[File1]
+Coordinates=0,0,40,33
+
+[Newbook1]
+Coordinates=0,0,65,33
+
+[(TMenuItem)]
+Coordinates=0,0,75,33
 

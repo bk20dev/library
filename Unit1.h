@@ -49,6 +49,7 @@
 #include <Vcl.Bind.Editors.hpp>
 #include <Vcl.DBCtrls.hpp>
 #include <Vcl.Graphics.hpp>
+#include <Vcl.CategoryButtons.hpp>
 //---------------------------------------------------------------------------
 #include <vector>
 #include "Book.h"
@@ -72,14 +73,19 @@ __published:	// IDE-managed Components
 	TBindingsList *BindingsList1;
 	TLinkPropertyToField *LinkPropertyToFieldCaption;
 	TLinkPropertyToField *LinkPropertyToFieldCaption2;
-	TFDConnection *LibraryConnection;
+	TFDConnection *S;
 	TLinkGridToDataSource *LinkGridToDataSourceBindSourcebook;
+	TLinkFillControlToField *LinkFillControlToField1;
+	TMainMenu *MainMenu1;
+	TMenuItem *File1;
+	TMenuItem *Newbook1;
 //	void __fastcall Co(int AIndex, TCanvas *ACanvas, TRect &ARect,
 //		  TOwnerDrawState AState);
 	void __fastcall Edit1Change(TObject *Sender);
 	void __fastcall ComboBox1Change(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall ControlList1ItemDblClick(TObject *Sender);
+	void __fastcall Newbook1Click(TObject *Sender);
 private:	// User declarations
 //	void UpdateCurrentListItem(const Book &book);
 	void ApplyFilters();
