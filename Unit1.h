@@ -81,6 +81,7 @@ __published:	// IDE-managed Components
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall LinkPropertyToFieldCaption2AssigningValue(TObject *Sender, TBindingAssignValueRec &AssignValueRec,
           TValue &Value, bool &Handled);
+	void __fastcall ControlList1ItemDblClick(TObject *Sender);
 private:	// User declarations
 //	void UpdateCurrentListItem(const Book &book);
 	void ApplyFilters();

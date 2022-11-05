@@ -9,6 +9,8 @@
 #pragma resource "*.dfm"
 TForm1 *Form1;
 //---------------------------------------------------------------------------
+#include "DetailsUnit.h"
+//---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
@@ -84,6 +86,14 @@ void __fastcall TForm1::LinkPropertyToFieldCaption2AssigningValue(TObject *Sende
 		label->Caption = "No description";
 		Handled = true;
 	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ControlList1ItemDblClick(TObject *Sender)
+{
+	int itemId = FDTablebook ->Fields->Fields[0]->AsInteger;
+	TForm3 *detailsForm = new TForm3(itemId, this);
+	detailsForm->Show();
 }
 //---------------------------------------------------------------------------
 

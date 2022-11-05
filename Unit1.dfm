@@ -71,7 +71,6 @@ object Form1: TForm1
         Value = 100.000000000000000000
       end>
     TabOrder = 0
-    ExplicitWidth = 562
     object Button1: TButton
       Left = 0
       Top = 46
@@ -81,7 +80,6 @@ object Form1: TForm1
       Caption = 'Clear filters'
       TabOrder = 0
       OnClick = Button1Click
-      ExplicitWidth = 343
     end
     object Edit1: TEdit
       Left = 125
@@ -92,7 +90,6 @@ object Form1: TForm1
       TabOrder = 1
       TextHint = 'Title, author, series, etc.'
       OnChange = Edit1Change
-      ExplicitWidth = 218
     end
     object ComboBox1: TComboBox
       Left = 125
@@ -105,7 +102,6 @@ object Form1: TForm1
       TabOrder = 2
       TextHint = 'Category'
       OnChange = ComboBox1Change
-      ExplicitWidth = 218
     end
     object Label1: TLabel
       AlignWithMargins = True
@@ -142,7 +138,7 @@ object Form1: TForm1
     Width = 566
     Height = 397
     Align = alClient
-    ItemCount = 3
+    ItemCount = 2
     ItemIndex = 0
     ItemMargins.Left = 0
     ItemMargins.Top = 0
@@ -153,8 +149,7 @@ object Form1: TForm1
     ItemSelectionOptions.FocusedColorAlpha = 80
     ParentColor = False
     TabOrder = 1
-    ExplicitWidth = 562
-    ExplicitHeight = 377
+    OnItemDblClick = ControlList1ItemDblClick
     object Label3: TLabel
       AlignWithMargins = True
       Left = 76
@@ -167,7 +162,7 @@ object Form1: TForm1
       Margins.Bottom = 2
       Anchors = [akLeft, akTop, akRight, akBottom]
       AutoSize = False
-      Caption = 'aaa'
+      Caption = 'Learn first three letters'
       EllipsisPosition = epEndEllipsis
       ShowAccelChar = False
       Transparent = True
@@ -177,9 +172,9 @@ object Form1: TForm1
     object Label4: TLabel
       Left = 76
       Top = 6
-      Width = 66
+      Width = 21
       Height = 13
-      Caption = 'Cien Smoka'
+      Caption = 'Abc'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
@@ -691,6 +686,7 @@ object Form1: TForm1
     Active = True
     Filtered = True
     FilterOptions = [foCaseInsensitive]
+    IndexFieldNames = 'id'
     Connection = LibraryConnection
     TableName = 'book'
     Left = 392
