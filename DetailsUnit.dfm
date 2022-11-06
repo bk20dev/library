@@ -2,8 +2,8 @@ object Form3: TForm3
   Left = 0
   Top = 0
   Caption = 'Form3'
-  ClientHeight = 383
-  ClientWidth = 607
+  ClientHeight = 378
+  ClientWidth = 587
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,8 +14,8 @@ object Form3: TForm3
   object StackPanel1: TStackPanel
     Left = 185
     Top = 0
-    Width = 422
-    Height = 383
+    Width = 402
+    Height = 378
     Align = alClient
     BevelOuter = bvNone
     ControlCollection = <
@@ -38,14 +38,12 @@ object Form3: TForm3
     Padding.Top = 8
     TabOrder = 0
     VerticalPositioning = spvpTop
-    ExplicitWidth = 488
-    ExplicitHeight = 433
     object Label1: TLabel
       Left = 24
       Top = 8
-      Width = 398
+      Width = 378
       Height = 45
-      Caption = 'Abc'
+      Caption = 'Da Michigan'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -32
@@ -56,8 +54,8 @@ object Form3: TForm3
     object Label2: TLabel
       Left = 24
       Top = 55
-      Width = 398
-      Height = 32
+      Width = 378
+      Height = 0
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -24
@@ -69,7 +67,7 @@ object Form3: TForm3
     object GridPanel1: TGridPanel
       AlignWithMargins = True
       Left = 24
-      Top = 97
+      Top = 65
       Width = 350
       Height = 42
       Margins.Left = 0
@@ -93,12 +91,17 @@ object Form3: TForm3
         item
           Column = 1
           Control = Label5
-          Row = 0
+          Row = 1
         end
         item
           Column = 0
           Control = Label6
           Row = 1
+        end
+        item
+          Column = 1
+          Control = Label7
+          Row = 0
         end>
       RowCollection = <
         item
@@ -125,12 +128,12 @@ object Form3: TForm3
       end
       object Label5: TLabel
         Left = 175
-        Top = 0
+        Top = 21
         Width = 175
         Height = 21
         Align = alClient
         AutoSize = False
-        Caption = 'Release year: 1579'
+        Caption = 'Release year: n/a'
         EllipsisPosition = epEndEllipsis
         ExplicitLeft = 0
         ExplicitTop = 258
@@ -144,24 +147,36 @@ object Form3: TForm3
         Height = 21
         Align = alClient
         AutoSize = False
-        Caption = 'Rating: 4.5'#11088
+        Caption = 'Rating: n/a'
         EllipsisPosition = epEndEllipsis
         ExplicitTop = 258
         ExplicitWidth = 65
+        ExplicitHeight = 15
+      end
+      object Label7: TLabel
+        Left = 175
+        Top = 0
+        Width = 175
+        Height = 21
+        Align = alClient
+        AutoSize = False
+        Caption = 'Genre: fantasy'
+        EllipsisPosition = epEndEllipsis
+        ExplicitWidth = 34
         ExplicitHeight = 15
       end
     end
     object Label3: TLabel
       AlignWithMargins = True
       Left = 24
-      Top = 149
-      Width = 398
+      Top = 117
+      Width = 378
       Height = 15
       Margins.Left = 0
       Margins.Top = 8
       Margins.Right = 0
       Margins.Bottom = 0
-      Caption = 'Learn first three letters'
+      Caption = 'No description'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -12
@@ -174,7 +189,7 @@ object Form3: TForm3
   object StackPanel2: TStackPanel
     Left = 0
     Top = 0
-    Height = 383
+    Height = 378
     Align = alLeft
     BevelOuter = bvNone
     ControlCollection = <
@@ -183,7 +198,6 @@ object Form3: TForm3
         HorizontalPositioning = sphpFill
       end>
     TabOrder = 1
-    ExplicitHeight = 433
     object Image1: TImage
       Left = 0
       Top = 0
@@ -197,42 +211,38 @@ object Form3: TForm3
     Connected = True
     LoginPrompt = False
     Left = 46
-    Top = 53
+    Top = 13
   end
   object BindSourceDB1: TBindSourceDB
     DataSet = FDQuery1
     ScopeMappings = <>
     Left = 48
-    Top = 16
+    Top = 72
   end
   object FDQuery1: TFDQuery
     Active = True
     Filtered = True
     Connection = LibraryConnection
     SQL.Strings = (
-      'SELECT * FROM book')
+      'SELECT b.*, g.name genre_name'
+      'FROM book b'
+      'JOIN genre g'
+      '    ON b.genre = g.id;'
+      '')
     Left = 16
-    Top = 16
+    Top = 72
   end
   object BindingsList1: TBindingsList
     Methods = <>
     OutputConverters = <>
     Left = 12
-    Top = 53
-    object LinkPropertyToFieldCaption: TLinkPropertyToField
-      Category = 'Quick Bindings'
-      DataSource = BindSourceDB1
-      FieldName = 'title'
-      Component = Label1
-      ComponentProperty = 'Caption'
-    end
+    Top = 13
     object LinkPropertyToFieldCaption2: TLinkPropertyToField
       Category = 'Quick Bindings'
       DataSource = BindSourceDB1
       FieldName = 'series'
       Component = Label2
       ComponentProperty = 'Caption'
-      OnAssignedValue = LinkPropertyToFieldCaption2AssignedValue
     end
     object LinkPropertyToFieldCaption3: TLinkPropertyToField
       Category = 'Quick Bindings'
@@ -264,6 +274,29 @@ object Form3: TForm3
       FieldName = 'rating'
       Component = Label6
       CustomFormat = '"Rating: " + IfThen(IfAny(%0:s <> ""), %0:s + "'#11088'", "n/a")'
+      ComponentProperty = 'Caption'
+    end
+    object LinkPropertyToFieldHeight: TLinkPropertyToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'series'
+      Component = Label2
+      CustomFormat = '0'
+      ComponentProperty = 'Height'
+    end
+    object LinkPropertyToFieldCaption: TLinkPropertyToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'title'
+      Component = Label1
+      ComponentProperty = 'Caption'
+    end
+    object LinkPropertyToFieldCaption7: TLinkPropertyToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'genre_name'
+      Component = Label7
+      CustomFormat = '"Genre: " + %s'
       ComponentProperty = 'Caption'
     end
   end

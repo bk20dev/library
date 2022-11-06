@@ -49,7 +49,6 @@ __published:	// IDE-managed Components
 	TStackPanel *StackPanel1;
 	TLabel *Label2;
 	TLabel *Label3;
-	TLinkPropertyToField *LinkPropertyToFieldCaption;
 	TLinkPropertyToField *LinkPropertyToFieldCaption2;
 	TLinkPropertyToField *LinkPropertyToFieldCaption3;
 	TStackPanel *StackPanel2;
@@ -61,8 +60,10 @@ __published:	// IDE-managed Components
 	TLabel *Label6;
 	TLinkPropertyToField *LinkPropertyToFieldCaption6;
 	TGridPanel *GridPanel1;
-	void __fastcall LinkPropertyToFieldCaption2AssignedValue(TObject *Sender, TBindingAssignValueRec &AssignValueRec,
-          const TValue &Value);
+	TLinkPropertyToField *LinkPropertyToFieldHeight;
+	TLabel *Label7;
+	TLinkPropertyToField *LinkPropertyToFieldCaption;
+	TLinkPropertyToField *LinkPropertyToFieldCaption7;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm3(int itemId, TComponent* Owner);

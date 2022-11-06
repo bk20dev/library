@@ -7,7 +7,7 @@ EditingLayerName=
 Coordinates=75,1,105,33
 
 [BindSourceDB1]
-Coordinates=136,142,92,231
+Coordinates=136,133,92,267
 
 [FDQuery1]
 Coordinates=75,71,63,33
@@ -17,35 +17,40 @@ Visible=False
 Coordinates=0,0,82,33
 
 []
-Coordinates=0,0,46,51
+Coordinates=593,450,63,105
+ExplicitSubNodes=Filter
 
 [Label1]
-Coordinates=308,121,46,51
+Coordinates=20,150,46,51
 
 [StackPanel1]
-Coordinates=10,531,75,51
+Coordinates=85,549,75,51
 
 [Label2]
-Coordinates=400,320,46,51
+Coordinates=308,454,46,69
+ExplicitSubNodes=Height
 
 [Label3]
-Coordinates=308,10,46,51
+Coordinates=308,343,46,51
 
 [StackPanel2]
-Coordinates=186,531,75,51
+Coordinates=280,549,75,51
 
 [Image1]
-Coordinates=111,531,49,51
+Coordinates=10,549,49,51
 
 [Label4]
-Coordinates=308,454,46,51
+Coordinates=308,10,46,51
 
 [Label5]
 Coordinates=308,232,46,51
 
 [Label6]
-Coordinates=10,232,46,51
+Coordinates=308,121,46,51
 
 [GridPanel1]
-Coordinates=0,0,68,51
+Coordinates=186,549,68,51
+
+[Label7]
+Coordinates=10,290,46,51
 
