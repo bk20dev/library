@@ -74,7 +74,17 @@ __published:	// IDE-managed Components
 	TLinkFillControlToField *LinkFillControlToField3;
 	TNumberBox *NumberBox1;
 	TEdit *Edit2;
+	TFDTable *FDTable2;
+	TBindSourceDB *BindSourceDB1;
+	TLinkControlToField *LinkControlToField1;
+	TLinkControlToField *LinkControlToField2;
+	TLinkControlToField *LinkControlToField3;
+	TLinkControlToField *LinkControlToField4;
+	TButton *Button2;
+	void __fastcall SaveClick(TObject *Sender);
+	void __fastcall Button2Click(TObject *Sender);
 private:	// User declarations
+    int itemId;
 public:		// User declarations
 	__fastcall TForm2(int itemId, TComponent* Owner);
 };

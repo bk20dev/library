@@ -1,87 +1,97 @@
 ﻿[Label3]
-Coordinates=202,428,53,58
+Coordinates=10,1041,46,51
 
 [Label2]
-Coordinates=291,344,53,58
+Coordinates=756,10,46,51
 
 [Button1]
-Coordinates=123,344,59,58
+Coordinates=82,1041,53,51
 
 [Label7]
-Coordinates=430,428,53,58
+Coordinates=262,1041,46,51
 
 [ComboBox4]
-Coordinates=10,102,101,124
+Coordinates=182,634,84,105
 ExplicitSubNodes=
 
 [Memo2]
-Coordinates=504,10,64,58
+Coordinates=198,10,53,51
 
 [Image1]
-Coordinates=208,344,57,58
+Coordinates=681,10,49,51
 
 [Label6]
-Coordinates=614,428,53,58
+Coordinates=428,1041,46,51
 
 [Label1]
-Coordinates=351,428,53,58
+Coordinates=929,10,46,51
 
 [Label4]
-Coordinates=693,428,53,58
+Coordinates=1001,10,46,51
 
 [ComboBox3]
-Coordinates=377,10,101,124
+Coordinates=182,910,84,105
 
 [Label5]
-Coordinates=453,344,53,58
+Coordinates=542,10,46,51
 
 [StackPanel1]
-Coordinates=10,428,87,58
+Coordinates=161,1041,75,51
 
 [GridPanel1]
-Coordinates=509,428,79,58
+Coordinates=334,1041,68,51
 
 [Edit1]
-Coordinates=594,10,44,58
+Coordinates=204,121,40,51
 
 [Save]
-Coordinates=532,344,49,58
+Coordinates=614,10,41,51
 
 [Label8]
-Coordinates=123,428,53,58
+Coordinates=1073,10,46,51
 
 [StackPanel4]
-Coordinates=722,344,87,58
+Coordinates=828,10,75,51
 
 [Actions]
-Coordinates=370,344,57,58
+Coordinates=464,10,52,51
 
 [ComboBox2]
-Coordinates=377,194,101,124
+Coordinates=182,295,84,105
 
 [StackPanel2]
-Coordinates=10,344,87,58
+Coordinates=500,1041,75,51
 
 [LibraryConnection]
-Coordinates=416,1,119,36
+Coordinates=416,1,105,33
 
 [FDTable1]
-Coordinates=570,100,71,36
+Coordinates=570,100,60,33
 Visible=False
 
 [BindSourceDB2]
-Coordinates=191,25,106,278
+Coordinates=390,340,92,231
 ExplicitSubNodes=
 
 [BindingsList1]
-Coordinates=308,80,91,36
+Coordinates=308,80,82,33
 
 []
-Coordinates=601,306,89,58
+Coordinates=72,1,63,51
 
 [NumberBox1]
-Coordinates=607,344,89,58
+Coordinates=185,799,78,51
 
 [Edit2]
-Coordinates=281,428,44,58
+Coordinates=610,680,40,51
+
+[FDTable2]
+Coordinates=770,60,60,33
+Visible=False
+
+[BindSourceDB1]
+Coordinates=770,60,92,231
+
+[Button2]
+Coordinates=0,0,53,51
 
