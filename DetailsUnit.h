@@ -60,6 +60,7 @@ __published:	// IDE-managed Components
 	TLinkPropertyToField *LinkPropertyToFieldCaption5;
 	TLabel *Label6;
 	TLinkPropertyToField *LinkPropertyToFieldCaption6;
+	TGridPanel *GridPanel1;
 	void __fastcall LinkPropertyToFieldCaption2AssignedValue(TObject *Sender, TBindingAssignValueRec &AssignValueRec,
           const TValue &Value);
 private:	// User declarations

@@ -2,8 +2,8 @@ object Form3: TForm3
   Left = 0
   Top = 0
   Caption = 'Form3'
-  ClientHeight = 434
-  ClientWidth = 677
+  ClientHeight = 383
+  ClientWidth = 607
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,8 +14,8 @@ object Form3: TForm3
   object StackPanel1: TStackPanel
     Left = 185
     Top = 0
-    Width = 492
-    Height = 434
+    Width = 422
+    Height = 383
     Align = alClient
     BevelOuter = bvNone
     ControlCollection = <
@@ -26,6 +26,9 @@ object Form3: TForm3
       item
         Control = Label2
         HorizontalPositioning = sphpFill
+      end
+      item
+        Control = GridPanel1
       end
       item
         Control = Label3
@@ -40,7 +43,7 @@ object Form3: TForm3
     object Label1: TLabel
       Left = 24
       Top = 8
-      Width = 468
+      Width = 398
       Height = 45
       Caption = 'Abc'
       Font.Charset = DEFAULT_CHARSET
@@ -53,7 +56,7 @@ object Form3: TForm3
     object Label2: TLabel
       Left = 24
       Top = 55
-      Width = 468
+      Width = 398
       Height = 32
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
@@ -63,11 +66,96 @@ object Form3: TForm3
       ParentFont = False
       Transparent = True
     end
-    object Label3: TLabel
+    object GridPanel1: TGridPanel
       AlignWithMargins = True
       Left = 24
       Top = 97
-      Width = 468
+      Width = 350
+      Height = 42
+      Margins.Left = 0
+      Margins.Top = 8
+      Margins.Right = 0
+      Margins.Bottom = 0
+      BevelOuter = bvNone
+      ColumnCollection = <
+        item
+          Value = 50.000000000000010000
+        end
+        item
+          Value = 49.999999999999990000
+        end>
+      ControlCollection = <
+        item
+          Column = 0
+          Control = Label4
+          Row = 0
+        end
+        item
+          Column = 1
+          Control = Label5
+          Row = 0
+        end
+        item
+          Column = 0
+          Control = Label6
+          Row = 1
+        end>
+      RowCollection = <
+        item
+          SizeStyle = ssAuto
+          Value = 100.000000000000000000
+        end
+        item
+          SizeStyle = ssAuto
+          Value = 100.000000000000000000
+        end>
+      TabOrder = 0
+      object Label4: TLabel
+        Left = 0
+        Top = 0
+        Width = 175
+        Height = 21
+        Align = alClient
+        AutoSize = False
+        Caption = 'Author: n/a'
+        EllipsisPosition = epEndEllipsis
+        ExplicitTop = 258
+        ExplicitWidth = 61
+        ExplicitHeight = 15
+      end
+      object Label5: TLabel
+        Left = 175
+        Top = 0
+        Width = 175
+        Height = 21
+        Align = alClient
+        AutoSize = False
+        Caption = 'Release year: 1579'
+        EllipsisPosition = epEndEllipsis
+        ExplicitLeft = 0
+        ExplicitTop = 258
+        ExplicitWidth = 94
+        ExplicitHeight = 15
+      end
+      object Label6: TLabel
+        Left = 0
+        Top = 21
+        Width = 175
+        Height = 21
+        Align = alClient
+        AutoSize = False
+        Caption = 'Rating: 4.5'#11088
+        EllipsisPosition = epEndEllipsis
+        ExplicitTop = 258
+        ExplicitWidth = 65
+        ExplicitHeight = 15
+      end
+    end
+    object Label3: TLabel
+      AlignWithMargins = True
+      Left = 24
+      Top = 149
+      Width = 398
       Height = 15
       Margins.Left = 0
       Margins.Top = 8
@@ -86,22 +174,13 @@ object Form3: TForm3
   object StackPanel2: TStackPanel
     Left = 0
     Top = 0
-    Height = 434
+    Height = 383
     Align = alLeft
     BevelOuter = bvNone
     ControlCollection = <
       item
         Control = Image1
         HorizontalPositioning = sphpFill
-      end
-      item
-        Control = Label4
-      end
-      item
-        Control = Label5
-      end
-      item
-        Control = Label6
       end>
     TabOrder = 1
     ExplicitHeight = 433
@@ -110,27 +189,6 @@ object Form3: TForm3
       Top = 0
       Width = 185
       Height = 256
-    end
-    object Label4: TLabel
-      Left = 0
-      Top = 258
-      Width = 61
-      Height = 15
-      Caption = 'Author: n/a'
-    end
-    object Label5: TLabel
-      Left = 0
-      Top = 275
-      Width = 94
-      Height = 15
-      Caption = 'Release year: 1579'
-    end
-    object Label6: TLabel
-      Left = 0
-      Top = 292
-      Width = 65
-      Height = 15
-      Caption = 'Rating: 4.5'#11088
     end
   end
   object LibraryConnection: TFDConnection
