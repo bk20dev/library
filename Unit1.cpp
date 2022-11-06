@@ -55,7 +55,7 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ControlList1ItemDblClick(TObject *Sender)
 {
-	int itemId = FDTablebook ->Fields->Fields[0]->AsInteger;
+	int itemId = FDTablebook->Fields->Fields[0]->AsInteger;
 	TForm3 *detailsForm = new TForm3(itemId, this);
 	detailsForm->Show();
 }
@@ -63,8 +63,16 @@ void __fastcall TForm1::ControlList1ItemDblClick(TObject *Sender)
 
 void __fastcall TForm1::Newbook1Click(TObject *Sender)
 {
-	TForm2* editForm = new TForm2(this);
+	TForm2* editForm = new TForm2(-1, this);
 	editForm->ShowModal();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ControlListButton1Click(TObject *Sender)
+{
+	int itemId = FDTablebook->Fields->Fields[0]->AsInteger;
+	TForm2 *editForm = new TForm2(itemId, this);
+    editForm->ShowModal();
 }
 //---------------------------------------------------------------------------
 

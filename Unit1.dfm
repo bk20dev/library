@@ -164,7 +164,7 @@ object Form1: TForm1
       AlignWithMargins = True
       Left = 76
       Top = 24
-      Width = 396
+      Width = 405
       Height = 38
       Margins.Left = 10
       Margins.Top = 2
@@ -177,13 +177,13 @@ object Form1: TForm1
       ShowAccelChar = False
       Transparent = True
       WordWrap = True
-      ExplicitWidth = 269
     end
     object Label4: TLabel
       Left = 76
       Top = 6
-      Width = 21
+      Width = 405
       Height = 13
+      AutoSize = False
       Caption = 'Abc'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -192,37 +192,6 @@ object Form1: TForm1
       Font.Style = [fsBold]
       ParentFont = False
       Transparent = True
-    end
-    object ControlListButton1: TControlListButton
-      AlignWithMargins = True
-      Left = 528
-      Top = 20
-      Width = 30
-      Height = 30
-      Margins.Left = 2
-      Margins.Top = 20
-      Margins.Right = 4
-      Margins.Bottom = 20
-      Align = alRight
-      LinkHotColor = clHighlight
-      Style = clbkToolButton
-      ExplicitLeft = 382
-      ExplicitTop = 21
-    end
-    object ControlListButton2: TControlListButton
-      AlignWithMargins = True
-      Left = 494
-      Top = 20
-      Width = 30
-      Height = 30
-      Margins.Left = 2
-      Margins.Top = 20
-      Margins.Right = 2
-      Margins.Bottom = 20
-      Align = alRight
-      LinkHotColor = clHighlight
-      Style = clbkToolButton
-      ExplicitLeft = 346
     end
     object Image1: TImage
       Left = 4
@@ -684,6 +653,15 @@ object Form1: TForm1
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFF}
       Proportional = True
+    end
+    object ControlListButton1: TControlListButton
+      Left = 494
+      Top = 24
+      Width = 59
+      Height = 25
+      Caption = 'Edit'
+      LinkHotColor = clHighlight
+      OnClick = ControlListButton1Click
     end
   end
   object BindSourcebook: TBindSourceDB

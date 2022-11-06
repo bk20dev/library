@@ -76,7 +76,7 @@ __published:	// IDE-managed Components
 	TEdit *Edit2;
 private:	// User declarations
 public:		// User declarations
-	__fastcall TForm2(TComponent* Owner);
+	__fastcall TForm2(int itemId, TComponent* Owner);
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TForm2 *Form2;

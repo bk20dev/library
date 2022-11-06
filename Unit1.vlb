@@ -33,14 +33,8 @@ Coordinates=364,121,46,51
 [Button1]
 Coordinates=389,309,53,51
 
-[ControlListButton1]
-Coordinates=468,309,108,33
-
-[ControlListButton2]
-Coordinates=10,386,108,33
-
 []
-Coordinates=103,1,50,51
+Coordinates=468,309,108,33
 Visible=False
 
 [BindSourcebook]
@@ -73,4 +67,7 @@ Coordinates=0,0,65,33
 
 [(TMenuItem)]
 Coordinates=0,0,75,33
+
+[ControlListButton1]
+Coordinates=0,0,108,33
 

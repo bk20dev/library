@@ -2,8 +2,8 @@ object Form2: TForm2
   Left = 0
   Top = 0
   Caption = 'Form2'
-  ClientHeight = 596
-  ClientWidth = 855
+  ClientHeight = 595
+  ClientWidth = 851
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,8 +18,8 @@ object Form2: TForm2
   object GridPanel1: TGridPanel
     Left = 12
     Top = 8
-    Width = 831
-    Height = 580
+    Width = 827
+    Height = 579
     Align = alClient
     BevelOuter = bvNone
     Caption = '1597'
@@ -64,8 +64,6 @@ object Form2: TForm2
         Value = 100.000000000000000000
       end>
     TabOrder = 0
-    ExplicitWidth = 827
-    ExplicitHeight = 579
     object StackPanel1: TStackPanel
       Left = 0
       Top = 0
@@ -129,9 +127,8 @@ object Form2: TForm2
         TabOrder = 1
         TextHint = 'First Quatro'
         Items.Strings = (
-          'Magiczne Drzewo'
-          'Harry Potter'
-          'Harry Potter')
+          ''
+          'Alphabet')
       end
       object Label7: TLabel
         Left = 0
@@ -219,9 +216,8 @@ object Form2: TForm2
         TabOrder = 0
         TextHint = 'William Shakespeare'
         Items.Strings = (
-          'Andrzej Maleszka'
-          'J. K. Rowling'
-          'B. D. Rolled')
+          ''
+          '')
       end
       object Label3: TLabel
         Left = 0
@@ -254,7 +250,6 @@ object Form2: TForm2
         TabOrder = 1
         TextHint = 'tragedy'
         Items.Strings = (
-          ''
           ''
           '')
       end
@@ -403,6 +398,7 @@ object Form2: TForm2
   end
   object FDTable1: TFDTable
     Active = True
+    IndexFieldNames = 'id'
     Connection = LibraryConnection
     TableName = 'book'
     Left = 812

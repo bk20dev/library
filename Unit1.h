@@ -50,6 +50,8 @@
 #include <Vcl.DBCtrls.hpp>
 #include <Vcl.Graphics.hpp>
 #include <Vcl.CategoryButtons.hpp>
+#include <System.ImageList.hpp>
+#include <Vcl.ImgList.hpp>
 //---------------------------------------------------------------------------
 #include <vector>
 #include "Book.h"
@@ -65,8 +67,6 @@ __published:	// IDE-managed Components
 	TControlList *ControlList1;
 	TLabel *Label3;
 	TLabel *Label4;
-	TControlListButton *ControlListButton1;
-	TControlListButton *ControlListButton2;
 	TImage *Image1;
 	TBindSourceDB *BindSourcebook;
 	TFDTable *FDTablebook;
@@ -79,6 +79,7 @@ __published:	// IDE-managed Components
 	TMainMenu *MainMenu1;
 	TMenuItem *File1;
 	TMenuItem *Newbook1;
+	TControlListButton *ControlListButton1;
 //	void __fastcall Co(int AIndex, TCanvas *ACanvas, TRect &ARect,
 //		  TOwnerDrawState AState);
 	void __fastcall Edit1Change(TObject *Sender);
@@ -86,6 +87,7 @@ __published:	// IDE-managed Components
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall ControlList1ItemDblClick(TObject *Sender);
 	void __fastcall Newbook1Click(TObject *Sender);
+	void __fastcall ControlListButton1Click(TObject *Sender);
 private:	// User declarations
 //	void UpdateCurrentListItem(const Book &book);
 	void ApplyFilters();
