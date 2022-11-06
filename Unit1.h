@@ -75,11 +75,13 @@ __published:	// IDE-managed Components
 	TLinkPropertyToField *LinkPropertyToFieldCaption2;
 	TFDConnection *S;
 	TLinkGridToDataSource *LinkGridToDataSourceBindSourcebook;
-	TLinkFillControlToField *LinkFillControlToField1;
 	TMainMenu *MainMenu1;
 	TMenuItem *File1;
 	TMenuItem *Newbook1;
 	TControlListButton *ControlListButton1;
+	TFDQuery *FDQuery1;
+	TBindSourceDB *BindSourceDB1;
+	TLinkFillControlToField *LinkFillControlToField1;
 //	void __fastcall Co(int AIndex, TCanvas *ACanvas, TRect &ARect,
 //		  TOwnerDrawState AState);
 	void __fastcall Edit1Change(TObject *Sender);

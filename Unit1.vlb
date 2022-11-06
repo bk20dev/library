@@ -1,49 +1,50 @@
 ﻿[Image1]
-Coordinates=242,309,49,51
+Coordinates=292,267,49,51
 
 [ComboBox1]
-Coordinates=10,94,84,105
+Coordinates=10,267,84,105
 
 [StatusBar1]
 Coordinates=10,464,78,58
 
 [Edit1]
-Coordinates=104,309,40,51
+Coordinates=82,398,40,51
 
 [Label1]
-Coordinates=170,309,46,51
+Coordinates=242,398,46,51
 
 [GridPanel1]
-Coordinates=10,309,68,51
+Coordinates=148,398,68,51
 
 [Label2]
-Coordinates=317,309,46,51
+Coordinates=10,398,46,51
 
 [Label3]
-Coordinates=364,232,46,51
+Coordinates=10,100,46,51
 
 [ControlList1]
-Coordinates=350,10,74,51
+Coordinates=312,44,74,51
 Visible=True
 ExplicitSubNodes=
 
 [Label4]
-Coordinates=364,121,46,51
+Coordinates=326,155,46,51
 
 [Button1]
-Coordinates=389,309,53,51
+Coordinates=367,267,53,51
 
 []
 Coordinates=468,309,108,33
 Visible=False
 
 [BindSourcebook]
-Coordinates=174,31,96,213
+Coordinates=136,10,96,231
 ExplicitSubNodes=
 
 [FDTablebook]
-Coordinates=246,80,79,33
+Coordinates=460,190,79,33
 Visible=False
+ExplicitSubNodes=Filter
 
 [BindingsList1]
 Coordinates=113,80,82,33
@@ -69,5 +70,12 @@ Coordinates=0,0,65,33
 Coordinates=0,0,75,33
 
 [ControlListButton1]
-Coordinates=0,0,108,33
+Coordinates=419,398,108,33
+
+[FDQuery1]
+Coordinates=120,100,63,33
+Visible=False
+
+[BindSourceDB1]
+Coordinates=170,270,92,105
 

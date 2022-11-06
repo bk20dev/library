@@ -49,7 +49,7 @@ void __fastcall TForm1::ComboBox1Change(TObject *Sender)
 void __fastcall TForm1::Button1Click(TObject *Sender)
 {
 	Edit1->Clear();
-    ComboBox1->Clear();
+    ComboBox1->Text = "";
 	ApplyFilters();
 }
 //---------------------------------------------------------------------------

@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 466
-  ClientWidth = 566
+  ClientHeight = 463
+  ClientWidth = 554
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,7 +16,7 @@ object Form1: TForm1
   object GridPanel1: TGridPanel
     Left = 0
     Top = 0
-    Width = 566
+    Width = 554
     Height = 69
     Align = alTop
     BevelOuter = bvNone
@@ -72,33 +72,31 @@ object Form1: TForm1
         Value = 100.000000000000000000
       end>
     TabOrder = 0
-    ExplicitWidth = 562
+    ExplicitWidth = 558
     object Button1: TButton
       Left = 0
       Top = 46
-      Width = 345
+      Width = 339
       Height = 23
       Align = alClient
       Caption = 'Clear filters'
       TabOrder = 0
       OnClick = Button1Click
-      ExplicitWidth = 343
     end
     object Edit1: TEdit
       Left = 125
       Top = 0
-      Width = 220
+      Width = 214
       Height = 23
       Align = alClient
       TabOrder = 1
       TextHint = 'Title, author, series, etc.'
       OnChange = Edit1Change
-      ExplicitWidth = 218
     end
     object ComboBox1: TComboBox
       Left = 125
       Top = 23
-      Width = 220
+      Width = 214
       Height = 23
       Align = alClient
       AutoDropDown = True
@@ -107,9 +105,9 @@ object Form1: TForm1
       TextHint = 'Category'
       OnChange = ComboBox1Change
       Items.Strings = (
-        ''
-        '')
-      ExplicitWidth = 218
+        'fantasy'
+        'sci-fi'
+        'unknown')
     end
     object Label1: TLabel
       AlignWithMargins = True
@@ -143,10 +141,10 @@ object Form1: TForm1
   object ControlList1: TControlList
     Left = 0
     Top = 69
-    Width = 566
-    Height = 397
+    Width = 554
+    Height = 394
     Align = alClient
-    ItemCount = 2
+    ItemCount = 3
     ItemIndex = 0
     ItemMargins.Left = 0
     ItemMargins.Top = 0
@@ -158,8 +156,6 @@ object Form1: TForm1
     ParentColor = False
     TabOrder = 1
     OnItemDblClick = ControlList1ItemDblClick
-    ExplicitWidth = 562
-    ExplicitHeight = 396
     object Label3: TLabel
       AlignWithMargins = True
       Left = 76
@@ -172,7 +168,7 @@ object Form1: TForm1
       Margins.Bottom = 2
       Anchors = [akLeft, akTop, akRight, akBottom]
       AutoSize = False
-      Caption = 'Learn first three letters'
+      Caption = 'No description'
       EllipsisPosition = epEndEllipsis
       ShowAccelChar = False
       Transparent = True
@@ -184,7 +180,7 @@ object Form1: TForm1
       Width = 405
       Height = 13
       AutoSize = False
-      Caption = 'Abc'
+      Caption = 'Da Michigan'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
@@ -683,7 +679,7 @@ object Form1: TForm1
   object BindingsList1: TBindingsList
     Methods = <>
     OutputConverters = <>
-    Left = 36
+    Left = 60
     Top = 149
     object LinkPropertyToFieldCaption: TLinkPropertyToField
       Category = 'Quick Bindings'
@@ -710,8 +706,9 @@ object Form1: TForm1
       Category = 'Quick Bindings'
       Control = ComboBox1
       Track = True
-      FillDataSource = BindSourcebook
-      FillDisplayFieldName = 'genre'
+      FillDataSource = BindSourceDB1
+      FillValueFieldName = 'id'
+      FillDisplayFieldName = 'name'
       AutoFill = True
       FillExpressions = <>
       FillHeaderExpressions = <>
@@ -727,7 +724,7 @@ object Form1: TForm1
     Top = 148
   end
   object MainMenu1: TMainMenu
-    Left = 128
+    Left = 152
     Top = 152
     object File1: TMenuItem
       Caption = 'File'
@@ -736,5 +733,19 @@ object Form1: TForm1
         OnClick = Newbook1Click
       end
     end
+  end
+  object FDQuery1: TFDQuery
+    Active = True
+    Connection = S
+    SQL.Strings = (
+      'SELECT id, name FROM genre')
+    Left = 40
+    Top = 264
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = FDQuery1
+    ScopeMappings = <>
+    Left = 8
+    Top = 264
   end
 end
