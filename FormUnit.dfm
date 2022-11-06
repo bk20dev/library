@@ -2,8 +2,8 @@ object Form2: TForm2
   Left = 0
   Top = 0
   Caption = 'Form2'
-  ClientHeight = 511
-  ClientWidth = 859
+  ClientHeight = 502
+  ClientWidth = 823
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,8 +18,8 @@ object Form2: TForm2
   object GridPanel1: TGridPanel
     Left = 12
     Top = 8
-    Width = 835
-    Height = 495
+    Width = 799
+    Height = 486
     Align = alClient
     BevelOuter = bvNone
     Caption = '1597'
@@ -64,8 +64,6 @@ object Form2: TForm2
         Value = 100.000000000000000000
       end>
     TabOrder = 0
-    ExplicitWidth = 811
-    ExplicitHeight = 575
     object StackPanel1: TStackPanel
       Left = 0
       Top = 0
@@ -112,7 +110,7 @@ object Form2: TForm2
         Width = 250
         Height = 23
         TabOrder = 0
-        Text = 'DEF'
+        Text = 'Da Michigan'
         TextHint = 'Romeo and Juliet'
       end
       object Label6: TLabel
@@ -127,12 +125,10 @@ object Form2: TForm2
         Top = 59
         Width = 200
         Height = 23
-        ItemIndex = 0
         TabOrder = 1
-        Text = 'Alphabet'
         TextHint = 'First Quatro'
         Items.Strings = (
-          'Alphabet'
+          ''
           '')
       end
       object Label7: TLabel
@@ -148,8 +144,6 @@ object Form2: TForm2
         Width = 250
         Height = 89
         Hint = 'Romeo falls in love with Ju...'
-        Lines.Strings = (
-          'These are next three letters')
         TabOrder = 2
       end
       object Label5: TLabel
@@ -220,7 +214,6 @@ object Form2: TForm2
         Top = 17
         Width = 200
         Height = 23
-        ItemIndex = 0
         TabOrder = 0
         TextHint = 'William Shakespeare'
         Items.Strings = (
@@ -257,10 +250,11 @@ object Form2: TForm2
         Height = 23
         ItemIndex = 0
         TabOrder = 1
-        TextHint = 'tragedy'
+        Text = 'unknown'
         Items.Strings = (
-          ''
-          '')
+          'unknown'
+          'sci-fi'
+          'fantasy')
       end
       object Label2: TLabel
         Left = 0
@@ -438,36 +432,8 @@ object Form2: TForm2
     OutputConverters = <>
     Left = 764
     Top = 13
-    object LinkFillControlToField2: TLinkFillControlToField
-      Category = 'Quick Bindings'
-      DataSource = BindSourceDB1
-      FieldName = 'author'
-      Control = ComboBox2
-      Track = True
-      FillDataSource = BindSourceDB2
-      FillDisplayFieldName = 'author'
-      AutoFill = True
-      FillExpressions = <>
-      FillHeaderExpressions = <>
-      FillBreakGroups = <>
-    end
-    object LinkFillControlToField3: TLinkFillControlToField
-      Category = 'Quick Bindings'
-      DataSource = BindSourceDB1
-      FieldName = 'genre'
-      Control = ComboBox3
-      Track = True
-      FillDataSource = BindSourceDB2
-      FillDisplayFieldName = 'genre'
-      AutoFill = True
-      FillExpressions = <>
-      FillHeaderExpressions = <>
-      FillBreakGroups = <>
-    end
     object LinkFillControlToField1: TLinkFillControlToField
       Category = 'Quick Bindings'
-      DataSource = BindSourceDB1
-      FieldName = 'series'
       Control = ComboBox4
       Track = True
       FillDataSource = BindSourceDB2
@@ -505,6 +471,31 @@ object Form2: TForm2
       Control = Edit2
       Track = True
     end
+    object LinkFillControlToField2: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      Control = ComboBox2
+      Track = True
+      FillDataSource = BindSourceDB2
+      FillDisplayFieldName = 'author'
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+    object LinkFillControlToField3: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'genre'
+      Control = ComboBox3
+      Track = True
+      FillDataSource = BindSourceDB3
+      FillValueFieldName = 'id'
+      FillDisplayFieldName = 'name'
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
   end
   object FDTable2: TFDTable
     Active = True
@@ -520,5 +511,19 @@ object Form2: TForm2
     ScopeMappings = <>
     Left = 792
     Top = 144
+  end
+  object FDQuery1: TFDQuery
+    Active = True
+    Connection = LibraryConnection
+    SQL.Strings = (
+      'SELECT id, name FROM genre')
+    Left = 756
+    Top = 200
+  end
+  object BindSourceDB3: TBindSourceDB
+    DataSet = FDQuery1
+    ScopeMappings = <>
+    Left = 408
+    Top = 256
   end
 end

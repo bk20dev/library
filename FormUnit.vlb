@@ -1,66 +1,67 @@
 ﻿[Label3]
-Coordinates=10,1041,46,51
+Coordinates=561,585,46,51
 
 [Label2]
-Coordinates=756,10,46,51
+Coordinates=738,10,46,51
 
 [Button1]
-Coordinates=82,1041,53,51
+Coordinates=381,585,53,51
 
 [Label7]
-Coordinates=262,1041,46,51
+Coordinates=82,662,46,51
 
 [ComboBox4]
-Coordinates=182,634,84,105
+Coordinates=628,73,84,105
 ExplicitSubNodes=
 
 [Memo2]
-Coordinates=198,10,53,51
+Coordinates=220,260,53,51
 
 [Image1]
-Coordinates=681,10,49,51
+Coordinates=155,585,49,51
 
 [Label6]
-Coordinates=428,1041,46,51
+Coordinates=309,585,46,51
 
 [Label1]
-Coordinates=929,10,46,51
+Coordinates=828,585,46,51
 
 [Label4]
-Coordinates=1001,10,46,51
+Coordinates=900,585,46,51
 
 [ComboBox3]
-Coordinates=182,910,84,105
+Coordinates=310,300,84,105
 
 [Label5]
-Coordinates=542,10,46,51
+Coordinates=10,662,46,51
 
 [StackPanel1]
-Coordinates=161,1041,75,51
+Coordinates=460,585,75,51
 
 [GridPanel1]
-Coordinates=334,1041,68,51
+Coordinates=633,585,68,51
 
 [Edit1]
-Coordinates=204,121,40,51
+Coordinates=140,20,40,51
 
 [Save]
-Coordinates=614,10,41,51
+Coordinates=10,585,41,51
 
 [Label8]
-Coordinates=1073,10,46,51
+Coordinates=154,662,46,51
 
 [StackPanel4]
-Coordinates=828,10,75,51
+Coordinates=972,585,75,51
 
 [Actions]
-Coordinates=464,10,52,51
+Coordinates=77,585,52,51
 
 [ComboBox2]
-Coordinates=182,295,84,105
+Coordinates=320,50,84,105
+ExplicitSubNodes=
 
 [StackPanel2]
-Coordinates=500,1041,75,51
+Coordinates=727,585,75,51
 
 [LibraryConnection]
 Coordinates=416,1,105,33
@@ -70,7 +71,7 @@ Coordinates=570,100,60,33
 Visible=False
 
 [BindSourceDB2]
-Coordinates=390,340,92,231
+Coordinates=620,260,92,231
 ExplicitSubNodes=
 
 [BindingsList1]
@@ -80,18 +81,25 @@ Coordinates=308,80,82,33
 Coordinates=72,1,63,51
 
 [NumberBox1]
-Coordinates=185,799,78,51
+Coordinates=170,470,78,51
 
 [Edit2]
-Coordinates=610,680,40,51
+Coordinates=230,340,40,51
 
 [FDTable2]
 Coordinates=770,60,60,33
 Visible=False
 
 [BindSourceDB1]
-Coordinates=770,60,92,231
+Coordinates=10,142,92,231
 
 [Button2]
-Coordinates=0,0,53,51
+Coordinates=230,585,53,51
+
+[FDQuery1]
+Coordinates=430,200,63,33
+Visible=False
+
+[BindSourceDB3]
+Coordinates=460,320,92,105
 

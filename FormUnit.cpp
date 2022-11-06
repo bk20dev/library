@@ -24,6 +24,8 @@ void __fastcall TForm2::SaveClick(TObject *Sender)
 		|| FDTable2->State == dsInsert;
 
 	if(isSaveModeEnabled) {
+		FDTable2->FieldByName("series")->AsString = ComboBox4->Text;
+		FDTable2->FieldByName("author")->AsString = ComboBox2->Text;
 		FDTable2->Post();
 	}
 

@@ -70,8 +70,6 @@ __published:	// IDE-managed Components
 	TFDTable *FDTable1;
 	TBindSourceDB *BindSourceDB2;
 	TBindingsList *BindingsList1;
-	TLinkFillControlToField *LinkFillControlToField2;
-	TLinkFillControlToField *LinkFillControlToField3;
 	TNumberBox *NumberBox1;
 	TEdit *Edit2;
 	TFDTable *FDTable2;
@@ -81,6 +79,10 @@ __published:	// IDE-managed Components
 	TLinkControlToField *LinkControlToField3;
 	TLinkControlToField *LinkControlToField4;
 	TButton *Button2;
+	TLinkFillControlToField *LinkFillControlToField2;
+	TLinkFillControlToField *LinkFillControlToField3;
+	TFDQuery *FDQuery1;
+	TBindSourceDB *BindSourceDB3;
 	void __fastcall SaveClick(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
 private:	// User declarations
