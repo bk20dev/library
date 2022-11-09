@@ -28,10 +28,10 @@ void TForm1::ApplyFilters()
 		OR series LIKE '%" + searchPhrase + "%')";
 
 	if(genre != "") {
-		filter += " AND (genre LIKE '%" + genre + "%')";
+		filter += " AND (genre_name LIKE '%" + genre + "%')";
 	}
 
-	FDTablebook->Filter = filter;
+	FDQuery2->Filter = filter;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Edit1Change(TObject *Sender)
@@ -55,7 +55,7 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ControlList1ItemDblClick(TObject *Sender)
 {
-	int itemId = FDTablebook->Fields->Fields[0]->AsInteger;
+	int itemId = FDQuery2->Fields->Fields[0]->AsInteger;
 	TForm3 *detailsForm = new TForm3(itemId, this);
 	detailsForm->Show();
 }
@@ -70,7 +70,7 @@ void __fastcall TForm1::Newbook1Click(TObject *Sender)
 
 void __fastcall TForm1::ControlListButton1Click(TObject *Sender)
 {
-	int itemId = FDTablebook->Fields->Fields[0]->AsInteger;
+	int itemId = FDQuery2->Fields->Fields[0]->AsInteger;
 	TForm2 *editForm = new TForm2(itemId, this);
     editForm->ShowModal();
 }

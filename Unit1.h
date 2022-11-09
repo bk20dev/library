@@ -68,13 +68,8 @@ __published:	// IDE-managed Components
 	TLabel *Label3;
 	TLabel *Label4;
 	TImage *Image1;
-	TBindSourceDB *BindSourcebook;
-	TFDTable *FDTablebook;
 	TBindingsList *BindingsList1;
-	TLinkPropertyToField *LinkPropertyToFieldCaption;
-	TLinkPropertyToField *LinkPropertyToFieldCaption2;
 	TFDConnection *S;
-	TLinkGridToDataSource *LinkGridToDataSourceBindSourcebook;
 	TMainMenu *MainMenu1;
 	TMenuItem *File1;
 	TMenuItem *Newbook1;
@@ -82,6 +77,11 @@ __published:	// IDE-managed Components
 	TFDQuery *FDQuery1;
 	TBindSourceDB *BindSourceDB1;
 	TLinkFillControlToField *LinkFillControlToField1;
+	TFDQuery *FDQuery2;
+	TBindSourceDB *BindSourceDB2;
+	TLinkPropertyToField *LinkPropertyToFieldCaption;
+	TLinkPropertyToField *LinkPropertyToFieldCaption2;
+	TLinkGridToDataSource *LinkGridToDataSourceBindSourceDB2;
 //	void __fastcall Co(int AIndex, TCanvas *ACanvas, TRect &ARect,
 //		  TOwnerDrawState AState);
 	void __fastcall Edit1Change(TObject *Sender);

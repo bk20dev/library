@@ -3,7 +3,7 @@ object Form1: TForm1
   Top = 0
   Caption = 'Form1'
   ClientHeight = 463
-  ClientWidth = 554
+  ClientWidth = 568
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,7 +16,7 @@ object Form1: TForm1
   object GridPanel1: TGridPanel
     Left = 0
     Top = 0
-    Width = 554
+    Width = 568
     Height = 69
     Align = alTop
     BevelOuter = bvNone
@@ -72,31 +72,33 @@ object Form1: TForm1
         Value = 100.000000000000000000
       end>
     TabOrder = 0
-    ExplicitWidth = 558
+    ExplicitWidth = 564
     object Button1: TButton
       Left = 0
       Top = 46
-      Width = 339
+      Width = 347
       Height = 23
       Align = alClient
       Caption = 'Clear filters'
       TabOrder = 0
       OnClick = Button1Click
+      ExplicitWidth = 345
     end
     object Edit1: TEdit
       Left = 125
       Top = 0
-      Width = 214
+      Width = 222
       Height = 23
       Align = alClient
       TabOrder = 1
       TextHint = 'Title, author, series, etc.'
       OnChange = Edit1Change
+      ExplicitWidth = 220
     end
     object ComboBox1: TComboBox
       Left = 125
       Top = 23
-      Width = 214
+      Width = 222
       Height = 23
       Align = alClient
       AutoDropDown = True
@@ -108,6 +110,7 @@ object Form1: TForm1
         'fantasy'
         'sci-fi'
         'unknown')
+      ExplicitWidth = 220
     end
     object Label1: TLabel
       AlignWithMargins = True
@@ -141,10 +144,10 @@ object Form1: TForm1
   object ControlList1: TControlList
     Left = 0
     Top = 69
-    Width = 554
+    Width = 568
     Height = 394
     Align = alClient
-    ItemCount = 3
+    ItemCount = 4
     ItemIndex = 0
     ItemMargins.Left = 0
     ItemMargins.Top = 0
@@ -156,6 +159,8 @@ object Form1: TForm1
     ParentColor = False
     TabOrder = 1
     OnItemDblClick = ControlList1ItemDblClick
+    ExplicitWidth = 564
+    ExplicitHeight = 393
     object Label3: TLabel
       AlignWithMargins = True
       Left = 76
@@ -651,57 +656,22 @@ object Form1: TForm1
       Proportional = True
     end
     object ControlListButton1: TControlListButton
-      Left = 494
+      Left = 493
       Top = 24
-      Width = 59
+      Width = 62
       Height = 25
+      Anchors = [akTop, akRight]
       Caption = 'Edit'
       LinkHotColor = clHighlight
       OnClick = ControlListButton1Click
+      ExplicitLeft = 494
     end
-  end
-  object BindSourcebook: TBindSourceDB
-    DataSet = FDTablebook
-    ScopeMappings = <>
-    Left = 8
-    Top = 208
-  end
-  object FDTablebook: TFDTable
-    Active = True
-    Filtered = True
-    FilterOptions = [foCaseInsensitive]
-    IndexFieldNames = 'id'
-    Connection = S
-    TableName = 'book'
-    Left = 40
-    Top = 208
   end
   object BindingsList1: TBindingsList
     Methods = <>
     OutputConverters = <>
     Left = 60
     Top = 149
-    object LinkPropertyToFieldCaption: TLinkPropertyToField
-      Category = 'Quick Bindings'
-      DataSource = BindSourcebook
-      FieldName = 'title'
-      Component = Label4
-      ComponentProperty = 'Caption'
-    end
-    object LinkPropertyToFieldCaption2: TLinkPropertyToField
-      Category = 'Quick Bindings'
-      DataSource = BindSourcebook
-      FieldName = 'description'
-      Component = Label3
-      CustomFormat = 'IfThen(IfAny(%0:s <> ""), %0:s, "No description")'
-      ComponentProperty = 'Caption'
-    end
-    object LinkGridToDataSourceBindSourcebook: TLinkGridToDataSource
-      Category = 'Quick Bindings'
-      DataSource = BindSourcebook
-      GridControl = ControlList1
-      Columns = <>
-    end
     object LinkFillControlToField1: TLinkFillControlToField
       Category = 'Quick Bindings'
       Control = ComboBox1
@@ -713,6 +683,27 @@ object Form1: TForm1
       FillExpressions = <>
       FillHeaderExpressions = <>
       FillBreakGroups = <>
+    end
+    object LinkPropertyToFieldCaption: TLinkPropertyToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      FieldName = 'title'
+      Component = Label4
+      ComponentProperty = 'Caption'
+    end
+    object LinkPropertyToFieldCaption2: TLinkPropertyToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      FieldName = 'description'
+      Component = Label3
+      CustomFormat = 'IfThen(IfAny(%0:s <> ""), %0:s, "No description")'
+      ComponentProperty = 'Caption'
+    end
+    object LinkGridToDataSourceBindSourceDB2: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      GridControl = ControlList1
+      Columns = <>
     end
   end
   object S: TFDConnection
@@ -747,5 +738,25 @@ object Form1: TForm1
     ScopeMappings = <>
     Left = 8
     Top = 264
+  end
+  object FDQuery2: TFDQuery
+    Active = True
+    Filtered = True
+    Connection = S
+    SQL.Strings = (
+      'SELECT'
+      '    b.id, b.title, b.series, b.description, b.author,'
+      '    g.name genre_name'
+      'FROM book b'
+      'JOIN genre g'
+      '    ON b.genre = g.id')
+    Left = 40
+    Top = 224
+  end
+  object BindSourceDB2: TBindSourceDB
+    DataSet = FDQuery2
+    ScopeMappings = <>
+    Left = 8
+    Top = 224
   end
 end
