@@ -3,8 +3,8 @@ object Form2: TForm2
   Top = 0
   ActiveControl = Edit1
   Caption = 'Form2'
-  ClientHeight = 468
-  ClientWidth = 741
+  ClientHeight = 464
+  ClientWidth = 725
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,8 +19,8 @@ object Form2: TForm2
   object GridPanel1: TGridPanel
     Left = 12
     Top = 8
-    Width = 717
-    Height = 452
+    Width = 701
+    Height = 448
     Align = alClient
     BevelOuter = bvNone
     ColumnCollection = <
@@ -64,8 +64,8 @@ object Form2: TForm2
         Value = 100.000000000000000000
       end>
     TabOrder = 0
-    ExplicitWidth = 737
-    ExplicitHeight = 457
+    ExplicitWidth = 697
+    ExplicitHeight = 447
     object StackPanel1: TStackPanel
       Left = 0
       Top = 0
@@ -112,7 +112,6 @@ object Form2: TForm2
         Width = 250
         Height = 23
         TabOrder = 0
-        Text = 'a'
         TextHint = 'Romeo and Juliet'
       end
       object Label6: TLabel
@@ -127,12 +126,10 @@ object Form2: TForm2
         Top = 59
         Width = 200
         Height = 23
-        ItemIndex = 0
         TabOrder = 1
         TextHint = 'First Quatro'
         Items.Strings = (
-          ''
-          '')
+          'a')
       end
       object Label7: TLabel
         Left = 0
@@ -147,8 +144,6 @@ object Form2: TForm2
         Width = 250
         Height = 89
         Hint = 'Romeo falls in love with Ju...'
-        Lines.Strings = (
-          'a')
         TabOrder = 2
       end
       object Label5: TLabel
@@ -219,12 +214,10 @@ object Form2: TForm2
         Top = 17
         Width = 200
         Height = 23
-        ItemIndex = 0
         TabOrder = 0
         TextHint = 'William Shakespeare'
         Items.Strings = (
-          ''
-          'b')
+          'a')
       end
       object Label3: TLabel
         Left = 0
@@ -254,9 +247,9 @@ object Form2: TForm2
         Top = 101
         Width = 145
         Height = 23
-        ItemIndex = 1
+        ItemIndex = 0
         TabOrder = 2
-        Text = 'sci-fi'
+        Text = 'unknown'
         Items.Strings = (
           'unknown'
           'sci-fi'
@@ -492,6 +485,7 @@ object Form2: TForm2
       FieldName = 'genre'
       Control = ComboBox3
       Track = True
+      CustomFormat = 'IfThen(IfAny(%0:s <> nil), %0:s, 1)'
       FillDataSource = BindSourceDB3
       FillValueFieldName = 'id'
       FillDisplayFieldName = 'name'

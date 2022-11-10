@@ -19,7 +19,7 @@ __fastcall TForm2::TForm2(int itemId, TComponent* Owner)
         ComboBox3->ItemIndex = 0;
 	} else {
 		FDTable2->Edit();
-    }
+	}
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm2::SaveClick(TObject *Sender)
@@ -30,6 +30,11 @@ void __fastcall TForm2::SaveClick(TObject *Sender)
 	if(isSaveModeEnabled) {
    		FDTable2->FieldByName("series")->AsString = ComboBox4->Text;
 		FDTable2->FieldByName("author")->AsString = ComboBox2->Text;
+
+		TValue genre = LinkFillControlToField3->BindList->GetSelectedValue();
+		UnicodeString genreId = genre.AsString();
+		FDTable2->FieldByName("genre")->AsString = genreId;
+
 		FDTable2->Post();
 	}
 
@@ -52,4 +57,3 @@ void __fastcall TForm2::FDTable2AfterEdit(TDataSet *DataSet)
     ComboBox2->Text = author;
 }
 //---------------------------------------------------------------------------
-
