@@ -1,9 +1,10 @@
 object Form2: TForm2
   Left = 0
   Top = 0
+  ActiveControl = Edit1
   Caption = 'Form2'
-  ClientHeight = 502
-  ClientWidth = 823
+  ClientHeight = 474
+  ClientWidth = 765
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,11 +19,10 @@ object Form2: TForm2
   object GridPanel1: TGridPanel
     Left = 12
     Top = 8
-    Width = 799
-    Height = 486
+    Width = 741
+    Height = 458
     Align = alClient
     BevelOuter = bvNone
-    Caption = '1597'
     ColumnCollection = <
       item
         SizeStyle = ssAuto
@@ -64,6 +64,7 @@ object Form2: TForm2
         Value = 100.000000000000000000
       end>
     TabOrder = 0
+    ExplicitWidth = 1057
     object StackPanel1: TStackPanel
       Left = 0
       Top = 0
@@ -110,7 +111,7 @@ object Form2: TForm2
         Width = 250
         Height = 23
         TabOrder = 0
-        Text = 'Da Michigan'
+        Text = 'asdf'
         TextHint = 'Romeo and Juliet'
       end
       object Label6: TLabel
@@ -125,11 +126,18 @@ object Form2: TForm2
         Top = 59
         Width = 200
         Height = 23
+        ItemIndex = 0
         TabOrder = 1
+        Text = 'b'
         TextHint = 'First Quatro'
         Items.Strings = (
-          ''
-          '')
+          'b'
+          ',asdf'#322'gorzatadasdf'
+          'dopcuia'
+          's4'
+          'da'
+          'dfas'
+          'series4')
       end
       object Label7: TLabel
         Left = 0
@@ -163,7 +171,7 @@ object Form2: TForm2
         MaxValue = 5.000000000000000000
         SmallStep = 0.500000000000000000
         TabOrder = 3
-        Value = 1.000000000000000000
+        Value = 5.000000000000000000
         SpinButtonOptions.Placement = nbspCompact
       end
     end
@@ -214,11 +222,18 @@ object Form2: TForm2
         Top = 17
         Width = 200
         Height = 23
+        ItemIndex = 0
         TabOrder = 0
+        Text = 'a'
         TextHint = 'William Shakespeare'
         Items.Strings = (
+          'a'
+          'd3235'
+          'amogus'
           ''
-          '')
+          ''
+          'dfasdf'
+          'author3')
       end
       object Label3: TLabel
         Left = 0
@@ -233,7 +248,8 @@ object Form2: TForm2
         Width = 121
         Height = 23
         NumbersOnly = True
-        TabOrder = 3
+        TabOrder = 1
+        Text = '2022'
         TextHint = '1597'
       end
       object Label8: TLabel
@@ -249,7 +265,7 @@ object Form2: TForm2
         Width = 145
         Height = 23
         ItemIndex = 0
-        TabOrder = 1
+        TabOrder = 2
         Text = 'unknown'
         Items.Strings = (
           'unknown'
@@ -269,7 +285,7 @@ object Form2: TForm2
         Width = 145
         Height = 25
         Caption = 'Pick image'
-        TabOrder = 2
+        TabOrder = 3
       end
       object Image1: TImage
         AlignWithMargins = True
@@ -410,31 +426,40 @@ object Form2: TForm2
       'ConnectionDef=library')
     Connected = True
     LoginPrompt = False
-    Left = 812
-    Top = 9
+    Left = 644
+    Top = 137
   end
   object FDTable1: TFDTable
     Active = True
     IndexFieldNames = 'id'
     Connection = LibraryConnection
+    FetchOptions.AssignedValues = [evItems]
+    FetchOptions.Items = [fiBlobs, fiDetails]
+    UpdateOptions.AssignedValues = [uvEDelete, uvEInsert, uvEUpdate]
+    UpdateOptions.EnableDelete = False
+    UpdateOptions.EnableInsert = False
+    UpdateOptions.EnableUpdate = False
     TableName = 'book'
-    Left = 756
-    Top = 88
+    Left = 588
+    Top = 216
   end
   object BindSourceDB2: TBindSourceDB
     DataSet = FDTable1
     ScopeMappings = <>
-    Left = 792
-    Top = 88
+    Left = 624
+    Top = 216
   end
   object BindingsList1: TBindingsList
     Methods = <>
     OutputConverters = <>
-    Left = 764
-    Top = 13
+    Left = 596
+    Top = 141
     object LinkFillControlToField1: TLinkFillControlToField
       Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'series'
       Control = ComboBox4
+      Direction = linkControlToData
       Track = True
       FillDataSource = BindSourceDB2
       FillDisplayFieldName = 'series'
@@ -471,17 +496,6 @@ object Form2: TForm2
       Control = Edit2
       Track = True
     end
-    object LinkFillControlToField2: TLinkFillControlToField
-      Category = 'Quick Bindings'
-      Control = ComboBox2
-      Track = True
-      FillDataSource = BindSourceDB2
-      FillDisplayFieldName = 'author'
-      AutoFill = True
-      FillExpressions = <>
-      FillHeaderExpressions = <>
-      FillBreakGroups = <>
-    end
     object LinkFillControlToField3: TLinkFillControlToField
       Category = 'Quick Bindings'
       DataSource = BindSourceDB1
@@ -496,34 +510,49 @@ object Form2: TForm2
       FillHeaderExpressions = <>
       FillBreakGroups = <>
     end
+    object LinkFillControlToField2: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'author'
+      Control = ComboBox2
+      Direction = linkControlToData
+      Track = True
+      FillDataSource = BindSourceDB2
+      FillDisplayFieldName = 'author'
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
   end
   object FDTable2: TFDTable
     Active = True
+    AfterEdit = FDTable2AfterEdit
     Filtered = True
     IndexFieldNames = 'id'
     Connection = LibraryConnection
     TableName = 'book'
-    Left = 756
-    Top = 144
+    Left = 588
+    Top = 272
   end
   object BindSourceDB1: TBindSourceDB
     DataSet = FDTable2
     ScopeMappings = <>
-    Left = 792
-    Top = 144
+    Left = 624
+    Top = 272
   end
   object FDQuery1: TFDQuery
     Active = True
     Connection = LibraryConnection
     SQL.Strings = (
       'SELECT id, name FROM genre')
-    Left = 756
-    Top = 200
+    Left = 588
+    Top = 328
   end
   object BindSourceDB3: TBindSourceDB
     DataSet = FDQuery1
     ScopeMappings = <>
-    Left = 408
-    Top = 256
+    Left = 624
+    Top = 328
   end
 end

@@ -41,6 +41,7 @@
 #include <Vcl.Bind.DBEngExt.hpp>
 #include <Vcl.Bind.Editors.hpp>
 #include <Vcl.NumberBox.hpp>
+#include <Vcl.Menus.hpp>
 //---------------------------------------------------------------------------
 class TForm2 : public TForm
 {
@@ -79,12 +80,13 @@ __published:	// IDE-managed Components
 	TLinkControlToField *LinkControlToField3;
 	TLinkControlToField *LinkControlToField4;
 	TButton *Button2;
-	TLinkFillControlToField *LinkFillControlToField2;
 	TLinkFillControlToField *LinkFillControlToField3;
 	TFDQuery *FDQuery1;
 	TBindSourceDB *BindSourceDB3;
+	TLinkFillControlToField *LinkFillControlToField2;
 	void __fastcall SaveClick(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
+	void __fastcall FDTable2AfterEdit(TDataSet *DataSet);
 private:	// User declarations
     int itemId;
 public:		// User declarations
