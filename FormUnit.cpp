@@ -18,7 +18,7 @@ __fastcall TForm2::TForm2(int itemId, TComponent* Owner)
    		Button2->Enabled = false;
         ComboBox3->ItemIndex = 0;
 	} else {
-        FDTable2->Edit();
+		FDTable2->Edit();
     }
 }
 //---------------------------------------------------------------------------
@@ -39,7 +39,7 @@ void __fastcall TForm2::SaveClick(TObject *Sender)
 void __fastcall TForm2::Button2Click(TObject *Sender)
 {
 	if(itemId != -1) {
-		FDTable1->Delete();
+        FDTable1->ExecSQL("DELETE FROM book WHERE id=" + IntToStr(itemId));
 		Close();
 	}
 }

@@ -3,8 +3,8 @@ object Form2: TForm2
   Top = 0
   ActiveControl = Edit1
   Caption = 'Form2'
-  ClientHeight = 474
-  ClientWidth = 765
+  ClientHeight = 468
+  ClientWidth = 741
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,8 +19,8 @@ object Form2: TForm2
   object GridPanel1: TGridPanel
     Left = 12
     Top = 8
-    Width = 741
-    Height = 458
+    Width = 717
+    Height = 452
     Align = alClient
     BevelOuter = bvNone
     ColumnCollection = <
@@ -64,7 +64,8 @@ object Form2: TForm2
         Value = 100.000000000000000000
       end>
     TabOrder = 0
-    ExplicitWidth = 1057
+    ExplicitWidth = 737
+    ExplicitHeight = 457
     object StackPanel1: TStackPanel
       Left = 0
       Top = 0
@@ -111,7 +112,7 @@ object Form2: TForm2
         Width = 250
         Height = 23
         TabOrder = 0
-        Text = 'asdf'
+        Text = 'a'
         TextHint = 'Romeo and Juliet'
       end
       object Label6: TLabel
@@ -128,16 +129,10 @@ object Form2: TForm2
         Height = 23
         ItemIndex = 0
         TabOrder = 1
-        Text = 'b'
         TextHint = 'First Quatro'
         Items.Strings = (
-          'b'
-          ',asdf'#322'gorzatadasdf'
-          'dopcuia'
-          's4'
-          'da'
-          'dfas'
-          'series4')
+          ''
+          '')
       end
       object Label7: TLabel
         Left = 0
@@ -152,6 +147,8 @@ object Form2: TForm2
         Width = 250
         Height = 89
         Hint = 'Romeo falls in love with Ju...'
+        Lines.Strings = (
+          'a')
         TabOrder = 2
       end
       object Label5: TLabel
@@ -171,7 +168,7 @@ object Form2: TForm2
         MaxValue = 5.000000000000000000
         SmallStep = 0.500000000000000000
         TabOrder = 3
-        Value = 5.000000000000000000
+        Value = 1.000000000000000000
         SpinButtonOptions.Placement = nbspCompact
       end
     end
@@ -224,16 +221,10 @@ object Form2: TForm2
         Height = 23
         ItemIndex = 0
         TabOrder = 0
-        Text = 'a'
         TextHint = 'William Shakespeare'
         Items.Strings = (
-          'a'
-          'd3235'
-          'amogus'
           ''
-          ''
-          'dfasdf'
-          'author3')
+          'b')
       end
       object Label3: TLabel
         Left = 0
@@ -249,7 +240,6 @@ object Form2: TForm2
         Height = 23
         NumbersOnly = True
         TabOrder = 1
-        Text = '2022'
         TextHint = '1597'
       end
       object Label8: TLabel
@@ -264,9 +254,9 @@ object Form2: TForm2
         Top = 101
         Width = 145
         Height = 23
-        ItemIndex = 0
+        ItemIndex = 1
         TabOrder = 2
-        Text = 'unknown'
+        Text = 'sci-fi'
         Items.Strings = (
           'unknown'
           'sci-fi'
