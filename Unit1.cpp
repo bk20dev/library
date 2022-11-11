@@ -82,3 +82,50 @@ void __fastcall TForm1::FormClose(TObject *Sender, TCloseAction &Action)
 	FDQuery2->Refresh();
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm1::Import1Click(TObject *Sender)
+{
+	bool success = OpenDialog1->Execute();
+	if(!success) return;
+
+	UnicodeString filePath = FileSaveDialog1->FileName;
+	int replaceAction =
+		MessageDlg("Replace current collection?", mtCustom, mbYesNoCancel, 0, mbNo);
+
+	if(replaceAction == mrNo) {
+		Import(filePath);
+		return;
+	}
+
+	if(replaceAction == mrYes) {
+		int confirmation =
+			MessageDlg("Do you really want to replace your current collection?", mtConfirmation, mbYesNo, 0, mbNo);
+		if(confirmation == mrYes) {
+			ImportReplace(filePath);
+        }
+	}
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Export1Click(TObject *Sender)
+{
+	bool success = FileSaveDialog1->Execute();
+	if(!success) return;
+
+	UnicodeString filePath = FileSaveDialog1->FileName;
+    Export(filePath);
+}
+//---------------------------------------------------------------------------
+void TForm1::Export(UnicodeString filePath)
+{
+	ShowMessage("Export: " + filePath);
+}
+//---------------------------------------------------------------------------
+void TForm1::Import(UnicodeString filePath)
+{
+	ShowMessage("Import: " + filePath);
+}
+//---------------------------------------------------------------------------
+void TForm1::ImportReplace(UnicodeString filePath)
+{
+	ShowMessage("ImportReplace: " + filePath);
+}
+//---------------------------------------------------------------------------

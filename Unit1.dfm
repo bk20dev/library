@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 456
-  ClientWidth = 540
+  ClientHeight = 455
+  ClientWidth = 536
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,7 +16,7 @@ object Form1: TForm1
   object GridPanel1: TGridPanel
     Left = 0
     Top = 0
-    Width = 540
+    Width = 536
     Height = 69
     Align = alTop
     BevelOuter = bvNone
@@ -81,7 +81,6 @@ object Form1: TForm1
       Caption = 'Clear filters'
       TabOrder = 0
       OnClick = Button1Click
-      ExplicitWidth = 335
     end
     object Edit1: TEdit
       Left = 125
@@ -92,7 +91,6 @@ object Form1: TForm1
       TabOrder = 1
       TextHint = 'Title, author, series, etc.'
       OnChange = Edit1Change
-      ExplicitWidth = 210
     end
     object ComboBox1: TComboBox
       Left = 125
@@ -109,7 +107,6 @@ object Form1: TForm1
         'fantasy'
         'sci-fi'
         'unknown')
-      ExplicitWidth = 210
     end
     object Label1: TLabel
       AlignWithMargins = True
@@ -143,9 +140,11 @@ object Form1: TForm1
   object ControlList1: TControlList
     Left = 0
     Top = 69
-    Width = 540
-    Height = 387
+    Width = 536
+    Height = 386
     Align = alClient
+    ItemCount = 1
+    ItemIndex = 0
     ItemMargins.Left = 0
     ItemMargins.Top = 0
     ItemMargins.Right = 0
@@ -168,6 +167,7 @@ object Form1: TForm1
       Margins.Bottom = 2
       Anchors = [akLeft, akTop, akRight, akBottom]
       AutoSize = False
+      Caption = 'No description'
       EllipsisPosition = epEndEllipsis
       ShowAccelChar = False
       Transparent = True
@@ -179,6 +179,7 @@ object Form1: TForm1
       Width = 381
       Height = 13
       AutoSize = False
+      Caption = 'Romeo'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
@@ -716,6 +717,17 @@ object Form1: TForm1
         OnClick = Newbook1Click
       end
     end
+    object Backup1: TMenuItem
+      Caption = 'Backup'
+      object Export1: TMenuItem
+        Caption = 'Export'
+        OnClick = Export1Click
+      end
+      object Import1: TMenuItem
+        Caption = 'Import'
+        OnClick = Import1Click
+      end
+    end
   end
   object FDQuery1: TFDQuery
     Connection = S
@@ -749,5 +761,20 @@ object Form1: TForm1
     ScopeMappings = <>
     Left = 8
     Top = 224
+  end
+  object FileSaveDialog1: TFileSaveDialog
+    DefaultExtension = 'db'
+    DefaultFolder = '~/Downloads'
+    FavoriteLinks = <>
+    FileName = 'library'
+    FileTypes = <>
+    Options = [fdoOverWritePrompt, fdoStrictFileTypes, fdoPathMustExist]
+    Title = 'Export as'
+    Left = 184
+    Top = 152
+  end
+  object OpenDialog1: TOpenDialog
+    Left = 216
+    Top = 152
   end
 end
