@@ -37,6 +37,8 @@
 #include <Vcl.Bind.Editors.hpp>
 #include <Vcl.ExtCtrls.hpp>
 #include <Vcl.WinXPanels.hpp>
+#include <Vcl.Graphics.hpp>
+#include <Vcl.Imaging.pngimage.hpp>
 //---------------------------------------------------------------------------
 class TForm3 : public TForm
 {
@@ -64,6 +66,7 @@ __published:	// IDE-managed Components
 	TLabel *Label7;
 	TLinkPropertyToField *LinkPropertyToFieldCaption;
 	TLinkPropertyToField *LinkPropertyToFieldCaption7;
+	TLinkControlToField *LinkControlToField1;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm3(int itemId, TComponent* Owner);

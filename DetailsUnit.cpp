@@ -15,3 +15,4 @@ __fastcall TForm3::TForm3(int itemId, TComponent* Owner)
 	FDQuery1->Filter = "id=" + IntToStr(itemId);
 }
 //---------------------------------------------------------------------------
+
