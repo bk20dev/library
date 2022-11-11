@@ -100,6 +100,8 @@ __published:	// IDE-managed Components
 	void __fastcall Import1Click(TObject *Sender);
 	void __fastcall Export1Click(TObject *Sender);
 private:	// User declarations
+	void SetupDatabase(UnicodeString dbName);
+	void CleanSetupDatabase(UnicodeString dbName);
 	void ApplyFilters();
 	void Export(UnicodeString filePath);
 	void Import(UnicodeString filePath);

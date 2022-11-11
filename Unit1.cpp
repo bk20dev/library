@@ -114,6 +114,66 @@ void __fastcall TForm1::Export1Click(TObject *Sender)
     Export(filePath);
 }
 //---------------------------------------------------------------------------
+void TForm1::SetupDatabase(UnicodeString dbName) {
+	auto params = std::make_unique<TFDParams>();
+
+	if(dbName != "" && *dbName.LastChar() != '.')
+		dbName += ".";
+
+
+	auto genre = System::Variant(dbName + "genre");
+	auto book  = System::Variant(dbName + "book");
+
+	params->Add("genre", genre);
+	params->Add("book", book);
+
+	S->ExecSQL(
+	"CREATE TABLE IF NOT EXISTS :genre (\n"
+	"  id INTEGER NOT NULL\n"
+	"    PRIMARY KEY AUTOINCREMENT,\n"
+	"  name TEXT NOT NULL\n"
+	");", params.get());
+
+	S->ExecSQL(
+	"CREATE TABLE IF NOT EXISTS :book (\n"
+	"  id INTEGER NOT NULL\n"
+	"    PRIMARY KEY AUTOINCREMENT,\n"
+	"  cover_path TEXT,\n"
+	"  series TEXT,\n"
+	"  title TEXT NOT NULL,\n"
+	"  genre INTEGER NOT NULL DEFAULT 1\n"
+	"    REFERENCES genre(id),\n"
+	"  description TEXT,\n"
+	"  author TEXT,\n"
+	"  release_year INTEGER,\n"
+	"  rating REAL,\n"
+	"  cover BLOB\n"
+	");", params.get());
+}
+//---------------------------------------------------------------------------
+void TForm1::CleanSetupDatabase(UnicodeString dbName) {
+//	auto params = std::make_unique<TFDParams>();
+
+	if(dbName != "" && *dbName.LastChar() != '.')
+		dbName += ".";
+
+//
+//	auto genre = System::Variant(dbName + "genre");
+//	auto book  = System::Variant(dbName + "book");
+//
+//	params->Add("genre", genre);
+//	params->Add("book", book);
+
+	ShowMessage("before dtb");
+	S->ExecSQL("DROP TABLE " + dbName + "book;");
+	ShowMessage("before dtg");
+	S->ExecSQL("DROP TABLE " + dbName + "genre;");
+	S->ExecSQL("VACUUM;");
+
+    ShowMessage("before stdb");
+    SetupDatabase(dbName);
+}
+//---------------------------------------------------------------------------
 void TForm1::PrepareDatabase(UnicodeString filePath) {
 	auto params = std::make_unique<TFDParams>();
 	auto fpv = System::Variant(filePath);
@@ -133,10 +193,22 @@ void TForm1::Export(UnicodeString filePath)
 //	ShowMessage("Export: " + filePath);
 	PrepareDatabase(filePath);
 
+    // important! the way i've done this... may? break when there is an update to the schema... but idc!
+
 	// todo:
 	//   - read tables
 	//   - create them
 	//   - insert data
+
+	CleanSetupDatabase("PreparedDatabase");
+
+	S->ExecSQL(
+		"INSERT INTO PreparedDatabase.genres SELECT * FROM genres;"
+	);
+
+	S->ExecSQL(
+		"INSERT INTO PreparedDatabase.book SELECT * FROM book;"
+	);
 
     UnlinkPreparedDatabase();
 }
