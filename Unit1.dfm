@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 454
-  ClientWidth = 532
+  ClientHeight = 453
+  ClientWidth = 528
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,7 +16,7 @@ object Form1: TForm1
   object GridPanel1: TGridPanel
     Left = 0
     Top = 0
-    Width = 532
+    Width = 528
     Height = 69
     Align = alTop
     BevelOuter = bvNone
@@ -75,7 +75,7 @@ object Form1: TForm1
     object Button1: TButton
       Left = 0
       Top = 46
-      Width = 329
+      Width = 327
       Height = 23
       Align = alClient
       Caption = 'Clear filters'
@@ -85,7 +85,7 @@ object Form1: TForm1
     object Edit1: TEdit
       Left = 125
       Top = 0
-      Width = 204
+      Width = 202
       Height = 23
       Align = alClient
       TabOrder = 1
@@ -95,7 +95,7 @@ object Form1: TForm1
     object ComboBox1: TComboBox
       Left = 125
       Top = 23
-      Width = 204
+      Width = 202
       Height = 23
       Align = alClient
       AutoDropDown = True
@@ -140,8 +140,8 @@ object Form1: TForm1
   object ControlList1: TControlList
     Left = 0
     Top = 69
-    Width = 532
-    Height = 385
+    Width = 528
+    Height = 384
     Align = alClient
     ItemCount = 4
     ItemIndex = 0
@@ -155,7 +155,6 @@ object Form1: TForm1
     ParentColor = False
     TabOrder = 1
     OnItemDblClick = ControlList1ItemDblClick
-    ExplicitTop = 75
     object Label3: TLabel
       AlignWithMargins = True
       Left = 76

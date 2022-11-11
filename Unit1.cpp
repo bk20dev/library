@@ -152,22 +152,22 @@ void TForm1::SetupDatabase(UnicodeString dbName) {
 }
 //---------------------------------------------------------------------------
 void TForm1::CleanSetupDatabase(UnicodeString dbName) {
-//	auto params = std::make_unique<TFDParams>();
+	auto params = std::make_unique<TFDParams>();
 
 	if(dbName != "" && *dbName.LastChar() != '.')
 		dbName += ".";
 
-//
-//	auto genre = System::Variant(dbName + "genre");
-//	auto book  = System::Variant(dbName + "book");
-//
-//	params->Add("genre", genre);
-//	params->Add("book", book);
+
+	auto genre = System::Variant(dbName + "genre");
+	auto book  = System::Variant(dbName + "book");
+
+   	params->Add("book", book);
+	params->Add("genre", genre);
 
 	ShowMessage("before dtb");
-	S->ExecSQL("DROP TABLE " + dbName + "book;");
+	S->ExecSQL("DROP TABLE :book ;", params.get());
 	ShowMessage("before dtg");
-	S->ExecSQL("DROP TABLE " + dbName + "genre;");
+	S->ExecSQL("DROP TABLE :genre ;", params.get());
 	S->ExecSQL("VACUUM;");
 
     ShowMessage("before stdb");
