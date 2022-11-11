@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 462
-  ClientWidth = 564
+  ClientHeight = 456
+  ClientWidth = 540
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,7 +16,7 @@ object Form1: TForm1
   object GridPanel1: TGridPanel
     Left = 0
     Top = 0
-    Width = 564
+    Width = 540
     Height = 69
     Align = alTop
     BevelOuter = bvNone
@@ -76,27 +76,29 @@ object Form1: TForm1
     object Button1: TButton
       Left = 0
       Top = 46
-      Width = 345
+      Width = 333
       Height = 23
       Align = alClient
       Caption = 'Clear filters'
       TabOrder = 0
       OnClick = Button1Click
+      ExplicitWidth = 335
     end
     object Edit1: TEdit
       Left = 125
       Top = 0
-      Width = 220
+      Width = 208
       Height = 23
       Align = alClient
       TabOrder = 1
       TextHint = 'Title, author, series, etc.'
       OnChange = Edit1Change
+      ExplicitWidth = 210
     end
     object ComboBox1: TComboBox
       Left = 125
       Top = 23
-      Width = 220
+      Width = 208
       Height = 23
       Align = alClient
       AutoDropDown = True
@@ -108,6 +110,7 @@ object Form1: TForm1
         'fantasy'
         'sci-fi'
         'unknown')
+      ExplicitWidth = 210
     end
     object Label1: TLabel
       AlignWithMargins = True
@@ -141,11 +144,9 @@ object Form1: TForm1
   object ControlList1: TControlList
     Left = 0
     Top = 69
-    Width = 564
-    Height = 393
+    Width = 540
+    Height = 387
     Align = alClient
-    ItemCount = 4
-    ItemIndex = 0
     ItemMargins.Left = 0
     ItemMargins.Top = 0
     ItemMargins.Right = 0
@@ -162,7 +163,7 @@ object Form1: TForm1
       AlignWithMargins = True
       Left = 83
       Top = 24
-      Width = 405
+      Width = 381
       Height = 38
       Margins.Left = 10
       Margins.Top = 2
@@ -170,7 +171,6 @@ object Form1: TForm1
       Margins.Bottom = 2
       Anchors = [akLeft, akTop, akRight, akBottom]
       AutoSize = False
-      Caption = 'asdsdsd'
       EllipsisPosition = epEndEllipsis
       ShowAccelChar = False
       Transparent = True
@@ -179,10 +179,9 @@ object Form1: TForm1
     object Label4: TLabel
       Left = 76
       Top = 6
-      Width = 405
+      Width = 381
       Height = 13
       AutoSize = False
-      Caption = 'a'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
@@ -4926,15 +4925,14 @@ object Form1: TForm1
       Proportional = True
     end
     object ControlListButton1: TControlListButton
-      Left = 493
-      Top = 24
+      Left = 469
+      Top = 25
       Width = 62
       Height = 25
       Anchors = [akTop, akRight]
       Caption = 'Edit'
       LinkHotColor = clHighlight
       OnClick = ControlListButton1Click
-      ExplicitLeft = 494
     end
   end
   object BindingsList1: TBindingsList
@@ -5004,12 +5002,11 @@ object Form1: TForm1
     end
   end
   object FDQuery1: TFDQuery
-    Active = True
     Connection = S
     SQL.Strings = (
       'SELECT id, name FROM genre')
     Left = 40
-    Top = 264
+    Top = 272
   end
   object BindSourceDB1: TBindSourceDB
     DataSet = FDQuery1

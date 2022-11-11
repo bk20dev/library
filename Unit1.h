@@ -92,6 +92,7 @@ __published:	// IDE-managed Components
 	void __fastcall ControlList1ItemDblClick(TObject *Sender);
 	void __fastcall Newbook1Click(TObject *Sender);
 	void __fastcall ControlListButton1Click(TObject *Sender);
+	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 private:	// User declarations
 //	void UpdateCurrentListItem(const Book &book);
 	void ApplyFilters();

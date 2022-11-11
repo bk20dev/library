@@ -64,6 +64,7 @@ void __fastcall TForm1::ControlList1ItemDblClick(TObject *Sender)
 void __fastcall TForm1::Newbook1Click(TObject *Sender)
 {
 	TForm2* editForm = new TForm2(-1, this);
+    editForm->OnClose = FormClose;
 	editForm->ShowModal();
 }
 //---------------------------------------------------------------------------
@@ -72,8 +73,12 @@ void __fastcall TForm1::ControlListButton1Click(TObject *Sender)
 {
 	int itemId = FDQuery2->Fields->Fields[0]->AsInteger;
 	TForm2 *editForm = new TForm2(itemId, this);
+    editForm->OnClose = FormClose;
     editForm->ShowModal();
 }
 //---------------------------------------------------------------------------
-
-
+void __fastcall TForm1::FormClose(TObject *Sender, TCloseAction &Action)
+{
+	FDQuery2->Refresh();
+}
+//---------------------------------------------------------------------------

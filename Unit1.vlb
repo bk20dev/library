@@ -1,4 +1,4 @@
-﻿[Image1]
+[Image1]
 Coordinates=10,398,49,51
 
 [ComboBox1]
@@ -34,7 +34,7 @@ Coordinates=10,87,46,51
 Coordinates=321,398,53,51
 
 []
-Coordinates=561,200,91,278
+Coordinates=0,0,53,51
 Visible=True
 ExplicitSubNodes=Filter
 
