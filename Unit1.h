@@ -52,6 +52,7 @@
 #include <Vcl.CategoryButtons.hpp>
 #include <System.ImageList.hpp>
 #include <Vcl.ImgList.hpp>
+#include <Vcl.Imaging.pngimage.hpp>
 //---------------------------------------------------------------------------
 #include <vector>
 #include "Book.h"
@@ -82,6 +83,7 @@ __published:	// IDE-managed Components
 	TLinkPropertyToField *LinkPropertyToFieldCaption;
 	TLinkPropertyToField *LinkPropertyToFieldCaption2;
 	TLinkGridToDataSource *LinkGridToDataSourceBindSourceDB2;
+	TLinkControlToField *LinkControlToField1;
 //	void __fastcall Co(int AIndex, TCanvas *ACanvas, TRect &ARect,
 //		  TOwnerDrawState AState);
 	void __fastcall Edit1Change(TObject *Sender);

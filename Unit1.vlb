@@ -1,37 +1,37 @@
-﻿[Image1]
-Coordinates=371,213,49,51
+[Image1]
+Coordinates=10,398,49,51
 
 [ComboBox1]
-Coordinates=10,213,84,105
+Coordinates=10,248,84,105
 
 [StatusBar1]
 Coordinates=10,464,78,58
 
 [Edit1]
-Coordinates=10,344,40,51
+Coordinates=251,398,40,51
 
 [Label1]
-Coordinates=242,344,46,51
+Coordinates=93,398,46,51
 
 [GridPanel1]
-Coordinates=76,344,68,51
+Coordinates=323,248,68,51
 
 [Label2]
-Coordinates=170,344,46,51
+Coordinates=172,398,46,51
 
 [Label3]
-Coordinates=10,73,46,51
+Coordinates=345,146,46,51
 
 [ControlList1]
-Coordinates=308,17,74,51
+Coordinates=329,28,74,51
 Visible=True
 ExplicitSubNodes=
 
 [Label4]
-Coordinates=322,128,46,51
+Coordinates=10,87,46,51
 
 [Button1]
-Coordinates=292,213,53,51
+Coordinates=321,398,53,51
 
 []
 Coordinates=0,0,53,51
@@ -63,19 +63,19 @@ Coordinates=0,0,65,33
 Coordinates=0,0,75,33
 
 [ControlListButton1]
-Coordinates=314,344,108,33
+Coordinates=406,398,108,33
 
 [FDQuery1]
 Coordinates=120,100,63,33
 Visible=False
 
 [BindSourceDB1]
-Coordinates=174,213,92,105
+Coordinates=191,248,92,105
 
 [FDQuery2]
 Coordinates=120,20,63,33
 Visible=False
 
 [BindSourceDB2]
-Coordinates=136,10,92,177
+Coordinates=143,10,92,195
 

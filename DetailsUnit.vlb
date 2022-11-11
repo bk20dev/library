@@ -7,7 +7,8 @@ EditingLayerName=
 Coordinates=75,1,105,33
 
 [BindSourceDB1]
-Coordinates=136,133,92,267
+Coordinates=136,133,92,285
+Visible=True
 
 [FDQuery1]
 Coordinates=75,71,63,33

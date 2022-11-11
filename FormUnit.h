@@ -42,7 +42,10 @@
 #include <Vcl.Bind.Editors.hpp>
 #include <Vcl.NumberBox.hpp>
 #include <Vcl.Menus.hpp>
-//---------------------------------------------------------------------------
+#include <Vcl.Graphics.hpp>
+#include <Vcl.Dialogs.hpp>
+
+#include <Vcl.ExtDlgs.hpp>//---------------------------------------------------------------------------
 class TForm2 : public TForm
 {
 __published:	// IDE-managed Components
@@ -84,9 +87,12 @@ __published:	// IDE-managed Components
 	TFDQuery *FDQuery1;
 	TBindSourceDB *BindSourceDB3;
 	TLinkFillControlToField *LinkFillControlToField2;
+	TLinkControlToField *LinkControlToField5;
+	TOpenPictureDialog *OpenPictureDialog1;
 	void __fastcall SaveClick(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
 	void __fastcall FDTable2AfterEdit(TDataSet *DataSet);
+	void __fastcall Button1Click(TObject *Sender);
 private:	// User declarations
     int itemId;
 public:		// User declarations

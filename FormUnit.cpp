@@ -1,6 +1,7 @@
 //---------------------------------------------------------------------------
 
 #include <vcl.h>
+#include <stdio.h>
 #pragma hdrstop
 
 #include "FormUnit.h"
@@ -57,3 +58,13 @@ void __fastcall TForm2::FDTable2AfterEdit(TDataSet *DataSet)
     ComboBox2->Text = author;
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm2::Button1Click(TObject *Sender)
+{
+	if(OpenPictureDialog1->Execute()) {
+		auto fname = OpenPictureDialog1->FileName;
+
+		Image1->Picture->LoadFromFile(fname);
+	}
+}
+//---------------------------------------------------------------------------
+
