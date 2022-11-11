@@ -116,7 +116,12 @@ void __fastcall TForm1::Export1Click(TObject *Sender)
 //---------------------------------------------------------------------------
 void TForm1::Export(UnicodeString filePath)
 {
-	ShowMessage("Export: " + filePath);
+//	ShowMessage("Export: " + filePath);
+	IE_Connection->Params->Database = filePath;
+	IE_Connection->Connected = true;
+
+
+
 }
 //---------------------------------------------------------------------------
 void TForm1::Import(UnicodeString filePath)

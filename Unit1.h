@@ -87,6 +87,8 @@ __published:	// IDE-managed Components
 	TMenuItem *Export1;
 	TFileSaveDialog *FileSaveDialog1;
 	TOpenDialog *OpenDialog1;
+	TFDConnection *IE_Connection;
+	TFDQuery *E_Query;
 //	void __fastcall Co(int AIndex, TCanvas *ACanvas, TRect &ARect,
 //		  TOwnerDrawState AState);
 	void __fastcall Edit1Change(TObject *Sender);

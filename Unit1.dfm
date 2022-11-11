@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 455
-  ClientWidth = 536
+  ClientHeight = 454
+  ClientWidth = 532
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,7 +16,7 @@ object Form1: TForm1
   object GridPanel1: TGridPanel
     Left = 0
     Top = 0
-    Width = 536
+    Width = 532
     Height = 69
     Align = alTop
     BevelOuter = bvNone
@@ -75,7 +75,7 @@ object Form1: TForm1
     object Button1: TButton
       Left = 0
       Top = 46
-      Width = 333
+      Width = 329
       Height = 23
       Align = alClient
       Caption = 'Clear filters'
@@ -85,7 +85,7 @@ object Form1: TForm1
     object Edit1: TEdit
       Left = 125
       Top = 0
-      Width = 208
+      Width = 204
       Height = 23
       Align = alClient
       TabOrder = 1
@@ -95,7 +95,7 @@ object Form1: TForm1
     object ComboBox1: TComboBox
       Left = 125
       Top = 23
-      Width = 208
+      Width = 204
       Height = 23
       Align = alClient
       AutoDropDown = True
@@ -140,10 +140,10 @@ object Form1: TForm1
   object ControlList1: TControlList
     Left = 0
     Top = 69
-    Width = 536
-    Height = 386
+    Width = 532
+    Height = 385
     Align = alClient
-    ItemCount = 1
+    ItemCount = 4
     ItemIndex = 0
     ItemMargins.Left = 0
     ItemMargins.Top = 0
@@ -155,6 +155,7 @@ object Form1: TForm1
     ParentColor = False
     TabOrder = 1
     OnItemDblClick = ControlList1ItemDblClick
+    ExplicitTop = 75
     object Label3: TLabel
       AlignWithMargins = True
       Left = 76
@@ -167,7 +168,7 @@ object Form1: TForm1
       Margins.Bottom = 2
       Anchors = [akLeft, akTop, akRight, akBottom]
       AutoSize = False
-      Caption = 'No description'
+      Caption = 'asdsdsd'
       EllipsisPosition = epEndEllipsis
       ShowAccelChar = False
       Transparent = True
@@ -179,7 +180,7 @@ object Form1: TForm1
       Width = 381
       Height = 13
       AutoSize = False
-      Caption = 'Romeo'
+      Caption = 'a'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
@@ -730,6 +731,7 @@ object Form1: TForm1
     end
   end
   object FDQuery1: TFDQuery
+    Active = True
     Connection = S
     SQL.Strings = (
       'SELECT id, name FROM genre')
@@ -776,5 +778,18 @@ object Form1: TForm1
   object OpenDialog1: TOpenDialog
     Left = 216
     Top = 152
+  end
+  object IE_Connection: TFDConnection
+    Params.Strings = (
+      'DriverID=SQLite')
+    ConnectedStoredUsage = [auRunTime]
+    Left = 496
+    Top = 152
+  end
+  object E_Query: TFDQuery
+    ActiveStoredUsage = [auRunTime]
+    Connection = IE_Connection
+    Left = 496
+    Top = 208
   end
 end
