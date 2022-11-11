@@ -779,17 +779,4 @@ object Form1: TForm1
     Left = 216
     Top = 152
   end
-  object IE_Connection: TFDConnection
-    Params.Strings = (
-      'DriverID=SQLite')
-    ConnectedStoredUsage = [auRunTime]
-    Left = 496
-    Top = 152
-  end
-  object E_Query: TFDQuery
-    ActiveStoredUsage = [auRunTime]
-    Connection = IE_Connection
-    Left = 496
-    Top = 208
-  end
 end

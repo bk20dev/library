@@ -114,23 +114,43 @@ void __fastcall TForm1::Export1Click(TObject *Sender)
     Export(filePath);
 }
 //---------------------------------------------------------------------------
+void TForm1::PrepareDatabase(UnicodeString filePath) {
+	auto params = std::make_unique<TFDParams>();
+	auto fpv = System::Variant(filePath);
+
+	params->Add("dbfile", fpv);
+
+	S->ExecSQL("ATTACH DATABASE :dbfile AS PreparedDatabase;", params.get());
+}
+//---------------------------------------------------------------------------
+void TForm1::UnlinkPreparedDatabase() {
+	S->ExecSQL("DETACH DATABASE PreparedDatabase;");
+}
+//---------------------------------------------------------------------------
+
 void TForm1::Export(UnicodeString filePath)
 {
 //	ShowMessage("Export: " + filePath);
-	IE_Connection->Params->Database = filePath;
-	IE_Connection->Connected = true;
+	PrepareDatabase(filePath);
 
+	// todo:
+	//   - read tables
+	//   - create them
+	//   - insert data
 
-
+    UnlinkPreparedDatabase();
 }
 //---------------------------------------------------------------------------
 void TForm1::Import(UnicodeString filePath)
 {
-	ShowMessage("Import: " + filePath);
+	PrepareDatabase(filePath);
+
+	UnlinkPreparedDatabase();
 }
 //---------------------------------------------------------------------------
 void TForm1::ImportReplace(UnicodeString filePath)
 {
-	ShowMessage("ImportReplace: " + filePath);
+	// todo:
+	// ! this may be implemented with a `DROP` into `Import`
 }
 //---------------------------------------------------------------------------

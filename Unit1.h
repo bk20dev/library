@@ -54,6 +54,7 @@
 #include <Vcl.ImgList.hpp>
 //---------------------------------------------------------------------------
 #include <vector>
+#include <memory>
 #include "Book.h"
 class TForm1 : public TForm
 {
@@ -87,8 +88,6 @@ __published:	// IDE-managed Components
 	TMenuItem *Export1;
 	TFileSaveDialog *FileSaveDialog1;
 	TOpenDialog *OpenDialog1;
-	TFDConnection *IE_Connection;
-	TFDQuery *E_Query;
 //	void __fastcall Co(int AIndex, TCanvas *ACanvas, TRect &ARect,
 //		  TOwnerDrawState AState);
 	void __fastcall Edit1Change(TObject *Sender);
@@ -104,7 +103,9 @@ private:	// User declarations
 	void ApplyFilters();
 	void Export(UnicodeString filePath);
 	void Import(UnicodeString filePath);
-    void ImportReplace(UnicodeString filePath);
+	void ImportReplace(UnicodeString filePath);
+	void PrepareDatabase(UnicodeString filePath);
+	void UnlinkPreparedDatabase();
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
 };
