@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 453
-  ClientWidth = 528
+  ClientHeight = 445
+  ClientWidth = 538
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,7 +16,7 @@ object Form1: TForm1
   object GridPanel1: TGridPanel
     Left = 0
     Top = 0
-    Width = 528
+    Width = 538
     Height = 69
     Align = alTop
     BevelOuter = bvNone
@@ -72,30 +72,33 @@ object Form1: TForm1
         Value = 100.000000000000000000
       end>
     TabOrder = 0
+    ExplicitWidth = 542
     object Button1: TButton
       Left = 0
       Top = 46
-      Width = 327
+      Width = 333
       Height = 23
       Align = alClient
       Caption = 'Clear filters'
       TabOrder = 0
       OnClick = Button1Click
+      ExplicitWidth = 335
     end
     object Edit1: TEdit
       Left = 125
       Top = 0
-      Width = 202
+      Width = 208
       Height = 23
       Align = alClient
       TabOrder = 1
       TextHint = 'Title, author, series, etc.'
       OnChange = Edit1Change
+      ExplicitWidth = 210
     end
     object ComboBox1: TComboBox
       Left = 125
       Top = 23
-      Width = 202
+      Width = 208
       Height = 23
       Align = alClient
       AutoDropDown = True
@@ -104,9 +107,31 @@ object Form1: TForm1
       TextHint = 'Category'
       OnChange = ComboBox1Change
       Items.Strings = (
+        'adventure'
+        'art'
+        'children'#39's'
+        'contemporary'
+        'cookbook'
+        'development'
+        'dystopian'
+        'families & relationships'
         'fantasy'
-        'sci-fi'
-        'unknown')
+        'guide'
+        'health'
+        'historical fiction'
+        'history'
+        'horror'
+        'humor'
+        'memoir'
+        'motivational'
+        'mystery'
+        'other'
+        'paranormal'
+        'romance'
+        'science fiction'
+        'self-help'
+        'thriller'
+        'travel')
     end
     object Label1: TLabel
       AlignWithMargins = True
@@ -140,10 +165,10 @@ object Form1: TForm1
   object ControlList1: TControlList
     Left = 0
     Top = 69
-    Width = 528
-    Height = 384
+    Width = 538
+    Height = 376
     Align = alClient
-    ItemCount = 4
+    ItemCount = 2
     ItemIndex = 0
     ItemMargins.Left = 0
     ItemMargins.Top = 0
@@ -155,6 +180,8 @@ object Form1: TForm1
     ParentColor = False
     TabOrder = 1
     OnItemDblClick = ControlList1ItemDblClick
+    ExplicitWidth = 542
+    ExplicitHeight = 377
     object Label3: TLabel
       AlignWithMargins = True
       Left = 76
@@ -167,7 +194,7 @@ object Form1: TForm1
       Margins.Bottom = 2
       Anchors = [akLeft, akTop, akRight, akBottom]
       AutoSize = False
-      Caption = 'asdsdsd'
+      Caption = '3'
       EllipsisPosition = epEndEllipsis
       ShowAccelChar = False
       Transparent = True
@@ -179,7 +206,7 @@ object Form1: TForm1
       Width = 381
       Height = 13
       AutoSize = False
-      Caption = 'a'
+      Caption = '1'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
@@ -764,8 +791,7 @@ object Form1: TForm1
     Top = 224
   end
   object FileSaveDialog1: TFileSaveDialog
-    DefaultExtension = 'db'
-    DefaultFolder = '~/Downloads'
+    DefaultExtension = 'books'
     FavoriteLinks = <>
     FileName = 'library'
     FileTypes = <>
@@ -775,6 +801,7 @@ object Form1: TForm1
     Top = 152
   end
   object OpenDialog1: TOpenDialog
+    Filter = 'Library File|*.books'
     Left = 216
     Top = 152
   end

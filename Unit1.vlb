@@ -3,6 +3,7 @@ Coordinates=371,213,49,51
 
 [ComboBox1]
 Coordinates=10,213,84,105
+Visible=True
 
 [StatusBar1]
 Coordinates=10,464,78,58
@@ -70,7 +71,7 @@ Coordinates=120,100,63,33
 Visible=False
 
 [BindSourceDB1]
-Coordinates=174,213,92,105
+Coordinates=540,220,92,105
 
 [FDQuery2]
 Coordinates=120,20,63,33

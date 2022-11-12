@@ -1,8 +1,6 @@
 //---------------------------------------------------------------------------
-
 #include <vcl.h>
 #pragma hdrstop
-
 #include "Unit1.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -15,22 +13,20 @@ TForm1 *Form1;
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
+    SetupDatabase("");
 }
 //---------------------------------------------------------------------------
 void TForm1::ApplyFilters()
 {
 	UnicodeString searchPhrase = Edit1->Text;
 	UnicodeString genre = ComboBox1->Text;
-
 	UnicodeString filter = "(\
 		title LIKE '%" + searchPhrase + "%'\
 		OR author LIKE '%" + searchPhrase + "%'\
 		OR series LIKE '%" + searchPhrase + "%')";
-
 	if(genre != "") {
 		filter += " AND (genre_name LIKE '%" + genre + "%')";
 	}
-
 	FDQuery2->Filter = filter;
 }
 //---------------------------------------------------------------------------
@@ -39,13 +35,11 @@ void __fastcall TForm1::Edit1Change(TObject *Sender)
     ApplyFilters();
 }
 //---------------------------------------------------------------------------
-
 void __fastcall TForm1::ComboBox1Change(TObject *Sender)
 {
     ApplyFilters();
 }
 //---------------------------------------------------------------------------
-
 void __fastcall TForm1::Button1Click(TObject *Sender)
 {
 	Edit1->Clear();
@@ -60,7 +54,6 @@ void __fastcall TForm1::ControlList1ItemDblClick(TObject *Sender)
 	detailsForm->Show();
 }
 //---------------------------------------------------------------------------
-
 void __fastcall TForm1::Newbook1Click(TObject *Sender)
 {
 	TForm2* editForm = new TForm2(-1, this);
@@ -68,7 +61,6 @@ void __fastcall TForm1::Newbook1Click(TObject *Sender)
 	editForm->ShowModal();
 }
 //---------------------------------------------------------------------------
-
 void __fastcall TForm1::ControlListButton1Click(TObject *Sender)
 {
 	int itemId = FDQuery2->Fields->Fields[0]->AsInteger;
@@ -86,16 +78,13 @@ void __fastcall TForm1::Import1Click(TObject *Sender)
 {
 	bool success = OpenDialog1->Execute();
 	if(!success) return;
-
 	UnicodeString filePath = FileSaveDialog1->FileName;
 	int replaceAction =
 		MessageDlg("Replace current collection?", mtCustom, mbYesNoCancel, 0, mbNo);
-
 	if(replaceAction == mrNo) {
 		Import(filePath);
 		return;
 	}
-
 	if(replaceAction == mrYes) {
 		int confirmation =
 			MessageDlg("Do you really want to replace your current collection?", mtConfirmation, mbYesNo, 0, mbNo);
@@ -109,36 +98,41 @@ void __fastcall TForm1::Export1Click(TObject *Sender)
 {
 	bool success = FileSaveDialog1->Execute();
 	if(!success) return;
-
 	UnicodeString filePath = FileSaveDialog1->FileName;
     Export(filePath);
 }
 //---------------------------------------------------------------------------
 void TForm1::SetupDatabase(UnicodeString dbName) {
-	auto params = std::make_unique<TFDParams>();
-
 	if(dbName != "" && *dbName.LastChar() != '.')
 		dbName += ".";
-
-
-	auto genre = System::Variant(dbName + "genre");
-	auto book  = System::Variant(dbName + "book");
-
-	params->Add("genre", genre);
-	params->Add("book", book);
-
+	auto genre = dbName + "genre";
+	auto book  = dbName + "book";
+	S->ExecSQL("PRAGMA foreign_keys = OFF;");
+	S->ExecSQL("DROP TABLE IF EXISTS " + genre + ";");
 	S->ExecSQL(
-	"CREATE TABLE IF NOT EXISTS :genre (\n"
+	"CREATE TABLE IF NOT EXISTS " + genre + " (\n"
 	"  id INTEGER NOT NULL\n"
 	"    PRIMARY KEY AUTOINCREMENT,\n"
 	"  name TEXT NOT NULL\n"
-	");", params.get());
+	");");
+	std::vector<UnicodeString> genres = {
+		"fantasy", "adventure", "romance", "contemporary",
+		"dystopian", "mystery", "horror", "thriller", "paranormal",
+		"historical fiction", "science fiction", "children's",
+		"memoir", "cookbook", "art", "self-help", "development",
+		"motivational", "health", "history", "travel", "guide",
+		"families & relationships", "humor", "other"
+	};
+	for (const auto &_genre : genres) {
+		S->ExecSQL("INSERT INTO " + genre + " (name) VALUES (\"" + _genre + "\")");
+	}
+
+	S->ExecSQL("PRAGMA foreign_keys = ON;");
 
 	S->ExecSQL(
-	"CREATE TABLE IF NOT EXISTS :book (\n"
+	"CREATE TABLE IF NOT EXISTS " + book + " (\n"
 	"  id INTEGER NOT NULL\n"
 	"    PRIMARY KEY AUTOINCREMENT,\n"
-	"  cover_path TEXT,\n"
 	"  series TEXT,\n"
 	"  title TEXT NOT NULL,\n"
 	"  genre INTEGER NOT NULL DEFAULT 1\n"
@@ -148,75 +142,56 @@ void TForm1::SetupDatabase(UnicodeString dbName) {
 	"  release_year INTEGER,\n"
 	"  rating REAL,\n"
 	"  cover BLOB\n"
-	");", params.get());
+	");");
 }
 //---------------------------------------------------------------------------
 void TForm1::CleanSetupDatabase(UnicodeString dbName) {
-	auto params = std::make_unique<TFDParams>();
-
 	if(dbName != "" && *dbName.LastChar() != '.')
 		dbName += ".";
 
-
-	auto genre = System::Variant(dbName + "genre");
-	auto book  = System::Variant(dbName + "book");
-
-   	params->Add("book", book);
-	params->Add("genre", genre);
-
-	ShowMessage("before dtb");
-	S->ExecSQL("DROP TABLE :book ;", params.get());
-	ShowMessage("before dtg");
-	S->ExecSQL("DROP TABLE :genre ;", params.get());
+	auto genre = dbName + "genre";
+	auto book  = dbName + "book";
+	S->ExecSQL("DROP TABLE IF EXISTS " + book + ";");
 	S->ExecSQL("VACUUM;");
-
-    ShowMessage("before stdb");
     SetupDatabase(dbName);
 }
 //---------------------------------------------------------------------------
 void TForm1::PrepareDatabase(UnicodeString filePath) {
-	auto params = std::make_unique<TFDParams>();
-	auto fpv = System::Variant(filePath);
-
-	params->Add("dbfile", fpv);
-
-	S->ExecSQL("ATTACH DATABASE :dbfile AS PreparedDatabase;", params.get());
+	S->ExecSQL("ATTACH DATABASE \"" + filePath + "\" AS PreparedDatabase;");
+	S->ExecSQL("VACUUM PreparedDatabase;");
 }
 //---------------------------------------------------------------------------
 void TForm1::UnlinkPreparedDatabase() {
 	S->ExecSQL("DETACH DATABASE PreparedDatabase;");
 }
 //---------------------------------------------------------------------------
-
 void TForm1::Export(UnicodeString filePath)
 {
 //	ShowMessage("Export: " + filePath);
 	PrepareDatabase(filePath);
-
-    // important! the way i've done this... may? break when there is an update to the schema... but idc!
-
+	// important! the way i've done this... may? break when there is an update to the schema... but idc!
 	// todo:
 	//   - read tables
 	//   - create them
 	//   - insert data
-
-	CleanSetupDatabase("PreparedDatabase");
-
-	S->ExecSQL(
-		"INSERT INTO PreparedDatabase.genres SELECT * FROM genres;"
-	);
-
-	S->ExecSQL(
-		"INSERT INTO PreparedDatabase.book SELECT * FROM book;"
-	);
-
-    UnlinkPreparedDatabase();
+	try {
+		CleanSetupDatabase("PreparedDatabase");
+		S->ExecSQL(
+			"INSERT INTO PreparedDatabase.book SELECT * FROM book;"
+		);
+	} catch (...) {}
+	UnlinkPreparedDatabase();
 }
 //---------------------------------------------------------------------------
 void TForm1::Import(UnicodeString filePath)
 {
 	PrepareDatabase(filePath);
-
+    SetupDatabase("");
+	S->ExecSQL(
+		"INSERT INTO book "
+		"(series, title, genre, description, author, release_year, rating, cover) "
+		"SELECT series, title, genre, description, author, release_year, rating, cover FROM PreparedDatabase.book;"
+	);
 	UnlinkPreparedDatabase();
 }
 //---------------------------------------------------------------------------
@@ -224,5 +199,7 @@ void TForm1::ImportReplace(UnicodeString filePath)
 {
 	// todo:
 	// ! this may be implemented with a `DROP` into `Import`
+	CleanSetupDatabase("");
+	Import(filePath);
 }
 //---------------------------------------------------------------------------
