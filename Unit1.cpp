@@ -78,9 +78,11 @@ void __fastcall TForm1::Import1Click(TObject *Sender)
 {
 	bool success = OpenDialog1->Execute();
 	if(!success) return;
-	UnicodeString filePath = FileSaveDialog1->FileName;
+
+	UnicodeString filePath = OpenDialog1->FileName;
 	int replaceAction =
 		MessageDlg("Replace current collection?", mtCustom, mbYesNoCancel, 0, mbNo);
+
 	if(replaceAction == mrNo) {
 		Import(filePath);
 		return;
@@ -105,6 +107,7 @@ void __fastcall TForm1::Export1Click(TObject *Sender)
 void TForm1::SetupDatabase(UnicodeString dbName) {
 	if(dbName != "" && *dbName.LastChar() != '.')
 		dbName += ".";
+
 	auto genre = dbName + "genre";
 	auto book  = dbName + "book";
 	S->ExecSQL("PRAGMA foreign_keys = OFF;");
@@ -179,20 +182,26 @@ void TForm1::Export(UnicodeString filePath)
 		S->ExecSQL(
 			"INSERT INTO PreparedDatabase.book SELECT * FROM book;"
 		);
-	} catch (...) {}
+	} catch (...) {
+		ShowMessage("Something went wrong");
+	}
 	UnlinkPreparedDatabase();
-    Refresh();
+	Refresh();
 }
 //---------------------------------------------------------------------------
 void TForm1::Import(UnicodeString filePath)
 {
 	PrepareDatabase(filePath);
-    SetupDatabase("");
-	S->ExecSQL(
-		"INSERT INTO book "
-		"(series, title, genre, description, author, release_year, rating, cover) "
-		"SELECT series, title, genre, description, author, release_year, rating, cover FROM PreparedDatabase.book;"
-	);
+	try {
+		SetupDatabase("");
+		S->ExecSQL(
+			"INSERT INTO book "
+			"(series, title, genre, description, author, release_year, rating, cover) "
+			"SELECT series, title, genre, description, author, release_year, rating, cover FROM PreparedDatabase.book;"
+		);
+	} catch (...) {
+		ShowMessage("Something went wrong");
+	}
 	UnlinkPreparedDatabase();
 	Refresh();
 }
