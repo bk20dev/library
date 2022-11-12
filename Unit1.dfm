@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 456
-  ClientWidth = 540
+  ClientHeight = 445
+  ClientWidth = 538
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,7 +16,7 @@ object Form1: TForm1
   object GridPanel1: TGridPanel
     Left = 0
     Top = 0
-    Width = 540
+    Width = 538
     Height = 69
     Align = alTop
     BevelOuter = bvNone
@@ -107,10 +107,31 @@ object Form1: TForm1
       TextHint = 'Category'
       OnChange = ComboBox1Change
       Items.Strings = (
+        'adventure'
+        'art'
+        'children'#39's'
+        'contemporary'
+        'cookbook'
+        'development'
+        'dystopian'
+        'families & relationships'
         'fantasy'
-        'sci-fi'
-        'unknown')
-      ExplicitWidth = 210
+        'guide'
+        'health'
+        'historical fiction'
+        'history'
+        'horror'
+        'humor'
+        'memoir'
+        'motivational'
+        'mystery'
+        'other'
+        'paranormal'
+        'romance'
+        'science fiction'
+        'self-help'
+        'thriller'
+        'travel')
     end
     object Label1: TLabel
       AlignWithMargins = True
@@ -144,9 +165,11 @@ object Form1: TForm1
   object ControlList1: TControlList
     Left = 0
     Top = 69
-    Width = 540
-    Height = 387
+    Width = 538
+    Height = 376
     Align = alClient
+    ItemCount = 2
+    ItemIndex = 0
     ItemMargins.Left = 0
     ItemMargins.Top = 0
     ItemMargins.Right = 0
@@ -171,6 +194,7 @@ object Form1: TForm1
       Margins.Bottom = 2
       Anchors = [akLeft, akTop, akRight, akBottom]
       AutoSize = False
+      Caption = '3'
       EllipsisPosition = epEndEllipsis
       ShowAccelChar = False
       Transparent = True
@@ -182,6 +206,7 @@ object Form1: TForm1
       Width = 381
       Height = 13
       AutoSize = False
+      Caption = '1'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
@@ -5000,8 +5025,20 @@ object Form1: TForm1
         OnClick = Newbook1Click
       end
     end
+    object Backup1: TMenuItem
+      Caption = 'Backup'
+      object Export1: TMenuItem
+        Caption = 'Export'
+        OnClick = Export1Click
+      end
+      object Import1: TMenuItem
+        Caption = 'Import'
+        OnClick = Import1Click
+      end
+    end
   end
   object FDQuery1: TFDQuery
+    Active = True
     Connection = S
     SQL.Strings = (
       'SELECT id, name FROM genre')
@@ -5033,5 +5070,20 @@ object Form1: TForm1
     ScopeMappings = <>
     Left = 8
     Top = 224
+  end
+  object FileSaveDialog1: TFileSaveDialog
+    DefaultExtension = 'books'
+    FavoriteLinks = <>
+    FileName = 'library'
+    FileTypes = <>
+    Options = [fdoOverWritePrompt, fdoStrictFileTypes, fdoPathMustExist]
+    Title = 'Export as'
+    Left = 184
+    Top = 152
+  end
+  object OpenDialog1: TOpenDialog
+    Filter = 'Library File|*.books'
+    Left = 216
+    Top = 152
   end
 end

@@ -2,7 +2,8 @@
 Coordinates=10,398,49,51
 
 [ComboBox1]
-Coordinates=10,248,84,105
+Coordinates=10,213,84,105
+Visible=True
 
 [StatusBar1]
 Coordinates=10,464,78,58
@@ -34,7 +35,7 @@ Coordinates=10,87,46,51
 Coordinates=321,398,53,51
 
 []
-Coordinates=0,0,53,51
+Coordinates=430,235,99,36
 Visible=True
 ExplicitSubNodes=Filter
 
@@ -70,7 +71,7 @@ Coordinates=120,100,63,33
 Visible=False
 
 [BindSourceDB1]
-Coordinates=191,248,92,105
+Coordinates=540,220,92,105
 
 [FDQuery2]
 Coordinates=120,20,63,33
@@ -78,4 +79,19 @@ Visible=False
 
 [BindSourceDB2]
 Coordinates=143,10,92,195
+
+[FileSaveDialog1]
+Coordinates=205,172,93,33
+
+[OpenDialog1]
+Coordinates=106,172,77,33
+
+[Import1]
+Coordinates=47,172,52,33
+
+[Backup1]
+Coordinates=430,1,57,33
+
+[Export1]
+Coordinates=430,56,52,33
 

@@ -55,6 +55,7 @@
 #include <Vcl.Imaging.pngimage.hpp>
 //---------------------------------------------------------------------------
 #include <vector>
+#include <memory>
 #include "Book.h"
 class TForm1 : public TForm
 {
@@ -84,6 +85,11 @@ __published:	// IDE-managed Components
 	TLinkPropertyToField *LinkPropertyToFieldCaption2;
 	TLinkGridToDataSource *LinkGridToDataSourceBindSourceDB2;
 	TLinkControlToField *LinkControlToField1;
+	TMenuItem *Backup1;
+	TMenuItem *Import1;
+	TMenuItem *Export1;
+	TFileSaveDialog *FileSaveDialog1;
+	TOpenDialog *OpenDialog1;
 //	void __fastcall Co(int AIndex, TCanvas *ACanvas, TRect &ARect,
 //		  TOwnerDrawState AState);
 	void __fastcall Edit1Change(TObject *Sender);
@@ -93,9 +99,17 @@ __published:	// IDE-managed Components
 	void __fastcall Newbook1Click(TObject *Sender);
 	void __fastcall ControlListButton1Click(TObject *Sender);
 	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
+	void __fastcall Import1Click(TObject *Sender);
+	void __fastcall Export1Click(TObject *Sender);
 private:	// User declarations
-//	void UpdateCurrentListItem(const Book &book);
+	void SetupDatabase(UnicodeString dbName);
+	void CleanSetupDatabase(UnicodeString dbName);
 	void ApplyFilters();
+	void Export(UnicodeString filePath);
+	void Import(UnicodeString filePath);
+	void ImportReplace(UnicodeString filePath);
+	void PrepareDatabase(UnicodeString filePath);
+	void UnlinkPreparedDatabase();
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
 };
