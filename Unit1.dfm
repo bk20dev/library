@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 429
-  ClientWidth = 544
+  ClientHeight = 428
+  ClientWidth = 540
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,7 +16,7 @@ object Form1: TForm1
   object GridPanel1: TGridPanel
     Left = 0
     Top = 0
-    Width = 544
+    Width = 540
     Height = 69
     Align = alTop
     BevelOuter = bvNone
@@ -72,39 +72,38 @@ object Form1: TForm1
         Value = 100.000000000000000000
       end>
     TabOrder = 0
-    ExplicitWidth = 487
     object Button1: TButton
       Left = 0
       Top = 46
-      Width = 335
+      Width = 333
       Height = 23
       Align = alClient
       Caption = 'Clear filters'
       TabOrder = 0
       OnClick = Button1Click
-      ExplicitWidth = 308
+      ExplicitWidth = 335
     end
     object Edit1: TEdit
       Left = 125
       Top = 0
-      Width = 210
+      Width = 208
       Height = 23
       Align = alClient
       TabOrder = 1
       TextHint = 'Title, author, series, etc.'
       OnChange = Edit1Change
-      ExplicitWidth = 183
+      ExplicitWidth = 210
     end
     object ComboBox1: TComboBox
       Left = 125
       Top = 23
-      Width = 210
+      Width = 208
       Height = 23
       Align = alClient
       AutoDropDown = True
       Sorted = True
       TabOrder = 2
-      TextHint = 'Category'
+      TextHint = 'Genre'
       OnChange = ComboBox1Change
       Items.Strings = (
         'adventure'
@@ -132,7 +131,7 @@ object Form1: TForm1
         'self-help'
         'thriller'
         'travel')
-      ExplicitWidth = 183
+      ExplicitWidth = 210
     end
     object Label1: TLabel
       AlignWithMargins = True
@@ -152,22 +151,22 @@ object Form1: TForm1
       Width = 119
       Height = 17
       Align = alClient
-      Caption = 'Category'
+      Caption = 'Genre'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -12
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
-      ExplicitWidth = 48
+      ExplicitWidth = 31
       ExplicitHeight = 15
     end
   end
   object ControlList1: TControlList
     Left = 0
     Top = 69
-    Width = 544
-    Height = 360
+    Width = 540
+    Height = 359
     Align = alClient
     ItemMargins.Left = 0
     ItemMargins.Top = 0
@@ -179,8 +178,6 @@ object Form1: TForm1
     ParentColor = False
     TabOrder = 1
     OnItemDblClick = ControlList1ItemDblClick
-    ExplicitWidth = 487
-    ExplicitHeight = 359
     object Label3: TLabel
       AlignWithMargins = True
       Left = 83

@@ -62,11 +62,11 @@ __published:	// IDE-managed Components
 	TLabel *Label6;
 	TLinkPropertyToField *LinkPropertyToFieldCaption6;
 	TGridPanel *GridPanel1;
-	TLinkPropertyToField *LinkPropertyToFieldHeight;
 	TLabel *Label7;
 	TLinkPropertyToField *LinkPropertyToFieldCaption;
 	TLinkPropertyToField *LinkPropertyToFieldCaption7;
 	TLinkControlToField *LinkControlToField1;
+	TLinkPropertyToField *LinkPropertyToFieldVisible;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm3(int itemId, TComponent* Owner);

@@ -4,54 +4,54 @@ ActiveLayerNames=
 EditingLayerName=
 
 [LibraryConnection]
-Coordinates=75,1,105,33
+Coordinates=75,1,119,36
 
 [BindSourceDB1]
-Coordinates=136,133,92,285
+Coordinates=143,236,106,314
 Visible=True
 
 [FDQuery1]
-Coordinates=75,71,63,33
+Coordinates=75,71,73,36
 Visible=False
 
 [BindingsList1]
-Coordinates=0,0,82,33
+Coordinates=0,0,91,36
 
 []
 Coordinates=593,450,63,105
 ExplicitSubNodes=Filter
 
 [Label1]
-Coordinates=20,150,46,51
+Coordinates=331,246,53,58
 
 [StackPanel1]
-Coordinates=85,549,75,51
+Coordinates=412,10,87,58
 
 [Label2]
-Coordinates=308,454,46,69
-ExplicitSubNodes=Height
+Coordinates=10,353,53,80
+ExplicitSubNodes=Visible
 
 [Label3]
-Coordinates=308,343,46,51
+Coordinates=331,600,53,58
 
 [StackPanel2]
-Coordinates=280,549,75,51
+Coordinates=630,10,87,58
 
 [Image1]
-Coordinates=10,549,49,51
+Coordinates=329,718,57,58
 
 [Label4]
-Coordinates=308,10,46,51
+Coordinates=331,364,53,58
 
 [Label5]
-Coordinates=308,232,46,51
+Coordinates=331,10,53,58
 
 [Label6]
-Coordinates=308,121,46,51
+Coordinates=331,128,53,58
 
 [GridPanel1]
-Coordinates=186,549,68,51
+Coordinates=525,10,79,58
 
 [Label7]
-Coordinates=10,290,46,51
+Coordinates=331,482,53,58
 
