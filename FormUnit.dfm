@@ -112,7 +112,6 @@ object Form2: TForm2
         Width = 250
         Height = 23
         TabOrder = 0
-        Text = 'a'
         TextHint = 'Romeo and Juliet'
       end
       object Label6: TLabel
@@ -127,9 +126,8 @@ object Form2: TForm2
         Top = 59
         Width = 200
         Height = 23
-        ItemIndex = 0
+        ItemIndex = 1
         TabOrder = 1
-        Text = 'asdf'
         TextHint = 'First Quatro'
         Items.Strings = (
           'asdf'
@@ -149,8 +147,6 @@ object Form2: TForm2
         Width = 250
         Height = 89
         Hint = 'Romeo falls in love with Ju...'
-        Lines.Strings = (
-          'asdsdsd')
         TabOrder = 2
       end
       object Label5: TLabel
@@ -170,7 +166,7 @@ object Form2: TForm2
         MaxValue = 5.000000000000000000
         SmallStep = 0.500000000000000000
         TabOrder = 3
-        Value = 1.000000000000000000
+        Value = 5.000000000000000000
         SpinButtonOptions.Placement = nbspCompact
       end
     end
@@ -221,9 +217,8 @@ object Form2: TForm2
         Top = 17
         Width = 200
         Height = 23
-        ItemIndex = 0
+        ItemIndex = 1
         TabOrder = 0
-        Text = 'aaa'
         TextHint = 'William Shakespeare'
         Items.Strings = (
           'aaa'
@@ -258,9 +253,7 @@ object Form2: TForm2
         Top = 101
         Width = 145
         Height = 23
-        ItemIndex = 1
         TabOrder = 2
-        Text = 'sci-fi'
         Items.Strings = (
           'unknown'
           'sci-fi'
@@ -288,7 +281,6 @@ object Form2: TForm2
         Top = 173
         Width = 200
         Height = 260
-        Picture.Data = {07544269746D617000000000}
         Proportional = True
       end
     end

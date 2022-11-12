@@ -110,6 +110,7 @@ private:	// User declarations
 	void ImportReplace(UnicodeString filePath);
 	void PrepareDatabase(UnicodeString filePath);
 	void UnlinkPreparedDatabase();
+    void Refresh();
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
 };

@@ -1,4 +1,4 @@
-[Image1]
+﻿[Image1]
 Coordinates=10,398,49,51
 
 [ComboBox1]
@@ -78,7 +78,7 @@ Coordinates=120,20,63,33
 Visible=False
 
 [BindSourceDB2]
-Coordinates=143,10,92,195
+Coordinates=143,10,92,123
 
 [FileSaveDialog1]
 Coordinates=205,172,93,33

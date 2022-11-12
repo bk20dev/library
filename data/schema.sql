@@ -1,0 +1,19 @@
+CREATE TABLE IF NOT EXISTS genre (
+	id INTEGER NOT NULL
+		PRIMARY KEY AUTOINCREMENT,
+	name TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS book (
+	id INTEGER NOT NULL
+		PRIMARY KEY AUTOINCREMENT,
+	series TEXT,
+	title TEXT NOT NULL,
+	genre INTEGER NOT NULL DEFAULT 1
+		REFERENCES genre(id),
+	description TEXT,
+	author TEXT,
+	release_year INTEGER,
+	rating REAL,
+	cover BLOB
+);

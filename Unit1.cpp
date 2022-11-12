@@ -181,6 +181,7 @@ void TForm1::Export(UnicodeString filePath)
 		);
 	} catch (...) {}
 	UnlinkPreparedDatabase();
+    Refresh();
 }
 //---------------------------------------------------------------------------
 void TForm1::Import(UnicodeString filePath)
@@ -193,6 +194,7 @@ void TForm1::Import(UnicodeString filePath)
 		"SELECT series, title, genre, description, author, release_year, rating, cover FROM PreparedDatabase.book;"
 	);
 	UnlinkPreparedDatabase();
+	Refresh();
 }
 //---------------------------------------------------------------------------
 void TForm1::ImportReplace(UnicodeString filePath)
@@ -201,5 +203,11 @@ void TForm1::ImportReplace(UnicodeString filePath)
 	// ! this may be implemented with a `DROP` into `Import`
 	CleanSetupDatabase("");
 	Import(filePath);
+}
+//---------------------------------------------------------------------------
+void TForm1::Refresh()
+{
+	FDQuery1->Refresh();
+    FDQuery2->Refresh();
 }
 //---------------------------------------------------------------------------
