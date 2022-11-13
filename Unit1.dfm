@@ -3,7 +3,7 @@ object Form1: TForm1
   Top = 0
   Caption = 'Form1'
   ClientHeight = 428
-  ClientWidth = 540
+  ClientWidth = 545
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,7 +16,7 @@ object Form1: TForm1
   object GridPanel1: TGridPanel
     Left = 0
     Top = 0
-    Width = 540
+    Width = 545
     Height = 69
     Align = alTop
     BevelOuter = bvNone
@@ -72,32 +72,33 @@ object Form1: TForm1
         Value = 100.000000000000000000
       end>
     TabOrder = 0
+    ExplicitWidth = 536
     object Button1: TButton
       Left = 0
       Top = 46
-      Width = 333
+      Width = 335
       Height = 23
       Align = alClient
       Caption = 'Clear filters'
       TabOrder = 0
       OnClick = Button1Click
-      ExplicitWidth = 335
+      ExplicitWidth = 331
     end
     object Edit1: TEdit
       Left = 125
       Top = 0
-      Width = 208
+      Width = 210
       Height = 23
       Align = alClient
       TabOrder = 1
       TextHint = 'Title, author, series, etc.'
       OnChange = Edit1Change
-      ExplicitWidth = 210
+      ExplicitWidth = 206
     end
     object ComboBox1: TComboBox
       Left = 125
       Top = 23
-      Width = 208
+      Width = 210
       Height = 23
       Align = alClient
       AutoDropDown = True
@@ -131,7 +132,7 @@ object Form1: TForm1
         'self-help'
         'thriller'
         'travel')
-      ExplicitWidth = 210
+      ExplicitWidth = 206
     end
     object Label1: TLabel
       AlignWithMargins = True
@@ -165,7 +166,7 @@ object Form1: TForm1
   object ControlList1: TControlList
     Left = 0
     Top = 69
-    Width = 540
+    Width = 545
     Height = 359
     Align = alClient
     ItemMargins.Left = 0
@@ -178,6 +179,8 @@ object Form1: TForm1
     ParentColor = False
     TabOrder = 1
     OnItemDblClick = ControlList1ItemDblClick
+    ExplicitWidth = 536
+    ExplicitHeight = 358
     object Label3: TLabel
       AlignWithMargins = True
       Left = 83
@@ -344,14 +347,21 @@ object Form1: TForm1
     DefaultExtension = 'books'
     FavoriteLinks = <>
     FileName = 'library'
-    FileTypes = <>
+    FileTypes = <
+      item
+        DisplayName = 'Library'
+        FileMask = '.books'
+      end>
+    OkButtonLabel = 'Export'
     Options = [fdoOverWritePrompt, fdoStrictFileTypes, fdoPathMustExist]
     Title = 'Export as'
     Left = 184
     Top = 152
   end
   object OpenDialog1: TOpenDialog
-    Filter = 'Library File|*.books'
+    DefaultExt = 'books'
+    Filter = 'Library|*.books'
+    Title = 'Import'
     Left = 216
     Top = 152
   end
