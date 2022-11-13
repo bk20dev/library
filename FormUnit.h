@@ -121,10 +121,13 @@ __published:	// IDE-managed Components
 	TLinkFillControlToField *LinkFillControlToField2;
 	TLinkControlToField *LinkControlToField5;
 	TOpenPictureDialog *OpenPictureDialog1;
+	TButton *Button3;
+	TLinkPropertyToField *LinkPropertyToFieldEnabled;
 	void __fastcall SaveClick(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
 	void __fastcall FDTable2AfterEdit(TDataSet *DataSet);
 	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall Button3Click(TObject *Sender);
 private:	// User declarations
     int itemId;
 public:		// User declarations

@@ -67,4 +67,9 @@ void __fastcall TForm2::Button1Click(TObject *Sender)
 	}
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm2::Button3Click(TObject *Sender)
+{
+    Image1->Picture = nullptr;
+}
+//---------------------------------------------------------------------------
 

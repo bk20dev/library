@@ -64,7 +64,7 @@ object Form2: TForm2
         Value = 100.000000000000000000
       end>
     TabOrder = 0
-    ExplicitWidth = 697
+    ExplicitWidth = 716
     ExplicitHeight = 447
     object StackPanel1: TStackPanel
       Left = 0
@@ -202,6 +202,9 @@ object Form2: TForm2
           Control = Button1
         end
         item
+          Control = Button3
+        end
+        item
           Control = Image1
         end>
       TabOrder = 1
@@ -299,10 +302,20 @@ object Form2: TForm2
         TabOrder = 3
         OnClick = Button1Click
       end
+      object Button3: TButton
+        Left = 0
+        Top = 170
+        Width = 145
+        Height = 25
+        Caption = 'Remove cover'
+        Enabled = False
+        TabOrder = 4
+        OnClick = Button3Click
+      end
       object Image1: TImage
         AlignWithMargins = True
         Left = 3
-        Top = 173
+        Top = 200
         Width = 200
         Height = 260
         Proportional = True
@@ -464,6 +477,14 @@ object Form2: TForm2
       FieldName = 'cover'
       Control = Image1
       Track = False
+    end
+    object LinkPropertyToFieldEnabled: TLinkPropertyToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'cover'
+      Component = Button3
+      CustomFormat = 'ToStr(Value) <> ""'
+      ComponentProperty = 'Enabled'
     end
   end
   object FDTable2: TFDTable
