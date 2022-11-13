@@ -4,7 +4,7 @@ object Form2: TForm2
   ActiveControl = Edit1
   Caption = 'Form2'
   ClientHeight = 464
-  ClientWidth = 725
+  ClientWidth = 744
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,7 +19,7 @@ object Form2: TForm2
   object GridPanel1: TGridPanel
     Left = 12
     Top = 8
-    Width = 701
+    Width = 720
     Height = 448
     Align = alClient
     BevelOuter = bvNone
@@ -166,7 +166,7 @@ object Form2: TForm2
         MaxValue = 5.000000000000000000
         SmallStep = 0.500000000000000000
         TabOrder = 3
-        Value = 5.000000000000000000
+        Value = 1.000000000000000000
         SpinButtonOptions.Placement = nbspCompact
       end
     end
@@ -253,11 +253,35 @@ object Form2: TForm2
         Top = 101
         Width = 145
         Height = 23
+        ItemIndex = 0
         TabOrder = 2
+        Text = 'fantasy'
         Items.Strings = (
-          'unknown'
-          'sci-fi'
-          'fantasy')
+          'fantasy'
+          'adventure'
+          'romance'
+          'contemporary'
+          'dystopian'
+          'mystery'
+          'horror'
+          'thriller'
+          'paranormal'
+          'historical fiction'
+          'science fiction'
+          'children'#39's'
+          'memoir'
+          'cookbook'
+          'art'
+          'self-help'
+          'development'
+          'motivational'
+          'health'
+          'history'
+          'travel'
+          'guide'
+          'families & relationships'
+          'humor'
+          'other')
       end
       object Label2: TLabel
         Left = 0
