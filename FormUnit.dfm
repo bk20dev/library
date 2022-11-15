@@ -3,7 +3,7 @@ object Form2: TForm2
   Top = 0
   ActiveControl = Edit1
   Caption = 'Form2'
-  ClientHeight = 464
+  ClientHeight = 503
   ClientWidth = 744
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -20,7 +20,7 @@ object Form2: TForm2
     Left = 12
     Top = 8
     Width = 720
-    Height = 448
+    Height = 487
     Align = alClient
     BevelOuter = bvNone
     ColumnCollection = <
@@ -126,13 +126,8 @@ object Form2: TForm2
         Top = 59
         Width = 200
         Height = 23
-        ItemIndex = 1
         TabOrder = 1
         TextHint = 'First Quatro'
-        Items.Strings = (
-          'asdf'
-          ''
-          'asdf')
       end
       object Label7: TLabel
         Left = 0
@@ -220,13 +215,8 @@ object Form2: TForm2
         Top = 17
         Width = 200
         Height = 23
-        ItemIndex = 1
         TabOrder = 0
         TextHint = 'William Shakespeare'
-        Items.Strings = (
-          'aaa'
-          ''
-          'aaa')
       end
       object Label3: TLabel
         Left = 0
