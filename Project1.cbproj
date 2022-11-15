@@ -122,9 +122,6 @@
         <LinkPackageImports>rtl.bpi;vcl.bpi;vclwinx.bpi;vclimg.bpi;bindengine.bpi;bindcomp.bpi;dbrtl.bpi;FireDACCommonDriver.bpi;FireDACCommon.bpi;xmlrtl.bpi;FireDACSqliteDriver.bpi;FireDAC.bpi;vclFireDAC.bpi;vcldb.bpi;vclx.bpi;dsnap.bpi;bindcompvclwinx.bpi;bindcompvcl.bpi</LinkPackageImports>
     </PropertyGroup>
     <ItemGroup>
-        <None Include="Book.h">
-            <BuildOrder>3</BuildOrder>
-        </None>
         <CppCompile Include="DetailsUnit.cpp">
             <Form>Form3</Form>
             <FormType>dfm</FormType>
